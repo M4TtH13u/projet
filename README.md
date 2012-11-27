@@ -2,5 +2,3 @@ projet
 ======
 
 projet php
-
-Nico
