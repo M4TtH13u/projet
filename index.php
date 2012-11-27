@@ -18,6 +18,19 @@ else
 <div id="menu">MENU
 
 </div>
-<div id="center">Afficher ici le contenu</div>
+<div id="center">
+    <?php 
+        if (isset($_SESSION['idRole']) && ($_SESSION['idRole']>1))
+        {
+            echo'Gerer les droits suivant le Role';
+        }
+        else
+        {
+        echo'Ah ah tu n\'as pas le droit d\'être ici';   
+        }
+        
+    ?>
+
+</div>
 <?php 
 include 'include/fin.php';
