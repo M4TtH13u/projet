@@ -16,12 +16,12 @@ if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))
                            $_SESSION['nom'] = $infoUtil['nom'];
                            $_SESSION['idUtil'] = $infoUtil['idUtil'];
                            $_SESSION['idRole'] = $infoUtil['idRole'];
-                          echo 'Vous etes connectés <br/> Cliquez <a href="index.php">ici</a> pour revenir sur la page d\'accueil';
+                          echo 'Vous etes connectés <br/> Cliquez <a href="../index.php">ici</a> pour revenir sur la page d\'accueil';
                          
                     }
                     else
                     {
-                        echo'erreur de connexion mot de passe éroné <br/> Cliquez <a href="index.php">ici</a> pour revenir sur la page d\'accueil';
+                        echo'erreur de connexion mot de passe éroné <br/> Cliquez <a href="../index.php">ici</a> pour revenir sur la page d\'accueil';
                     }
 		}
 		deconnect($cnx);
