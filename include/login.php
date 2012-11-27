@@ -1,5 +1,5 @@
 <?php
-
+include'debut.php';
 include'fonctions.php';
 if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))
 {
@@ -22,5 +22,5 @@ if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))
 echo'<SCRIPT LANGUAGE="JavaScript">
      document.location.href="../index.php" 
 </SCRIPT>';
-
+include'fin.php';
 ?>
