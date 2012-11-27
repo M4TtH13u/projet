@@ -1,6 +1,6 @@
 <?php
 include'debut.php';
-include'include/fonctions.php';
+include'fonctions.php';
 if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))
 {
                 $cnx=connect();
