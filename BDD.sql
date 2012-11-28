@@ -104,6 +104,14 @@ CREATE TABLE IF NOT EXISTS `prof` (
   PRIMARY KEY (`idProf`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `prof`
+--
+
+INSERT INTO `prof` (`idProf`, `numBureau`, `telBureau`, `idUtil`) VALUES
+(200, 'CY301', 0134695023,5);
+
+
 -- --------------------------------------------------------
 
 --
