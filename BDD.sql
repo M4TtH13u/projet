@@ -77,6 +77,12 @@ CREATE TABLE IF NOT EXISTS `module` (
   PRIMARY KEY (`idMod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Structure de la table `module`
+--
+
+INSERT INTO `module` (`idMod`, `libelle`, `idPromo`) VALUES            //ICI
+
 -- --------------------------------------------------------
 
 --
