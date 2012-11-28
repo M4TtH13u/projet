@@ -77,6 +77,12 @@ CREATE TABLE IF NOT EXISTS `module` (
   PRIMARY KEY (`idMod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Structure de la table `module`
+--
+
+INSERT INTO `module` (`idMod`, `libelle`, `idPromo`) VALUES            //ICI
+
 -- --------------------------------------------------------
 
 --
@@ -103,6 +109,20 @@ CREATE TABLE IF NOT EXISTS `prof` (
   `idUtil` int(2) NOT NULL,
   PRIMARY KEY (`idProf`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `prof`
+--
+
+INSERT INTO `prof` (`idProf`, `numBureau`, `telBureau`, `idUtil`) VALUES
+(200, 'CY301', '0134852653', 1);
+(201, 'TG302', '0165452545', 1);
+(202, 'TG305', '0136654745', 1);
+(203, 'TG201', '0154855226', 1);
+(204, 'TG103', '0125699532', 1);
+(205, 'AUCUN', '0125458516', 1); //MAUVAIS
+(206, 'CY204', '0145956418', 1);
+
 
 -- --------------------------------------------------------
 
@@ -354,6 +374,15 @@ INSERT INTO `utilisateur` (`idUtil`, `login`, `pass`, `nom`, `prenom`, `idRole`)
 (162, 'vansadiara', 'eleve', 'Vansadia', 'Rajdip', 2),
 (163, 'villaincle', 'eleve', 'Villain', 'Clément', 2),
 (164, 'zambazamba', 'eleve', 'Zamba-Zamba', 'Fady', 2);
+(200, 'vda', 'prof', 'Daniel', 'Valérie', 1);
+(201, 'ae', 'prof', 'El Janati', 'Abdessalam', 1);
+(202, 'bge', 'prof', 'George', 'Bartholomew', 1);
+(203, 'bpt', 'prof', 'Perrault', 'Brigitte', 1);
+(204, 'mhp', 'prof', 'Buston', 'Marie-Hélène', 1);
+(205, 'rhm', 'prof', 'Hammoum', 'Rachid', 1);
+(206, 'ga', 'prof', 'Almouzni', 'Guy', 1);
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
