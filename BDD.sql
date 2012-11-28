@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `prof` (
 --
 
 INSERT INTO `prof` (`idProf`, `numBureau`, `telBureau`, `idUtil`) VALUES
-(200, 'CY301', 0134695023,5);
+(200, 'CY301', 0134695023, 5);
 
 
 -- --------------------------------------------------------
