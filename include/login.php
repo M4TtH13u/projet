@@ -1,15 +1,15 @@
 <?php
 
 include'fonctions.php';
-if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))
+if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))//si ya eu un login et mdp d'inscrit
 {
                 $cnx=connect();
 		mysql_query("SET NAMES UTF8");
-		$req='select * from utilisateur where login="'.$_POST['pseudo'].'"';
+		$req='select * from utilisateur where login="'.$_POST['pseudo'].'"';//on choppe les informations de l'utilisateur
 		$res=execReq($req);
 		while($infoUtil=mysql_fetch_assoc($res))
 		{
-                    if ($infoUtil['pass']== $_POST['mdp'])
+                    if ($infoUtil['pass']== $_POST['mdp'])// si le mot de passe est ok
                     {
                         session_start();
                            $_SESSION['prenom'] = $infoUtil['prenom'];
