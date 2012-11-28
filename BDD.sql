@@ -362,6 +362,15 @@ INSERT INTO `utilisateur` (`idUtil`, `login`, `pass`, `nom`, `prenom`, `idRole`)
 (162, 'vansadiara', 'eleve', 'Vansadia', 'Rajdip', 2),
 (163, 'villaincle', 'eleve', 'Villain', 'Clément', 2),
 (164, 'zambazamba', 'eleve', 'Zamba-Zamba', 'Fady', 2);
+(200, 'vda', 'prof', 'Daniel', 'Valérie', 1);
+(201, 'ae', 'prof', 'El Janati', 'Abdessalam', 1);
+(202, 'bge', 'prof', 'George', 'Bartholomew', 1);
+(203, 'bpt', 'prof', 'Perrault', 'Brigitte', 1);
+(204, 'mhp', 'prof', 'Buston', 'Marie-Hélène', 1);
+(205, 'rhm', 'prof', 'Hammoum', 'Rachid', 1);
+(206, 'ga', 'prof', 'Almouzni', 'Guy', 1);
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
