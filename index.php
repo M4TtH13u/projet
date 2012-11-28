@@ -1,5 +1,6 @@
 <?php
 include'include/debut.php';
+include'./include/menu.php';
 if (empty($_SESSION['idUtil']))// si l'utilisateur est pas connecté
 {
 ?>
@@ -8,20 +9,27 @@ if (empty($_SESSION['idUtil']))// si l'utilisateur est pas connecté
 <label>Mot de passe : </label><input type="password" name="mdp"/><br/>
 <input type="submit" Value="Se connecter"/>
 </form>
+
+
 <?php
 }
 else // sinon on affiche son nom et prénom
 {
    echo'<div id="cnx">'.$_SESSION['nom'].' '.$_SESSION['prenom'].'<br/> <a href="include/logout.php">Se déconnecter</a></div>';
 
-}?>
-<div id="menu">MENU <!-- Pour afficher le menu -->
 
-</div>
+}?>
+
+
 <div id="center"><!-- Pour afficher le contenu de la page -->
     <?php 
-        if (isset($_SESSION['idRole']) && ($_SESSION['idRole']>1))
+        if (isset($_SESSION['idRole']) && ($_SESSION['idRole']=4))
         {
+		?>
+		<script type="text/javascript">
+		admin();
+		</script>
+		<?php
             echo'Gerer les droits suivant le Role';
         }
         else
@@ -32,5 +40,6 @@ else // sinon on affiche son nom et prénom
     ?>
 
 </div>
+
 <?php 
 include 'include/fin.php';

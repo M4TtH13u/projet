@@ -16,8 +16,15 @@
  width:80%;
  height: 20%;
  background-color: black;
+ color: white;
+ text-align: center;
      
 }
+
+.eleve{
+display:none;
+}
+
 #center
 {
      position:absolute;

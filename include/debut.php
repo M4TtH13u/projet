@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" media="screen" type="text/css" title="Design" href="include/design.css" />
-    <script type="JavaScript" url=""></script>
+    <script type="text/javascript" src="include/fonctions.js"></script>
 </head>
 <body>
 <?php 
