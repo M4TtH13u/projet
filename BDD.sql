@@ -38,6 +38,7 @@ CREATE TABLE IF NOT EXISTS `eleve` (
 --
 
 
+
 INSERT INTO `eleve` (`numEtudiant`, `anneeRedouble`, `idPromo`, `idUtil`) VALUES
 (1, 0, 2, 5),
 (2, 0, 1, 6),
