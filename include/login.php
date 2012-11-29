@@ -11,9 +11,18 @@ if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))//si ya eu un login et mdp
 		{
                     if ($infoUtil['pass']== $_POST['mdp'])// si le mot de passe est ok
                     {
-                        session_start();
-                           $_SESSION['prenom'] = $infoUtil['prenom'];
-                           $_SESSION['nom'] = $infoUtil['nom'];
+                     session_start();
+                       
+		
+                    $req2='select idPromo from eleve where idUtil="'.$infoUtil['idUtil'].'"';
+                     $res2=execReq($req2);
+                     while($eleve=mysql_fetch_assoc($res2))
+                     {
+                      $_SESSION['idPromo'] = $eleve['idPromo'];
+                     }   
+                    
+                     $_SESSION['prenom'] = $infoUtil['prenom'];
+                     $_SESSION['nom'] = $infoUtil['nom'];
                            $_SESSION['idUtil'] = $infoUtil['idUtil'];
                            $_SESSION['idRole'] = $infoUtil['idRole'];
                     }
