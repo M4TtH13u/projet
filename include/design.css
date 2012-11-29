@@ -31,8 +31,10 @@ ul li
 display:inline-block;
 }
 
-ul
+ul  
 {
+ margin: 0px;
+padding: 0px;
 list-style : none;
 }
 
@@ -79,3 +81,4 @@ td
     display:none;
 }
 li:hover ul.niveau2 {display:inline-block;}
+li :hover {background-color: blue;}
