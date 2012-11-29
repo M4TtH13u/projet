@@ -64,6 +64,25 @@ CREATE TABLE IF NOT EXISTS `matiere` (
   PRIMARY KEY (`idMat`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `matiere`
+--
+
+INSERT INTO `matiere` (`idMat`, `libelle`, `coefMat`, `idMod`, `idProf`) VALUES 
+(1,'informatique', 7, 1, 202),
+(2,'mathématiques', 10, 3, 201),
+(3,'physique', 3, 4, 205),
+(4,'éléctronique', 3, 4, 206),
+(5,'français', 2, 5, 203),
+(6,'anglais', 2, 2, 204),
+(6,'anglais', 2, 2, 200),
+(7,'informatique', 4, 7, 202),
+(8,'mathématiques', 10, 9, 207),
+(9,'physique', 6, 10, 208),
+(10,'éléctronique', 3, 10, 206),
+11,'français', 2, 11, 209),
+(12,'anglais', 2, 8, 204);
+ 
 -- --------------------------------------------------------
 
 --
@@ -78,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `module` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Structure de la table `module`
+-- Contenu de la table `module`
 --
 
 INSERT INTO `module` (`idMod`, `libelle`, `idPromo`) VALUES 
@@ -392,8 +411,10 @@ INSERT INTO `utilisateur` (`idUtil`, `login`, `pass`, `nom`, `prenom`, `idRole`)
 (203, 'bpt', 'prof', 'Perrault', 'Brigitte', 3),
 (204, 'mhp', 'prof', 'Buston', 'Marie-Hélène', 3),
 (205, 'rhm', 'prof', 'Hammoum', 'Rachid', 3),
-(206, 'ga', 'prof', 'Almouzni', 'Guy', 3);
-
+(206, 'ga', 'prof', 'Almouzni', 'Guy', 3),
+(207, 'db', 'prof', 'Baskiotis', 'Despina', 3),
+(208, 'nguyenminh', 'prof', 'Thi Thu Thuy', 'Nguyen', 3),
+(209, 'sma', 'prof', 'Mano', 'Sophie', 3);
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
