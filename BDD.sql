@@ -263,7 +263,19 @@ CREATE TABLE IF NOT EXISTS `module` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
-
+insert into `module` value 
+(1,'Informatique',2),
+(2,'Langues',2),
+(3,'Mathématiques',2),
+(4,'Physique',2),
+(5,'Relations Humaines',2),
+(6,'Tranverse',2),
+(7,'Informatique',1),
+(8,'Langues',1),
+(9,'Mathématiques',1),
+(10,'Physique',1),
+(11,'Relations Humaines',1),
+(12,'Tranverse',1);
 --
 -- Structure de la table `participe`
 --
