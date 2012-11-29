@@ -25,11 +25,11 @@ else // sinon on affiche son nom et prénom
     <?php 
         if (isset($_SESSION['idRole']) && ($_SESSION['idRole']=4))
         {
-		?>
-		<script type="text/javascript"> <!-- Pour changer l'affichage de la table de menu -->
-		admin();
-		</script>
-		<?php
+            
+                echo'<script type="text/javascript"> admin();</script>';
+           
+		
+		
             echo'Gerer les droits suivant le Role';
         }
         else
