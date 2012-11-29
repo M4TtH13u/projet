@@ -13,4 +13,8 @@ tentative de correction du bug ==> rien donné;<br/>
 création d'un menu avec des listes au lieu du xhtml mais probleme de css pas résolu (0h45 je vais me coucher la) <br/>
 
 dans la table élève, c'est pas bon mais je sais, j'ai juste fait un copier coller de la table utilisateur mais apres il etait 12h45 <br/>
-mais je sais pas trop comment m'y prendre pour remplir rapidement cette table sans tout faire manuellement.
+mais je sais pas trop comment m'y prendre pour remplir rapidement cette table sans tout faire manuellement.(thomas)<br/>
+
+J'ai modif bdd pour les élèves grace a la page ajoutbdd.php, et j'ai exporté la bdd.<br/>
+Mais j'ai du oublié des noms en cpi2 je les ai mis tous en cpi1 de base , donc faudra les modifs apres <br/>
+mais j'avais pas la liste des élèves de notre promo donc bon (matth)<br/>
