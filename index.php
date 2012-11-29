@@ -1,6 +1,6 @@
 <?php
 include'include/debut.php';
-include'./include/menu.php';
+include'./include/menu2.php';
 if (empty($_SESSION['idUtil']))// si l'utilisateur est pas connecté
 {
 ?>
@@ -26,7 +26,7 @@ else // sinon on affiche son nom et prénom
         if (isset($_SESSION['idRole']) && ($_SESSION['idRole']=4))
         {
 		?>
-		<script type="text/javascript">
+		<script type="text/javascript"> <!-- Pour changer l'affichage de la table de menu -->
 		admin();
 		</script>
 		<?php
