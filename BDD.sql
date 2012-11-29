@@ -238,19 +238,19 @@ CREATE TABLE IF NOT EXISTS `matiere` (
 --
 
 INSERT INTO `matiere` (`idMat`, `libelle`, `coefMat`, `idMod`, `idProf`) VALUES 
-(1,'informatique', 7, 1, 202),
-(2,'mathématiques', 10, 3, 201),
-(3,'physique', 3, 4, 205),
-(4,'éléctronique', 3, 4, 206),
-(5,'français', 2, 5, 203),
-(6,'anglais', 2, 2, 204),
-(6,'anglais', 2, 2, 200),
-(7,'informatique', 4, 7, 202),
-(8,'mathématiques', 10, 9, 207),
-(9,'physique', 6, 10, 208),
-(10,'éléctronique', 3, 10, 206),
-(11,'français', 2, 11, 209),
-(12,'anglais', 2, 8, 204);
+(1,'informatique', 7, 1, 3),
+(2,'mathématiques', 10, 3, 2),
+(3,'physique', 3, 4, 6),
+(4,'éléctronique', 3, 4, 7),
+(5,'français', 2, 5, 4),
+(6,'anglais', 2, 2, 5),
+(6,'anglais', 2, 2, 1),
+(7,'informatique', 4, 7, 3),
+(8,'mathématiques', 10, 9, 8),
+(9,'physique', 6, 10, 9),
+(10,'éléctronique', 3, 10, 7),
+(11,'français', 2, 11, 10),
+(12,'anglais', 2, 8, 5);
  
 -- --------------------------------------------------------
 
