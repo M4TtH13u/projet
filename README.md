@@ -10,4 +10,7 @@ Je fais le menu déroulant dès que j'ai la BDD complète. <br/>
 29/11/12
 ==============================
 tentative de correction du bug ==> rien donné;<br/>
-création d'un menu avec des listes au lieu du xhtml mais probleme de css pas résolu (0h45 je vais me coucher la)
+création d'un menu avec des listes au lieu du xhtml mais probleme de css pas résolu (0h45 je vais me coucher la) <br/>
+
+dans la table élève, c'est pas bon mais je sais, j'ai juste fait un copier coller de la table utilisateur mais apres il etait 12h45 <br/>
+mais je sais pas trop comment m'y prendre pour remplir rapidement cette table sans tout faire manuellement.

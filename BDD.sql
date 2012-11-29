@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `eleve` (
 -- Contenu de la table `élève`
 --
 
-INSERT INTO `eleve` (`numEtudiant`, `anneeRedouble`, `idPromo`, `idUtil`) VALUES     --ICI!!!!!!!!!!!!!!!!
+INSERT INTO `eleve` (`numEtudiant`, `anneeRedouble`, `idPromo`, `idUtil`) VALUES     
 (5, 'abidalrola', 'eleve', 'Abidal', 'Roland', 2),
 (6, 'adamolijon', 'eleve', 'Adamoli', 'Jonathan', 2),
 (7, 'agasseroma', 'eleve', 'Agasse', 'Romain', 2),
