@@ -8,8 +8,7 @@ include'fonctions.php';
         Accueil
     </li>
     <li class="eleve">
-       Module 
-	  
+       Module
        <ul class="niveau2">
 		<?php
 		$cnx=connect();
@@ -20,7 +19,7 @@ include'fonctions.php';
                 }
                 else 
                 {
-                    $req='select * from module'; //on choppe les modules      
+                $req='select * from module'; //on choppe les modules      
                 }
 		$res=execReq($req);
 		while($nom=mysql_fetch_assoc($res)){
@@ -39,7 +38,7 @@ include'fonctions.php';
 		$req='select * from promo'; //on choppe les modules
 		$res=execReq($req);
 		while($nom=mysql_fetch_assoc($res)){
-			echo '<li value="'.$nom['idPromo'].'>'.$nom['libelle'].'</li>';
+			echo '<li value="'.$nom['idPromo'].'">'.$nom['libelle'].'</li>';
 			}
 		deconnect($cnx);
 		?>
