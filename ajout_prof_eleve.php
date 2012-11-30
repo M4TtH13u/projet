@@ -20,7 +20,7 @@ include'include/fonctions.php';
         while($promo=mysql_fetch_assoc($res)){
             echo '<SELECT name="promo">'.$promo['idPromo'].'</SELECT>';
         }      
-        deconnect($cnx);       
+        deconnect($cnx); 
     }
     ?>
  
