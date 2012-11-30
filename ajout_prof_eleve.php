@@ -28,6 +28,12 @@ include'include/fonctions.php';
     }
     ?>
         </select>
+    <div id="ajout_prof">
+    <?php
+        echo '<label>Tél :</label><input type="text"/></br>';
+        echo '<label>Numéro bureau :</label><input type="text"/></br>';    
+    ?>
+    </div>
  
 </form>
     
