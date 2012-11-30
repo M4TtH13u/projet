@@ -13,16 +13,21 @@ include'include/fonctions.php';
         echo '<input type="radio" name="choixUtil">Eleve</input></br>';
         echo '<label>Nom :</label><input type="text"/></br>';
         echo '<label>Prénom :</label><input type="text"/></br>';
+    ?>
+        <select>
+        <option></option>
+    <?php
         $cnx=connect();
         mysql_query("SET NAMES UTF8");
         $req='select * from promo';
         $res=execReq($req);
         while($promo=mysql_fetch_assoc($res)){
-            echo '<SELECT name="promo">'.$promo['idPromo'].'</SELECT>';
+            echo '<option name="promo" value="'.$promo['idPromo'].'">'.$promo['libelle'].'</option>';
         }      
         deconnect($cnx); 
     }
     ?>
+        </select>
  
 </form>
     
