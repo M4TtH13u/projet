@@ -8,11 +8,11 @@ include'include/fonctions.php';
     if ($_SESSION['idRole']>=3){
             if ($_SESSION['idRole']==4){
                 echo '<input type="radio" name="choixUtil">Administrateur</input>';
-                echo '<label>Prénom :</label><input type="radio" name="choixUtil"/>';
+                echo '<input type="radio" name="choixUtil">Professeur</input>';
             }
         echo '<input type="radio" name="choixUtil">Eleve</input></br>';
-        echo '<input type="text">Nom :</input></br>';
-        echo '<input type="text">Prénom :</input></br>';
+        echo '<label>Nom :</label><input type="text"/></br>';
+        echo '<label>Prénom :</label><input type="text"/></br>';
         $cnx=connect();
         mysql_query("SET NAMES UTF8");
         $req='select * from promo';
