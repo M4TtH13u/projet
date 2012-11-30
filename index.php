@@ -29,10 +29,9 @@ else // sinon on affiche son nom et prénom
                 echo'<script type="text/javascript"> admin();</script>';
                
    // Page par défaut quant elle n'existe pas dans le tableau
-  }
-		
-            echo'Gerer les droits suivant le Role';
-        }
+            }
+	 
+        
         else
         {
         echo'Ah ah tu n\'as pas le droit d\'être ici';   
