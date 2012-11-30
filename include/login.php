@@ -13,14 +13,15 @@ if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))//si ya eu un login et mdp
                     {
                      session_start();
                        
-		
-                    $req2='select idPromo from eleve where idUtil="'.$infoUtil['idUtil'].'"';
+                     $req2='select * from eleve where idUtil="'.$infoUtil['idUtil'].'"';// s'il s'agit d'un élève on lui enregistre sa promo
                      $res2=execReq($req2);
+            
                      while($eleve=mysql_fetch_assoc($res2))
                      {
+                         
                       $_SESSION['idPromo'] = $eleve['idPromo'];
                      }   
-                    
+        
                      $_SESSION['prenom'] = $infoUtil['prenom'];
                      $_SESSION['nom'] = $infoUtil['nom'];
                            $_SESSION['idUtil'] = $infoUtil['idUtil'];
@@ -29,8 +30,9 @@ if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))//si ya eu un login et mdp
                 }
 		deconnect($cnx);
 }
-echo'<SCRIPT LANGUAGE="JavaScript">
+ echo'<SCRIPT LANGUAGE="JavaScript">
      document.location.href="../index.php" 
 </SCRIPT>';
+
 
 ?>

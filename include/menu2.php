@@ -14,7 +14,14 @@ include'fonctions.php';
 		<?php
 		$cnx=connect();
 		mysql_query("SET NAMES UTF8");
+                if (!empty($_SESSION['idPromo']))
+                {
 		$req='select * from module where idPromo ="'.$_SESSION['idPromo'].'" '; //on choppe les modules
+                }
+                else 
+                {
+                    $req='select * from module'; //on choppe les modules      
+                }
 		$res=execReq($req);
 		while($nom=mysql_fetch_assoc($res)){
 			echo '<li>'.$nom['libelle'].'</li>';
