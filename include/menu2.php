@@ -8,8 +8,7 @@ include'fonctions.php';
         Accueil
     </li>
     <li class="eleve">
-       Module 
-	  
+       Module
        <ul class="niveau2">
 		<?php
 		$cnx=connect();
@@ -20,7 +19,7 @@ include'fonctions.php';
                 }
                 else 
                 {
-                    $req='select * from module'; //on choppe les modules      
+                $req='select * from module'; //on choppe les modules      
                 }
 		$res=execReq($req);
 		while($nom=mysql_fetch_assoc($res)){
@@ -37,7 +36,7 @@ include'fonctions.php';
 		$cnx=connect();
 		mysql_query("SET NAMES UTF8");
 		$req='select * from promo'; //on choppe les modules
-		$res=execReq($req);
+                $res=execReq($req);
 		while($nom=mysql_fetch_assoc($res)){
 			echo '<li value="'.$nom['idPromo'].'">'.$nom['libelle'].'</li>';
 			}
