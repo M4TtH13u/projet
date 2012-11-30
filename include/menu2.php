@@ -36,6 +36,7 @@ include'fonctions.php';
 		$cnx=connect();
 		mysql_query("SET NAMES UTF8");
 		$req='select * from promo'; //on choppe les modules
+                echo $req;
 		$res=execReq($req);
 		while($nom=mysql_fetch_assoc($res)){
 			echo '<li value="'.$nom['idPromo'].'">'.$nom['libelle'].'</li>';
