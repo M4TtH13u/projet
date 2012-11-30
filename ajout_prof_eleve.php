@@ -7,8 +7,8 @@ include'include/fonctions.php';
     <?php
     if ($_SESSION['idRole']>=3){
             if ($_SESSION['idRole']==4){
-                echo '<input type="radio" name="choixUtil">Professeur</input>';
-                echo '<input type="radio" name="choixUtil">Administrateur</input>';
+                echo '<label>Nom :</label><input type="radio" name="choixUtil"/>';
+                echo '<label>Prénom :</label><input type="radio" name="choixUtil"/>';
             }
         echo '<input type="radio" name="choixUtil">Eleve</input></br>';
         echo '<input type="text">Nom :</input></br>';
