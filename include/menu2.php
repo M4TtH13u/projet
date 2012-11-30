@@ -39,7 +39,7 @@ include'fonctions.php';
 		$req='select * from promo'; //on choppe les modules
 		$res=execReq($req);
 		while($nom=mysql_fetch_assoc($res)){
-			echo '<li>'.$nom['libelle'].'</li>';
+			echo '<li value="'.$nom['idPromo'].'>'.$nom['libelle'].'</li>';
 			}
 		deconnect($cnx);
 		?>
