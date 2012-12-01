@@ -88,3 +88,11 @@ ul ul
 }
 li:hover ul.niveau2 {display:inline-block;}
 li:hover {background-color: blue;}
+
+#ajout_prof{
+    display:none;
+}
+
+#ajout_promo{
+    display:none;
+}

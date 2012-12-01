@@ -3,17 +3,21 @@ include'include/debut.php';
 //include'include/fin.php';
 include'include/fonctions.php';
 ?>
-<form id="form" action="#" method="POST">
+<form id="form" name="form1" action="#" method="POST">
     <?php
     if ($_SESSION['idRole']>=3){
             if ($_SESSION['idRole']==4){
-                echo '<input type="radio" name="choixUtil">Administrateur</input>';
-                echo '<input type="radio" name="choixUtil">Professeur</input>';
+                echo '<label>Administrateur<input type="radio" name="choixUtil" onClick="prof();"/></label>';
+                echo '<label>Professeur<input type="radio" name="choixUtil" id="prof1" onClick="prof();"/></label>';
             }
-        echo '<input type="radio" name="choixUtil">Eleve</input></br>';
-        echo '<label>Nom :</label><input type="text"/></br>';
-        echo '<label>Prénom :</label><input type="text"/></br>';
+        echo '<label>Elève<input type="radio" name="choixUtil" id="eleve1" onClick="prof();"/></label></br>';
+        echo '<label>Nom :<input type="text"/></label></br>';
+        echo '<label>Prénom :<input type="text"/></label></br>';
+        echo '<label>Identifiant :<input type="text"/></label></br>';
+        echo '<label>Mot de passe :<input type="text"/></label></br>';
+        echo '<label>Confirmation mot de passe :<input type="text"/></label></br>';
     ?>
+    <div id="ajout_promo">
         <select>
         <option></option>
     <?php
@@ -25,13 +29,14 @@ include'include/fonctions.php';
             echo '<option name="promo" value="'.$promo['idPromo'].'">'.$promo['libelle'].'</option>';
         }      
         deconnect($cnx); 
+        echo "</select>";
     }
     ?>
-        </select>
+    </div>  
     <div id="ajout_prof">
     <?php
-        echo '<label>Tél :</label><input type="text"/></br>';
-        echo '<label>Numéro bureau :</label><input type="text"/></br>';    
+        echo '<label>Tél :<input type="text"/></label></br>';
+        echo '<label>Numéro bureau :<input type="text"/></label></br>';    
     ?>
     </div>
  
