@@ -23,11 +23,23 @@ include'fonctions.php';
                 }
 		$res=execReq($req);
 		while($nom=mysql_fetch_assoc($res)){
-			echo '<li>'.$nom['libelle'].'</li>';
+			echo '<li>'.$nom['libelle'];
+                ?>
+                <ul class = "niveau3">
+                    <?php
+                    $req0 = 'select * from matiere ma, module mo where mo.idMod = ma.idMod';
+                    $res0 = execReq($req0);
+                    while($nom0 = mysql_fetch_assoc($res0)){
+                            echo '<li>'.$nom0['libelle'].'</li>';
+                    }
+                ?>
+                </ul>
+                <?php
+                echo '</li>';
 			}
 		deconnect($cnx);
 		?>
-		</ul>
+	</ul>
     </li>
     <li class="eleve">
         Promo
@@ -39,7 +51,7 @@ include'fonctions.php';
                 $res=execReq($req);
 		while($nom=mysql_fetch_assoc($res)){
 			echo '<li value="'.$nom['idPromo'].'">'.$nom['libelle'].'</li>';
-			}
+                }
 		deconnect($cnx);
 		?>
 		</ul>
