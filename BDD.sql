@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 29 Novembre 2012 à 18:10
+-- Généré le: Sam 01 Décembre 2012 à 18:36
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.3.13
 
@@ -228,27 +228,27 @@ CREATE TABLE IF NOT EXISTS `matiere` (
   `idMod` int(2) NOT NULL,
   `idProf` int(2) NOT NULL,
   PRIMARY KEY (`idMat`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Contenu de la table `matiere`
 --
 
-INSERT INTO `matiere` (`idMat`, `libelle`, `coefMat`, `idMod`, `idProf`) VALUES 
-(1,'informatique', 7, 1, 3),
-(2,'mathématiques', 10, 3, 2),
-(3,'physique', 3, 4, 6),
-(4,'éléctronique', 3, 4, 7),
-(5,'français', 2, 5, 4),
-(6,'anglais', 2, 2, 5),
-(7,'anglais', 2, 2, 1),
-(8,'informatique', 4, 7, 3),
-(9,'mathématiques', 10, 9, 8),
-(10,'physique', 6, 10, 9),
-(11,'éléctronique', 3, 10, 7),
-(12,'français', 2, 11, 10),
-(13,'anglais', 2, 8, 5);
- 
+INSERT INTO `matiere` (`idMat`, `libelle`, `coefMat`, `idMod`, `idProf`) VALUES
+(1, 'informatique', 7, 1, 1),
+(2, 'mathématiques', 10, 3, 2),
+(3, 'physique', 3, 4, 6),
+(4, 'éléctronique', 3, 4, 7),
+(5, 'français', 2, 5, 3),
+(6, 'anglais', 2, 2, 4),
+(7, 'anglais', 2, 2, 5),
+(8, 'informatique', 4, 7, 1),
+(9, 'mathématiques', 10, 9, 8),
+(10, 'physique', 6, 10, 9),
+(11, 'éléctronique', 3, 10, 7),
+(12, 'français', 2, 11, 10),
+(13, 'anglais', 2, 8, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -260,22 +260,28 @@ CREATE TABLE IF NOT EXISTS `module` (
   `libelle` varchar(30) NOT NULL,
   `idPromo` int(2) NOT NULL,
   PRIMARY KEY (`idMod`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+
+--
+-- Contenu de la table `module`
+--
+
+INSERT INTO `module` (`idMod`, `libelle`, `idPromo`) VALUES
+(1, 'Informatique', 2),
+(2, 'Langues', 2),
+(3, 'Mathématiques', 2),
+(4, 'Physique', 2),
+(5, 'Relations Humaines', 2),
+(6, 'Tranverse', 2),
+(7, 'Informatique', 1),
+(8, 'Langues', 1),
+(9, 'Mathématiques', 1),
+(10, 'Physique', 1),
+(11, 'Relations Humaines', 1),
+(12, 'Tranverse', 1);
 
 -- --------------------------------------------------------
-insert into `module` value 
-(1,'Informatique',2),
-(2,'Langues',2),
-(3,'Mathématiques',2),
-(4,'Physique',2),
-(5,'Relations Humaines',2),
-(6,'Tranverse',2),
-(7,'Informatique',1),
-(8,'Langues',1),
-(9,'Mathématiques',1),
-(10,'Physique',1),
-(11,'Relations Humaines',1),
-(12,'Tranverse',1);
+
 --
 -- Structure de la table `participe`
 --
@@ -299,24 +305,23 @@ CREATE TABLE IF NOT EXISTS `prof` (
   `telBureau` int(10) NOT NULL,
   `idUtil` int(2) NOT NULL,
   PRIMARY KEY (`idProf`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Contenu de la table `prof`
 --
 
 INSERT INTO `prof` (`idProf`, `numBureau`, `telBureau`, `idUtil`) VALUES
-(1, 'CY301', '0134852653', 200),
-(2, 'TG302', '0165452545', 201),
-(3, 'TG305', '0136654745', 202),
-(4, 'TG201', '0154855226', 203),
-(5, 'TG103', '0125699532', 204),
-(6, 'AUCUN', '0125458516', 205),
-(7, 'CY205', '0145956418', 206),
-(8, 'CY204', '0145956418', 207),
-(9, 'CY102', '0145956418', 208),
-(10, 'CT124', '0145956418', 209);
-
+(1, 'CY301', 134852653, 200),
+(2, 'TG302', 165452545, 201),
+(3, 'TG305', 136654745, 202),
+(4, 'TG201', 154855226, 203),
+(5, 'TG103', 125699532, 204),
+(6, 'AUCUN', 125458516, 205),
+(7, 'CY205', 145956418, 206),
+(8, 'CY204', 145956418, 207),
+(9, 'CY102', 145956418, 208),
+(10, 'CT124', 145956418, 209);
 
 -- --------------------------------------------------------
 
@@ -397,7 +402,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `prenom` varchar(30) NOT NULL,
   `idRole` int(2) NOT NULL,
   PRIMARY KEY (`idUtil`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=165 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=208 ;
 
 --
 -- Contenu de la table `utilisateur`
@@ -568,13 +573,15 @@ INSERT INTO `utilisateur` (`idUtil`, `login`, `pass`, `nom`, `prenom`, `idRole`)
 (162, 'vansadiara', 'eleve', 'Vansadia', 'Rajdip', 2),
 (163, 'villaincle', 'eleve', 'Villain', 'Cl?ment', 2),
 (164, 'zambazamba', 'eleve', 'Zamba-Zamba', 'Fady', 2),
-(200,'bge','prof','George', 'Bartholomew', 4),
-(201,'ae','prof','El Janati', 'Abdessalam', 4),
-(202,'bpt','prof','Perrault', 'Brigitte', 4),
-(203,'mhp','prof','Buston', 'Marie-Hélène', 4),
-(204,'vda','prof','Daniel', 'Valérie', 4),
-(205,'rhm', 'prof', 'Hammoum', 'Rachid', 4),
-(206,'almouzni', 'prof', 'Almouzni', 'Rachid', 4);
+(200, 'bge', 'prof', 'George', 'Bartholomew', 3),
+(201, 'ae', 'prof', 'El Janati', 'Abdessalam', 3),
+(202, 'bpt', 'prof', 'Perrault', 'Brigitte', 3),
+(203, 'mhp', 'prof', 'Buston', 'Marie-Hélène', 3),
+(204, 'vda', 'prof', 'Daniel', 'Valérie', 3),
+(205, 'rhm', 'prof', 'Hammoum', 'Rachid', 3),
+(206, 'almouzni', 'prof', 'Almouzni', 'Guy', 3),
+(207, 'despina', 'prof', 'Baskiotis', 'Despina', 3);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
