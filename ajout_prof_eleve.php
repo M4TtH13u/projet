@@ -29,16 +29,23 @@ include'include/fonctions.php';
             echo '<option name="promo" value="'.$promo['idPromo'].'">'.$promo['libelle'].'</option>';
         }      
         deconnect($cnx); 
-        echo "</select>";
-    }
-    ?>
-    </div>  
-    <div id="ajout_prof">
-    <?php
-        echo '<label>Tél :<input type="text"/></label></br>';
-        echo '<label>Numéro bureau :<input type="text"/></label></br>';    
-    ?>
-    </div>
+        ?>
+        </select>
+        </div>
+              
+
+    
+            <div id="ajout_prof">
+            <?php
+             echo '<label>Tél :<input type="text"/></label></br>';
+             echo '<label>Numéro bureau :<input type="text"/></label></br>';    
+             ?>
+             </div>
+        <?php
+         }
+        ?>
+    
+
  
 </form>
     
@@ -47,4 +54,3 @@ include'include/fonctions.php';
  <?php   
  include'include/fin.php';   
  ?>
-
