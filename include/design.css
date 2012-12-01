@@ -17,7 +17,13 @@ top: 50px;
 margin: 0px;
 padding: 0px;
 }
-
+ul ul ul{
+position: absolute;
+left: 140px;
+top: -3px;
+margin: 0px;
+padding: 0px;  
+}
 li {
 list-style-type: none;
 position: relative;
@@ -54,12 +60,6 @@ list-style : none;
      
 }
 
-td
-{
-   width: 100px;
-   height:50px;
-}
-
 .eleve{
  display:none;
 }
@@ -82,10 +82,6 @@ td
 .niveau2{
     display:none;
 }
-ul ul 
-{
-     margin: 0px; padding: 0px;
-}
 li:hover ul.niveau2 {display:inline-block;}
 li:hover {background-color: blue;}
 
@@ -104,7 +100,6 @@ li:hover {background-color: blue;}
         
 .niveau3{
     display : none;
-    margin-left: 141px;
     
         }
-.niveau2:hover ul.niveau3 {display:block;}
+li li:hover ul.niveau3 {display:block;}
