@@ -96,3 +96,15 @@ li:hover {background-color: blue;}
 #ajout_promo{
     display:none;
 }
+.niveau3 li{
+	border-color:white;
+	border:solid;
+	height:30px;
+	}
+        
+.niveau3{
+    display : none;
+    margin-left: 141px;
+    
+        }
+.niveau2:hover ul.niveau3 {display:block;}
