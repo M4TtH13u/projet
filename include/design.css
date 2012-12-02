@@ -107,7 +107,7 @@ li li:hover ul.niveau3 {display:block;}
 #eleve_delete,#prof_delete, #eleve_CPI1,#eleve_CPI2
 {display:none;}
 
-#form_ajout_prof_eleve{
+#form_prof_eleve{
     background-color: grey;
     text-align: center;
     margin-left: 20%;
@@ -120,4 +120,11 @@ input[type=submit]:hover, input[type=reset]:hover {
 input[type=submit]:active, input[type=reset]:active {
  background-color:#FCDEDE;
  box-shadow:1px 1px 1px #D83F3D inset;
+}
+label
+{
+	display: block;
+	width: 150px;
+	float:left;
+      
 }

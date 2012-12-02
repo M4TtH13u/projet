@@ -8,7 +8,9 @@ if (( !empty($_POST['type']) && !empty($_POST['promo']) && !empty($_POST['eleve'
 else
 {
 ?>
-<form id="suppression" method="POST" action="#">
+<form id="form_prof_eleve" name="form1" action="#" method="POST">
+    <fieldset>
+        <legend>Suppression :</legend>
     <label>Choix de suppression :  Professeur</label><input type="radio" name="type" id="prof" value="prof" onClick="afficher_delete();"/>
     <label>Elève</label><input type ="radio" name="type" value="eleve" id ="eleve" onClick="afficher_delete();"/>
     <br/>
@@ -68,7 +70,8 @@ else
            ?>
         </select>
     </div>
-    <input type="submit" value='Supprimer'/>
+    <input type="submit" value='Supprimer'/><input type="reset"/>
+    </fieldset>
 </form>
     <?php
 }
