@@ -46,7 +46,7 @@ include'include/fonctions.php';
             ?>
         <br>
         <input type="submit" value="Envoyer" />
-        <input type="reset" value="Annuler" />
+        <input type="reset" value="Annuler" onClick="reinitialiser();"/>
     </fieldset>
 </form>
     

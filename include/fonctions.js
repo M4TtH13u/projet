@@ -55,4 +55,19 @@ function afficher_delete2()
         document.getElementById("eleve_CPI2").style.display="none";
     } 
 }
-
+function reinitialiser()
+{
+    if(document.getElementById("ajout_promo")!=null)
+        {
+         document.getElementById("ajout_promo").style.display="none";
+         document.getElementById("ajout_prof").style.display="none";  
+        }
+   else
+   {
+   document.getElementById("eleve_CPI1").style.display="none";
+   document.getElementById("eleve_CPI2").style.display="none";
+   document.getElementById("prof_delete").style.display="none";
+   document.getElementById("eleve_delete").style.display="none";
+   }
+   
+}

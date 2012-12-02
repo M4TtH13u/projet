@@ -11,10 +11,11 @@ else
 <form id="form_prof_eleve" name="form1" action="#" method="POST">
     <fieldset>
         <legend>Suppression :</legend>
-    <label>Choix de suppression :  Professeur</label><input type="radio" name="type" id="prof" value="prof" onClick="afficher_delete();"/>
-    <label>Elève</label><input type ="radio" name="type" value="eleve" id ="eleve" onClick="afficher_delete();"/>
+    <label>Choix de suppression :</label><input type="radio" name="type" id="prof" value="prof" onClick="afficher_delete();"/>Professeur
+    <input type ="radio" name="type" value="eleve" id ="eleve" onClick="afficher_delete();"/>Elève
     <br/>
     <div id="eleve_delete">
+        <label>Choisir la promo</label>
     <?php
      $cnx=connect();
     $req='select * from promo';
@@ -25,7 +26,10 @@ else
     }
     deconnect($cnx);
     ?>
-        <div id="eleve_CPI1"><select  name="eleve">
+         
+        <div id="eleve_CPI1">
+           <label>Choisir l'élève</label>
+            <select  name="eleve">
                 <option></option>
                  <?php
                             $cnx=connect();
@@ -40,6 +44,7 @@ else
                 
              </select>  </div>
          <div id="eleve_CPI2">
+             <label>Choisir l'élève</label>
              <select  name="eleve">
                 <option></option>
                  <?php
@@ -56,6 +61,7 @@ else
          </div>          
     </div>
     <div id="prof_delete">
+        <label>Choisir le professeur</label>
         <select name="prof">
             <option></option>
             <?php
@@ -70,7 +76,7 @@ else
            ?>
         </select>
     </div>
-    <input type="submit" value='Supprimer'/><input type="reset"/>
+    <input type="submit" value='Supprimer'/><input type="reset" onClick="reinitialiser();"/>
     </fieldset>
 </form>
     <?php
