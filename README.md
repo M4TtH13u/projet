@@ -18,3 +18,8 @@ mais je sais pas trop comment m'y prendre pour remplir rapidement cette table sa
 J'ai modif bdd pour les élèves grace a la page ajoutbdd.php, et j'ai exporté la bdd.<br/>
 Mais j'ai du oublié des noms en cpi2 je les ai mis tous en cpi1 de base , donc faudra les modifs apres <br/>
 mais j'avais pas la liste des élèves de notre promo donc bon (matth)<br/>
+
+
+02/12/12
+==============
+Les formulaires de Ajout et Suppression de prof sont fait, il reste plus qu'à les mettre en application en supprimant les éléments dans la table<br/>
