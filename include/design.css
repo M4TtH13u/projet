@@ -103,3 +103,6 @@ li:hover {background-color: blue;}
     
         }
 li li:hover ul.niveau3 {display:block;}
+
+#eleve_delete,#prof_delete, #eleve_CPI1,#eleve_CPI2
+{display:none;}
