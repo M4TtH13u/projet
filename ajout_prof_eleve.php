@@ -3,7 +3,9 @@ include'include/debut.php';
 //include'include/fin.php';
 include'include/fonctions.php';
 ?>
-<form id="form" name="form1" action="#" method="POST">
+<form id="form_ajout_prof_eleve" name="form1" action="#" method="POST">
+    <fieldset>
+        <legend>Inscription :</legend>
     <?php
     if ($_SESSION['idRole']>=3){
             if ($_SESSION['idRole']==4){
@@ -14,10 +16,11 @@ include'include/fonctions.php';
         echo '<label>Nom :<input type="text"/></label></br>';
         echo '<label>Prénom :<input type="text"/></label></br>';
         echo '<label>Identifiant :<input type="text"/></label></br>';
-        echo '<label>Mot de passe :<input type="text"/></label></br>';
-        echo '<label>Confirmation mot de passe :<input type="text"/></label></br>';
+        echo '<label>Mot de passe :<input type="password"/></label></br>';
+        echo '<label>Confirmation mot de passe :<input type="password"/></label></br>';
     ?>
     <div id="ajout_promo">
+        <label>Promo :</label>
         <select>
         <option></option>
     <?php
@@ -30,6 +33,7 @@ include'include/fonctions.php';
         }      
         deconnect($cnx); 
         ?>
+        
         </select>
         </div>
               
@@ -44,8 +48,10 @@ include'include/fonctions.php';
         <?php
          }
         ?>
+            <input type="submit" value="Envoyer" />
+            <input type="reset" value="Annuler" />
     
-
+    </fieldest>
  
 </form>
     
