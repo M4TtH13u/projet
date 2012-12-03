@@ -23,3 +23,7 @@ mais j'avais pas la liste des élèves de notre promo donc bon (matth)<br/>
 02/12/12
 ==============
 Les formulaires de Ajout et Suppression de prof sont fait, il reste plus qu'à les mettre en application en supprimant les éléments dans la table<br/>
+
+3/12/12 
+=============
+Va falloir commencer a commenter notre code et le mettre en forme
