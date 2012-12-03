@@ -27,7 +27,7 @@ include'fonctions.php';
                 ?>
                 <ul class = "niveau3">
                     <?php
-                    $req0 = 'select * from matiere where idMod="'.$nom['idMod'].'"'; // On sélectionne tout ce qu'il y a dans la table "matiere"
+                    $req0 = 'select * from matiere where idMod="'.$nom['idMod'].'"'; // On sélectionne tout ce qu'il y a dans la table "matiere" 
                     $res0 = execReq($req0);
                     while($nom0 = mysql_fetch_assoc($res0)){
                             echo '<li>'.$nom0['libelle'].'</li>'; // On affiche le libelle des différentes matières
