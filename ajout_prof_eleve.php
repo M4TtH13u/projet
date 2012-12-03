@@ -1,7 +1,23 @@
 <?php
 include'include/debut.php';
 include'include/fonctions.php';
-if (( !empty($_POST['choixUtil']) && !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['login']) && !empty($_POST['pass']) && !empty($_POST['repass']))&&($_POST['pass']==$_POST['repass'])&&( ($_POST['choixUtil']=="4")||(($_POST['choixUtil']=="2")&&!empty($_POST['promo']))||(($_POST['choixUtil']=="3")&&!empty($_POST['tel'])&& !empty($_POST['numBureau']))))
+$bool=false;
+global $bool;
+if(!empty($_POST['login']))
+{
+    $cnx=connect();
+    mysql_query("SET NAMES UTF8");
+    $req='select * from utilisateur where login='.$_POST['login'].'';
+        $res=execReq($req);
+       if(mysql_num_rows($res)==0)
+       {
+           $bool=true;
+       }
+    deconnect($cnx); 
+    echo'L\administrateur a été ajouté';  
+}
+
+if (($bool && !empty($_POST['choixUtil']) && !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['login']) && !empty($_POST['pass']) && !empty($_POST['repass']))&&($_POST['pass']==$_POST['repass'])&&( ($_POST['choixUtil']=="4")||(($_POST['choixUtil']=="2")&&!empty($_POST['promo']))||(($_POST['choixUtil']=="3")&&!empty($_POST['tel'])&& !empty($_POST['numBureau']))))
 {
     if ($_POST['choixUtil']=="4")
     {

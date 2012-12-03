@@ -50,7 +50,7 @@ include'fonctions.php';
 		$req='select * from promo'; //on choppe les modules
                 $res=execReq($req);
 		while($nom=mysql_fetch_assoc($res)){
-			echo '<li onClick="promo('.$nom['libelle'].');" value="'.$nom['idPromo'].'">'.$nom['libelle'].'</li>';
+			echo '<li onClick="promo(\''.$nom['libelle'].'\');" value="'.$nom['idPromo'].'">'.$nom['libelle'].'</li>';
                 }
 		deconnect($cnx);
 		?>

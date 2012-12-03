@@ -4,7 +4,43 @@ for (var i=0;i<change.length;i++){
 change[i].style.display="inline-block";}
 }
 
+function getXhr(){
+	var xhr = null;
+	if (window.XMLHttpRequest) // Firefox et autres
+      	     xhr = new XMLHttpRequest();
+	else if(window.ActiveXObject){ // Internet Explorer< 7
+      		try {
+  			xhr = new ActiveXObject("Msxml2.XMLHTTP");
+      		} catch (e) {
+  			xhr = new ActiveXObject("Microsoft.XMLHTTP") ;
+      		}
+	}
+	else{
+	    alert("Votre navigateur ne supporte pas les objets XMLHTTPRequest...");
+      	    xhr = false;
+	}
+	return xhr;
+  }
 
+
+function promo(num_promo){
+    var xhr;
+    var pere;
+    var reponse;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            alert(reponse);
+            pere = document.getElementById('center');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","promo.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send("nb="+num_promo);
+  }
+    
 
 
 
