@@ -55,6 +55,7 @@ function afficher_delete2()
         document.getElementById("eleve_CPI2").style.display="none";
     } 
 }
+
 function reinitialiser()
 {
     if(document.getElementById("ajout_promo")!=null)

@@ -1,6 +1,12 @@
 <?php
 include'include/debut.php';
 include'./include/menu2.php';
+$pageOK = array(
+		'accueil' =>'accueil.php',
+                'annonce' => 'annonce.php',                
+                'recherc'=>'recherche.php',
+		'pro'=>'professionnel.php'
+		);
 if (empty($_SESSION['idUtil']))// si l'utilisateur est pas connecté
 {
 ?>
