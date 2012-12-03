@@ -1,6 +1,6 @@
 <?php
 include'include/debut.php';
-include'./include/menu2.php';
+include'./include/menu.php';
 if (empty($_SESSION['idUtil']))// si l'utilisateur est pas connecté
 {
 ?>

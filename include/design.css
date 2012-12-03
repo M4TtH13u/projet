@@ -1,3 +1,4 @@
+/* CSS Pour la partie principal */
 #cnx
 {
     z-index:3;
@@ -22,7 +23,7 @@
  text-align: center;
      
 }
-    ul ul {
+    ul ul { /*Mise en forme du menu */
     display: none;
     position: absolute;
     left: 0px;
@@ -105,6 +106,9 @@ li:hover {background-color: blue;}
     
         }
 li li:hover ul.niveau3 {display:block;}
+
+
+/* Mise en forme des formulaires */
 
 #eleve_delete,#prof_delete, #eleve_CPI1,#eleve_CPI2
 {display:none;}
