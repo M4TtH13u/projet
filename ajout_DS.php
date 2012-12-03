@@ -13,7 +13,7 @@ include'include/fonctions.php';
 <form id="form_DS" action="#" method="POST">
     <fieldset>
         <legend>Ajout DS :</legend>     
-        <label>Nom de l'examen : </label><input type="text" name="libelle"/><br/>;
+        <label>Nom de l'examen : </label><input type="text" name="libelle"/><br/>
             <label>Matiere :</label>
                 <select name="matiere">
                     <option></option>
@@ -27,8 +27,8 @@ include'include/fonctions.php';
                         }      
                         deconnect($cnx); 
                     ?>
-                </select>
-            <label>Date : </label><input type="date" name="date"/><br/>;
+                </select></br>
+            <label>Date : </label><input type="date" name="date"/><br/>
             <label>Type d'examen :</label>
                 <select name="type">
                     <option></option>
@@ -38,7 +38,7 @@ include'include/fonctions.php';
                         $req='select * from typexam';
                         $res=execReq($req);
                         while($type=mysql_fetch_assoc($res)){
-                            echo '<option value="'.$type['idType'].'">'.$matiere['libelle'].'</option>';
+                            echo '<option value="'.$type['idType'].'">'.$type['libelle'].'</option>';
                         }      
                         deconnect($cnx); 
                     ?>
