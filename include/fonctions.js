@@ -31,15 +31,33 @@ function promo(num_promo){
     xhr.onreadystatechange = function(){
       if(xhr.readyState == 4 && xhr.status == 200){
             reponse = xhr.responseText;
-            alert(reponse);
+            
             pere = document.getElementById('center');
             pere.innerHTML = reponse;
       }
     }
-    xhr.open("POST","promo.php",true);
+    xhr.open("POST","include/promo.php",true);
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send("nb="+num_promo);
   }
+function matiere(num_mat)
+{
+    var xhr;
+    var pere;
+    var reponse;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            
+            pere = document.getElementById('center');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","include/matiere.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send("nb="+num_mat);
+}
     
 
 
@@ -94,17 +112,17 @@ function afficher_delete2()
 
 function reinitialiser()
 {
-    if(document.getElementById("ajout_promo")!=null)
-        {
-         document.getElementById("ajout_promo").style.display="none";
-         document.getElementById("ajout_prof").style.display="none";  
-        }
+   if(document.getElementById("ajout_promo")!=null)
+    {
+        document.getElementById("ajout_promo").style.display="none";
+        document.getElementById("ajout_prof").style.display="none";  
+    }
    else
-   {
-   document.getElementById("eleve_CPI1").style.display="none";
-   document.getElementById("eleve_CPI2").style.display="none";
-   document.getElementById("prof_delete").style.display="none";
-   document.getElementById("eleve_delete").style.display="none";
-   }
+    {
+        document.getElementById("eleve_CPI1").style.display="none";
+        document.getElementById("eleve_CPI2").style.display="none";
+        document.getElementById("prof_delete").style.display="none";
+        document.getElementById("eleve_delete").style.display="none";
+    }
    
 }

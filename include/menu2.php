@@ -30,7 +30,7 @@ include'fonctions.php';
                     $req0 = 'select * from matiere where idMod="'.$nom['idMod'].'"'; // On sélectionne tout ce qu'il y a dans la table "matiere" 
                     $res0 = execReq($req0);
                     while($nom0 = mysql_fetch_assoc($res0)){
-                            echo '<li>'.$nom0['libelle'].'</li>'; // On affiche le libelle des différentes matières
+                            echo '<li onClick="matiere(\''.$nom0['idMat'].'\')">'.$nom0['libelle'].'</li>'; // On affiche le libelle des différentes matières
                     }
                 ?>
                 </ul>
@@ -50,7 +50,7 @@ include'fonctions.php';
 		$req='select * from promo'; //on choppe les modules
                 $res=execReq($req);
 		while($nom=mysql_fetch_assoc($res)){
-			echo '<li onClick="promo(\''.$nom['libelle'].'\');" value="'.$nom['idPromo'].'">'.$nom['libelle'].'</li>';
+			echo '<li onClick="promo(\''.$nom['idPromo'].'\');" value="'.$nom['idPromo'].'">'.$nom['libelle'].'</li>';
                 }
 		deconnect($cnx);
 		?>
