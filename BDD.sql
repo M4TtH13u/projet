@@ -244,17 +244,17 @@ CREATE TABLE IF NOT EXISTS `matiere` (
 
 INSERT INTO `matiere` (`idMat`, `libelle`, `coefMat`, `idMod`, `idProf`) VALUES
 (1, 'informatique', 7, 1, 1),
-(2, 'mathÃ©matiques', 10, 3, 2),
+(2, 'mathématiques', 10, 3, 2),
 (3, 'physique', 3, 4, 6),
-(4, 'Ã©lÃ©ctronique', 3, 4, 7),
-(5, 'franÃ§ais', 2, 5, 3),
+(4, 'éléctronique', 3, 4, 7),
+(5, 'français', 2, 5, 3),
 (6, 'anglais', 2, 2, 4),
 (7, 'anglais', 2, 2, 5),
 (8, 'informatique', 4, 7, 1),
-(9, 'mathÃ©matiques', 10, 9, 8),
+(9, 'mathématiques', 10, 9, 8),
 (10, 'physique', 6, 10, 9),
-(11, 'Ã©lÃ©ctronique', 3, 10, 7),
-(12, 'franÃ§ais', 2, 11, 10),
+(11, 'éléctronique', 3, 10, 7),
+(12, 'français', 2, 11, 10),
 (13, 'anglais', 2, 8, 4);
 
 -- --------------------------------------------------------
@@ -277,13 +277,13 @@ CREATE TABLE IF NOT EXISTS `module` (
 INSERT INTO `module` (`idMod`, `libelle`, `idPromo`) VALUES
 (1, 'Informatique', 2),
 (2, 'Langues', 2),
-(3, 'MathÃ©matiques', 2),
+(3, 'Mathématiques', 2),
 (4, 'Physique', 2),
 (5, 'Relations Humaines', 2),
 (6, 'Tranverse', 2),
 (7, 'Informatique', 1),
 (8, 'Langues', 1),
-(9, 'MathÃ©matiques', 1),
+(9, 'Mathématiques', 1),
 (10, 'Physique', 1),
 (11, 'Relations Humaines', 1),
 (12, 'Tranverse', 1);
@@ -377,7 +377,7 @@ CREATE TABLE IF NOT EXISTS `role` (
 
 INSERT INTO `role` (`idRole`, `libelle`) VALUES
 (1, 'visiteur'),
-(2, 'Ã©tudiant'),
+(2, 'étudiant'),
 (3, 'professeur'),
 (4, 'administrateur');
 
@@ -399,7 +399,7 @@ CREATE TABLE IF NOT EXISTS `typexam` (
 --
 
 INSERT INTO `typexam` (`idType`, `libelle`, `coef`) VALUES
-(1, 'Devoir SurveillÃ©', 4),
+(1, 'Devoir Surveillé', 4),
 (2, 'Interrogation', 2),
 (3, 'DM', 1),
 (4, 'TP', 2);
