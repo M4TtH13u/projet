@@ -1,8 +1,10 @@
 <?php
 include'include/debut.php';
 include'include/fonctions.php';
-if ( !empty($_POST['type']) && ((!empty($_POST['promo']) && !empty($_POST['eleve'])) ||  !empty($_POST['prof'])))
-{
+if (!empty($_POST['type']) && ((!empty($_POST['promo']) && !empty($_POST['eleve'])) || !empty($_POST['prof']))) {
+   // $cnx=connect();
+    //mysql_query("SET NAMES UTF8");
+    //$req=
     echo'Ca reste a faire';
 }
 else

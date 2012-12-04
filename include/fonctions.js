@@ -59,8 +59,28 @@ function matiere(num_mat)
     xhr.send("nb="+num_mat);
 }
     
+function ajoutProfEleve()
+{
+    var xhr;
+    var pere;
+    var reponse;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            pere = document.getElementById('center');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","ajout_prof_eleve.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send(null);
+}
 
-
+function validerAjout()
+{
+    alert('coucou');
+}
 
 
 function prof(){

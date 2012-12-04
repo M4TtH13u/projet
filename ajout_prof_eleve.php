@@ -1,6 +1,6 @@
 <?php
-include'include/debut.php';
 include'include/fonctions.php';
+session_start();
 $bool=false;
 global $bool;
 if(!empty($_POST['login']))
@@ -105,14 +105,13 @@ else
             }
             ?>
         <br>
-        <input type="submit" value="Envoyer" />
+        <?php echo '<input type="submit" onClick="validerAjout('.$_POST['login'].','.$_POST['pass'].','.$_POST['repass'].','.$_POST['nom'].','.$_POST['prenom'].','.$_POST['ChoixUtil'].','.$_POST['tel'].','.$_POST['numBureau'].','.$_POST['promo'].');" value="Envoyer" />'; ?>
         <input type="reset" value="Annuler" onClick="reinitialiser();"/>
     </fieldset>
 </form>
     
 
 
- <?php   
-}
- include'include/fin.php';   
+ <?php
+} 
  ?>
