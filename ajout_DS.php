@@ -49,7 +49,7 @@ include'include/fonctions.php';
     if ((!empty($_POST['libelle']) && !empty($_POST['matiere']) && !empty($_POST['date']) && !empty($_POST['type']))){
         $cnx=connect();
         mysql_query("SET NAMES UTF8");
-        $req='INSERT INTO examen VALUE("","'.$_POST['libelle'].'","'.$_POST['idMat'].'","'.$_POST['date'].'","'.$_POST['idType'].'")';
+        $req='INSERT INTO examen VALUE("","'.$_POST['libelle'].'","'.$_POST['matiere'].'","'.$_POST['date'].'","'.$_POST['type'].'")';
         $res=execReq($req);
         deconnect($cnx); 
         echo 'Le DS à bien été ajouté'; 
