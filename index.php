@@ -1,4 +1,4 @@
-<?php
+<?php //test 
 include'include/debut.php';
 include'./include/menu.php';
 if (empty($_SESSION['idUtil']))// si l'utilisateur est pas connecté
