@@ -62,9 +62,10 @@
 
 
 
-.eleve{
+.eleve, .prof{
  display:none;
 }
+
 
 #center
 {
