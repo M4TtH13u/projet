@@ -14,7 +14,7 @@ if(isset($_POST['login']))
            $bool=true;
        }
     deconnect($cnx); 
-    echo'L\administrateur a été ajouté';  
+    echo'L\administrateur a ï¿½tï¿½ ajoutï¿½';  
 }
 
 if (($bool && !empty($_POST['choixUtil']) && !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['login']) && !empty($_POST['pass']) && !empty($_POST['repass']))&&($_POST['pass']==$_POST['repass'])&&( ($_POST['choixUtil']=="4")||(($_POST['choixUtil']=="2")&&!empty($_POST['promo']))||(($_POST['choixUtil']=="3")&&!empty($_POST['tel'])&& !empty($_POST['numBureau']))))
@@ -26,7 +26,7 @@ if (($bool && !empty($_POST['choixUtil']) && !empty($_POST['nom']) && !empty($_P
         $req='INSERT INTO utilisateur VALUE("","'.$_POST['login'].'","'.$_POST['pass'].'","'.$_POST['nom'].'","'.$_POST['prenom'].'",4)';
         $res=execReq($req);
         deconnect($cnx); 
-        echo'L\administrateur a été ajouté';
+        echo'L\administrateur a ï¿½tï¿½ ajoutï¿½';
     }
     elseif ($_POST['choixUtil']=="3") 
     {
@@ -41,7 +41,7 @@ if (($bool && !empty($_POST['choixUtil']) && !empty($_POST['nom']) && !empty($_P
         $res2=execReq($req2);
         }
         deconnect($cnx);
-        echo'Le professeur a été ajouté';
+        echo'Le professeur a ï¿½tï¿½ ajoutï¿½';
     }
     elseif ($_POST['choixUtil']=="2")
     {
@@ -56,7 +56,7 @@ if (($bool && !empty($_POST['choixUtil']) && !empty($_POST['nom']) && !empty($_P
         $res2=execReq($req2);
         }
         deconnect($cnx);
-        echo'L\'élève a été ajouté';
+        echo'L\'ï¿½lï¿½ve a ï¿½tï¿½ ajoutï¿½';
     }
    
 }   
@@ -74,9 +74,9 @@ else
                 echo '<label>Type :</label><input type="radio" name="choixUtil" onClick="prof();"value="4"/> Administrateur';
                 echo '<input type="radio" name="choixUtil" id="prof1" onClick="prof();" value="3"/>Professeur';
                 }
-            echo '<input type="radio" name="choixUtil" id="eleve1" onClick="prof();" value="2"/>Elève<br/>';
+            echo '<input type="radio" name="choixUtil" id="eleve1" onClick="prof();" value="2"/>Elï¿½ve<br/>';
             echo '<label>Nom :</label><input type="text" name="nom"/><br/>';
-            echo '<label>Prénom : </label><input type="text" name="prenom"/><br/>';
+            echo '<label>Prï¿½nom : </label><input type="text" name="prenom"/><br/>';
             echo '<label>Identifiant : </label><input type="text" name="login"/><br/>';
             echo '<label>Mot de passe : </label><input type="password" name="pass"/><br/>';
             echo '<label>Confirmation mot de passe : </label><input type="password" name="repass"/><br/>';
@@ -98,14 +98,14 @@ else
                 </select>
            </span>
             <span id="ajout_prof">
-                <label>Tél :</label><input type="text" name="tel"/><br/>
-                <label>Numéro bureau :</label><input type="text" name="numBureau"/><br/>   
+                <label>Tï¿½l :</label><input type="text" name="tel"/><br/>
+                <label>Numï¿½ro bureau :</label><input type="text" name="numBureau"/><br/>   
            </span>
             <?php
             }
             ?>
         <br>
-        <?php echo '<input type="submit" onClick="validerAjout() value="Envoyer" />'; ?>
+        <?php echo '<input type="submit" onClick="validerAjout()" value="Envoyer" />'; ?>
         <input type="reset" value="Annuler" onClick="reinitialiser();"/>
     </fieldset>
 </form>
