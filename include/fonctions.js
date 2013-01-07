@@ -81,11 +81,11 @@ function ajoutProfEleve()
     xhr.send(null);
 }
 
-function validerAjout()
+function verif()
 {
-    alert('coucou');
+    alert('à faire');
+    //a faire
 }
-
 
 function prof(){
     var prof2=document.getElementById("prof1");
