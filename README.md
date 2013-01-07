@@ -31,3 +31,18 @@ Va falloir commencer a commenter notre code et le mettre en forme
 6/01/13 
 =============
 Va falloir s'activer un peu
+
+07/01/13
+=============
+Il nous reste plusieurs choses à faire :
+    -Suppression d'utilisateurs
+    -Modifier les promos et les faire sous forme de menu déroulant (afin de pouvoir ajouter des informations si l'utilisateur est un administrateur)
+    -Dans la page associée aux résultats des matières, ajouter la moyenne coefficienté de chaque élève
+    -De même pour le calcul de la moyenne générale coefficienté pour chaque matière
+    -Afficher les professeurs en charge de chaque matière dans le menu de base
+    -Créer un menu (similaire à "Promo") pour caractériser les professeurs en fonction de :
+        .Nom
+        .Prenom
+        .Numéro de bureau
+        .Téléphone de bureau
+    -Créer une fonction permettant d'ajouter/supprimer une matière associée à un professeur. Utilisable uniquement par l'admin
