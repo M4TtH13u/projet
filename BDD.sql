@@ -275,7 +275,7 @@ CREATE TABLE IF NOT EXISTS `module` (
 --
 
 INSERT INTO `module` (`idMod`, `libelle`, `idPromo`) VALUES
-(1, 'Informatique', 2),
+(1, 'Informatique ', 2),
 (2, 'Langues', 2),
 (3, 'Mathématiques', 2),
 (4, 'Physique', 2),

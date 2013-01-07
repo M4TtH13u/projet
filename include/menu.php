@@ -56,12 +56,16 @@ include'fonctions.php';
 		?>
 		</ul>
     </li>
-    <li class="prof">
-        Gérer les élèves
+     <li class="prof" onClick="professeur();">
+        Professeurs
+    </li>
+    <li class="admin">
+        Gérer les utilisateurs
             <ul class="niveau2">
                 <li onClick="ajoutProfEleve();">ajouter utilisateurs</li>
                 <li onClick="deleteProfEleve();">supprimer utilisateurs</li>
             </ul>
     </li>
+   
 </ul>
  
