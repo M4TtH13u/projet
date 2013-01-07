@@ -4,7 +4,7 @@ include'fonctions.php';
 
 ?>
 <ul id="menu">
-    <li>
+    <li onClick="faccueil();">
         Accueil
     </li>
     <li class="eleve">
