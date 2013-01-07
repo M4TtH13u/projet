@@ -71,7 +71,10 @@
  display:none;
 }
 
-
+img {
+    height: 100%;
+    width: 100%;
+}
 #center
 {
  z-index:1;
@@ -81,7 +84,6 @@
  min-height: 77.3%;
  min-width: 80%;
  width: 100%;
- 
  background-color: gray;
 }
 .niveau2 li{
