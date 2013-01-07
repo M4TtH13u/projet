@@ -62,7 +62,10 @@ function matiere(num_mat)
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send("nb="+num_mat);
 }
-    
+function faccueil()
+{
+    document.getElementById('center').innerHTML="<img src='image/accueil.jpg'/>";
+}
 function ajoutProfEleve()
 {
     var xhr;
