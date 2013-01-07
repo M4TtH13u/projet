@@ -26,7 +26,7 @@ if (($bool && !empty($_POST['choixUtil']) && !empty($_POST['nom']) && !empty($_P
         $req='INSERT INTO utilisateur VALUE("","'.$_POST['login'].'","'.$_POST['pass'].'","'.$_POST['nom'].'","'.$_POST['prenom'].'",4)';
         $res=execReq($req);
         deconnect($cnx); 
-        echo'L\administrateur a �t� ajout�';
+        echo'L\administrateur a été ajouté';
     }
     elseif ($_POST['choixUtil']=="3") 
     {
@@ -41,7 +41,7 @@ if (($bool && !empty($_POST['choixUtil']) && !empty($_POST['nom']) && !empty($_P
         $res2=execReq($req2);
         }
         deconnect($cnx);
-        echo'Le professeur a �t� ajout�';
+        echo'Le professeur a été ajouté';
     }
     elseif ($_POST['choixUtil']=="2")
     {
@@ -56,7 +56,7 @@ if (($bool && !empty($_POST['choixUtil']) && !empty($_POST['nom']) && !empty($_P
         $res2=execReq($req2);
         }
         deconnect($cnx);
-        echo'L\'�l�ve a �t� ajout�';
+        echo'L\'élève a été ajouté';
     }
    
 }   
@@ -74,9 +74,9 @@ else
                 echo '<label>Type :</label><input type="radio" name="choixUtil" onClick="prof();"value="4"/> Administrateur';
                 echo '<input type="radio" name="choixUtil" id="prof1" onClick="prof();" value="3"/>Professeur';
                 }
-            echo '<input type="radio" name="choixUtil" id="eleve1" onClick="prof();" value="2"/>El�ve<br/>';
+            echo '<input type="radio" name="choixUtil" id="eleve1" onClick="prof();" value="2"/>Elève<br/>';
             echo '<label>Nom :</label><input type="text" name="nom"/><br/>';
-            echo '<label>Pr�nom : </label><input type="text" name="prenom"/><br/>';
+            echo '<label>Prénom : </label><input type="text" name="prenom"/><br/>';
             echo '<label>Identifiant : </label><input type="text" name="login"/><br/>';
             echo '<label>Mot de passe : </label><input type="password" name="pass"/><br/>';
             echo '<label>Confirmation mot de passe : </label><input type="password" name="repass"/><br/>';
@@ -98,8 +98,8 @@ else
                 </select>
            </span>
             <span id="ajout_prof">
-                <label>T�l :</label><input type="text" name="tel"/><br/>
-                <label>Num�ro bureau :</label><input type="text" name="numBureau"/><br/>   
+                <label>Tel :</label><input type="text" name="tel"/><br/>
+                <label>Numéro bureau :</label><input type="text" name="numBureau"/><br/>   
            </span>
             <?php
             }
