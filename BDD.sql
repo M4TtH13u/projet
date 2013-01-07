@@ -523,7 +523,7 @@ INSERT INTO `utilisateur` (`idUtil`, `login`, `pass`, `nom`, `prenom`, `idRole`)
 (96, 'marzouksam', 'c16da4ad70df593520193184381b9f21', 'Marzouk', 'Sami', 2),
 (97, 'massotfran', 'c16da4ad70df593520193184381b9f21', 'Massot', 'Francois', 2),
 (98, 'mauduiteme', 'c16da4ad70df593520193184381b9f21', 'Mauduit', 'Emeric', 2),
-(99, 'mayanjosea', 'c16da4ad70df593520193184381b9f21', 'Mayan', 'José-Alexandre', 2),
+(99, 'mayanjosea', 'c16da4ad70df593520193184381b9f21', 'Mayan', 'Jose-Alexandre', 2),
 (100, 'mercierlau', 'c16da4ad70df593520193184381b9f21', 'Mercier', 'Laura', 2),
 (101, 'mesbahygab', 'c16da4ad70df593520193184381b9f21', 'Mesbahy', 'Gabriel', 2),
 (102, 'michalakst', 'c16da4ad70df593520193184381b9f21', 'Michalak', 'Stanislas', 2),
