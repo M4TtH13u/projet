@@ -30,7 +30,7 @@ function execReq($req){
 }
 
 
-if (($bool && !empty($_POST['choixUtil']) && !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['login']) && !empty($_POST['pass']) && !empty($_POST['repass']))&&($_POST['pass']==$_POST['repass'])&&( ($_POST['choixUtil']=="4")||(($_POST['choixUtil']=="2")&&!empty($_POST['promo']))||(($_POST['choixUtil']=="3")&&!empty($_POST['tel'])&& !empty($_POST['numBureau']))))
+if ((!empty($_POST['choixUtil']) && !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['login']) && !empty($_POST['pass']) && !empty($_POST['repass']))&&($_POST['pass']==$_POST['repass'])&&( ($_POST['choixUtil']=="4")||(($_POST['choixUtil']=="2")&&!empty($_POST['promo']))||(($_POST['choixUtil']=="3")&&!empty($_POST['tel'])&& !empty($_POST['numBureau']))))
 {
     if ($_POST['choixUtil']=="4")
     {
