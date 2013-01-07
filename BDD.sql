@@ -592,8 +592,8 @@ INSERT INTO `utilisateur` (`idUtil`, `login`, `pass`, `nom`, `prenom`, `idRole`)
 (200, 'bge', 'd450c5dbcc10db0749277efc32f15f9f', 'George', 'Bartholomew', 3),
 (201, 'ae', 'd450c5dbcc10db0749277efc32f15f9f', 'El Janati', 'Abdessalam', 3),
 (202, 'bpt', 'd450c5dbcc10db0749277efc32f15f9f', 'Perrault', 'Brigitte', 3),
-(203, 'mhp', 'd450c5dbcc10db0749277efc32f15f9f', 'Buston', 'Marie-Hélène', 3),
-(204, 'vda', 'd450c5dbcc10db0749277efc32f15f9f', 'Daniel', 'Valérie', 3),
+(203, 'mhp', 'd450c5dbcc10db0749277efc32f15f9f', 'Buston', 'Marie-Helene', 3),
+(204, 'vda', 'd450c5dbcc10db0749277efc32f15f9f', 'Daniel', 'Valerie', 3),
 (205, 'rhm', 'd450c5dbcc10db0749277efc32f15f9f', 'Hammoum', 'Rachid', 3),
 (206, 'almouzni', 'd450c5dbcc10db0749277efc32f15f9f', 'Almouzni', 'Guy', 3),
 (207, 'despina', 'd450c5dbcc10db0749277efc32f15f9f', 'Baskiotis', 'Despina', 3);
