@@ -9,7 +9,7 @@ if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))//si ya eu un login et mdp
 		$res=execReq($req);
 		while($infoUtil=mysql_fetch_assoc($res))
 		{
-                    if ($infoUtil['pass']== $_POST['mdp'])// si le mot de passe est ok
+                    if ($infoUtil['pass']== md5($_POST['mdp']))// si le mot de passe est ok
                     {
                      session_start();
                        
