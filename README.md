@@ -46,3 +46,4 @@ Il nous reste plusieurs choses à faire :
         .Numéro de bureau
         .Téléphone de bureau
     -Créer une fonction permettant d'ajouter/supprimer une matière associée à un professeur. Utilisable uniquement par l'admin
+Et plusieurs autres mais nous verrons cela plus tard.
