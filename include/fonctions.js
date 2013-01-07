@@ -81,6 +81,24 @@ function ajoutProfEleve()
     xhr.send(null);
 }
 
+function deleteProfEleve()
+{
+    var xhr;
+    var pere;
+    var reponse;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            pere = document.getElementById('center');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","delete_prof_eleve.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send(null);
+}
+
 function verif()
 {
     alert('à faire');
