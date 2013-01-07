@@ -1,15 +1,7 @@
 <?php
-include'include/debut.php';
 include'include/fonctions.php';
-if (!empty($_POST['type']) && ((!empty($_POST['promo']) && !empty($_POST['eleve'])) || !empty($_POST['prof']))) {
-   // $cnx=connect();
-    //mysql_query("SET NAMES UTF8");
-    //$req=
-    echo'Ca reste a faire';
-}
-else
-{
-    ?>
+session_start();
+?>
     <form id="form_prof_eleve" name="form1" action="#" method="POST">
         <fieldset>
             <legend>Suppression :</legend>
@@ -80,7 +72,4 @@ else
              <input type="submit" value='Supprimer'/><input type="reset" onClick="reinitialiser();"/>
         </fieldset>
     </form>
-        <?php
-}
-include 'include/fin.php';
-?>
+
