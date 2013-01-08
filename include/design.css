@@ -1,119 +1,110 @@
 /* CSS Pour la partie principal */
 #cnx
 {
-    z-index:3;
- position:fixed;
- top:0px;
- right:0px;
- width:20%;
- height: 19.8%;
- min-height: 22.5%;
- min-width: 20%;
- background-color: white;
- border : 1px solid black;  
+z-index:3;
+position:fixed;
+top:0px;
+right:0px;
+width:20%;
+height: 19.8%;
+min-height: 22.5%;
+min-width: 20%;
+background-color: white;
+border : 1px solid black;  
 }
 #menu
 {
- z-index:2;
- position:fixed;
- top:0px;
- left:0px;
- width:80%;
- height: 20%;
- min-height: 22.7%;
- min-width: 20%;
- background-color: black;
- color: white;
- text-align: center;
-     
+z-index:2;
+position:fixed;
+top:0px;
+left:0px;
+width:80%;
+height: 20%;
+min-height: 22.7%;
+min-width: 20%;
+background-color: black;
+color: white;
+text-align: center;
+
 }
-    ul ul { /*Mise en forme du menu */
-    display: none;
-    position: absolute;
-    left: -1px;
-    top: 50px;
-    margin: 0px;
-    padding: 0px;
-    }
-    ul ul ul{
-    position: absolute;
-    left: 140px;
-    top: -3px;
-    margin: 0px;
-    padding: 0px;  
-    }
-    li {
-    list-style-type: none;
-    position: relative;
-    width: 140px;
-    height:40px;
-    background-color: red;
-     margin: 0px;
-    padding: 0px;
-    }
-
-    ul li
-    {
-    display:inline-block;
-    padding-top: 10px;
-    }
-
-    ul  
-    {
-    margin: 0px;
-    padding: 0px;
-    list-style : none;
-    }
-
-
-
-.eleve, .prof{
- display:none;
+ul ul { /*Mise en forme du menu */
+display: none;
+position: absolute;
+left: -1px;
+top: 50px;
+margin: 0px;
+padding: 0px;
 }
+ul ul ul{
+position: absolute;
+left: 140px;
+top: -3px;
+margin: 0px;
+padding: 0px;  
+}
+li {
+list-style-type: none;
+position: relative;
+width: 140px;
+height:40px;
+background-color: red;
+margin: 0px;
+padding: 0px;
+}
+
+ul li
+{
+display:inline-block;
+padding-top: 10px;
+}
+
+ul  
+{
+margin: 0px;
+padding: 0px;
+list-style : none;
+}
+
+.eleve, .prof{display:none;}
 
 img {
-    height: 100%;
-    width: 100%;
+height: 100%;
+width: 100%;
 }
 #center
 {
- z-index:1;
- position:absolute;
- top: 22.7%;
- left:0px;
- min-height: 77.3%;
- min-width: 80%;
- width: 100%;
- background-color: gray;
+z-index:1;
+position:absolute;
+top: 22.7%;
+left:0px;
+min-height: 77.3%;
+min-width: 80%;
+width: 100%;
+background-color: gray;
 }
 .niveau2 li{
-	border-color:white;
-	border:solid;
-	height:30px;
-	}
-.niveau2{
-    display:none;
+border-color:white;
+border:solid;
+height:30px;
 }
+.niveau2{display:none;}
+
 li:hover ul.niveau2 {display:inline-block;}
+
 li:hover {background-color: blue;}
 
-#ajout_prof{
-    display:none;
+#ajout_prof{display:none;}
+
+#ajout_promo{display:none;}
+
+.niveau3 li{
+border-color:white;
+border:solid;
+height:30px;
 }
 
-#ajout_promo{
-    display:none;
-}
-.niveau3 li{
-	border-color:white;
-	border:solid;
-	height:30px;
-	}
-        
-.niveau3{
-    display : none;
-    
-        }
+.niveau3{display : none;}
+
 li li:hover ul.niveau3 {display:block;}
 
 
@@ -123,23 +114,19 @@ li li:hover ul.niveau3 {display:block;}
 {display:none;}
 
 #form_prof_eleve{
-    background-color: grey;
-    text-align: center;
-    margin-left: 20%;
-    margin-right:20%;
+background-color: grey;
+text-align: center;
+margin-left: 20%;
+margin-right:20%;
 }
 
-input[type=submit]:hover, input[type=reset]:hover {
- background-image: linear-gradient;
- }
-input[type=submit]:active, input[type=reset]:active {
- background-image: radial-gradient;
+input[type=submit]:hover, input[type=reset]:hover {background-image: linear-gradient;}
 
-}
+input[type=submit]:active, input[type=reset]:active {background-image: radial-gradient;}
+
 label
 {
-	display: block;
-	width: 200px;
-	float:left;
-      
+display: block;
+width: 200px;
+float:left;
 }
