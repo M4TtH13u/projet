@@ -22,7 +22,23 @@ else // sinon on affiche son nom et prénom
 
 
 <div id="center"><!-- Pour afficher le contenu de la page -->
-    <img src='image/accueil.jpg' />
+    <?php 
+        if (isset($_SESSION['idRole']) && ($_SESSION['idRole']>=2))
+        {
+            
+                echo'<script type="text/javascript"> admin();</script>';
+               
+   // Page par défaut quant elle n'existe pas dans le tableau
+            }
+	 
+        
+        else
+        {
+        echo'<img src="image/accueil.jpg" />';   
+        }
+        
+    ?>
+
 </div>
 
 <?php 
