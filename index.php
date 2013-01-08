@@ -7,7 +7,7 @@ if (empty($_SESSION['idUtil']))// si l'utilisateur est pas connecté
 <form id="cnx" action="include/login.php" method="POST">
 <label>Login : </label><input type="text" name="pseudo"/><br/>
 <label>Mot de passe : </label><input type="password" name="mdp"/><br/>
-<input type="submit" Value="Se connecter"/>
+<input type="submit" Value="Se connecter" />
 </form>
 
 
@@ -15,7 +15,7 @@ if (empty($_SESSION['idUtil']))// si l'utilisateur est pas connecté
 }
 else // sinon on affiche son nom et prénom
 {
-   echo'<div id="cnx">'.$_SESSION['nom'].' '.$_SESSION['prenom'].'<br/> <a href="include/logout.php">Se déconnecter</a></div>';
+   echo'<div id="cnx" >'.$_SESSION['nom'].' '.$_SESSION['prenom'].'<br/> <a href="include/logout.php">Se déconnecter</a></div>';
 
 
 }?>

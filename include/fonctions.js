@@ -1,10 +1,14 @@
 function admin(){
 var change = document.getElementsByClassName('eleve');
 var change2 = document.getElementsByClassName('prof');
+var change3 = document.getElementsByClassName('admin');
 for (var i=0;i<change.length;i++){
 change[i].style.display="inline-block";}
 for(var i=0;i<change2.length;i++){
     change2[i].style.display="inline-block";
+}
+for(var i=0;i<change3.length;i++){
+    change3[i].style.display="inline-block";
 }
 }
 
