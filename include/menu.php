@@ -56,7 +56,7 @@ include'fonctions.php';
 		?>
 		</ul>
     </li>
-     <li class="prof" onClick="professeur();">
+     <li class="eleve" onClick="professeur();">
         Professeurs
     </li>
     <li class="admin">
