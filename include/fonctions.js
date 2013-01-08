@@ -64,7 +64,7 @@ function matiere(num_mat)
 }
 function faccueil()
 {
-    document.getElementById('center').innerHTML="<img src='image/accueil.jpg'/>";
+    document.getElementById('center').innerHTML="<img src='image/accueil.jpg' />";
 }
 function professeur()
 {
