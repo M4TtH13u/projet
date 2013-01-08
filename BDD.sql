@@ -275,18 +275,18 @@ CREATE TABLE IF NOT EXISTS `module` (
 --
 
 INSERT INTO `module` (`idMod`, `libelle`, `idPromo`) VALUES
-(1, 'Informatique ', 2),
-(2, 'Langues', 2),
-(3, 'Mathématiques', 2),
-(4, 'Physique', 2),
-(5, 'Relations Humaines', 2),
-(6, 'Tranverse', 2),
-(7, 'Informatique', 1),
-(8, 'Langues', 1),
-(9, 'Mathématiques', 1),
-(10, 'Physique', 1),
-(11, 'Relations Humaines', 1),
-(12, 'Tranverse', 1);
+(1, 'Informatique-CPI2', 2),
+(2, 'Langues-CPI2', 2),
+(3, 'Mathématiques-CPI2', 2),
+(4, 'Physique-CPI2', 2),
+(5, 'Relations Humaines-CPI2', 2),
+(6, 'Tranverse-CPI2', 2),
+(7, 'Informatique-CPI1', 1),
+(8, 'Langues-CPI1', 1),
+(9, 'Mathématiques-CPI1', 1),
+(10, 'Physique-CPI1', 1),
+(11, 'Relations Humaines-CPI1', 1),
+(12, 'Tranverse-CPI1', 1);
 
 -- --------------------------------------------------------
 

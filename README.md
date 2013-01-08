@@ -35,7 +35,7 @@ Va falloir s'activer un peu
 07/01/13
 =============
 Il nous reste plusieurs choses à faire :
-    -Suppression d'utilisateurs
+    -Suppression d'utilisateurs (2 - 3 petites truc a regler)
     -Modifier les promos et les faire sous forme de menu déroulant (afin de pouvoir ajouter des informations si l'utilisateur est un administrateur)
     -Dans la page associée aux résultats des matières, ajouter la moyenne coefficienté de chaque élève
     -De même pour le calcul de la moyenne générale coefficienté pour chaque matière
