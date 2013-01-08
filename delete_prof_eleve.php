@@ -23,7 +23,7 @@ session_start();
                    <label>Choisir l'élève</label>
                    <select  name="eleve">
                         <option></option>
-                        <?php
+                        ?php
                            $cnx=connect();
                            $req='select * from utilisateur u,eleve e  where u.idUtil=e.idUtil and e.idPromo=1';
                            $res=execReq($req);
