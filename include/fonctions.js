@@ -7,7 +7,7 @@ change[i].style.display="inline-block";}
 for(var i=0;i<change2.length;i++){
     change2[i].style.display="inline-block";
 }
-for(var i=0;i<change2.length;i++){
+for(var i=0;i<change3.length;i++){
     change3[i].style.display="inline-block";
 }
 }
