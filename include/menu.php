@@ -66,6 +66,10 @@ include'fonctions.php';
                 <li onClick="deleteProfEleve();">supprimer utilisateurs</li>
             </ul>
     </li>
+      <li class="prof" onClick="examen();" >
+        Ajouter un examen
+            
+    </li>
    
 </ul>
  
