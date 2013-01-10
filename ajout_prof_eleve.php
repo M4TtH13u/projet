@@ -1,6 +1,8 @@
 <?php
 include'include/fonctions.php';
 session_start();
+if (securite())
+{
 ?>
 <form id="form_prof_eleve" method="POST">
     <fieldset>
@@ -49,6 +51,11 @@ session_start();
     </fieldset>
 </form>
 
-<?php
-
+<?php }
+else
+{
+     echo'<SCRIPT LANGUAGE="JavaScript">
+     document.location.href="index.php" 
+</SCRIPT>';
+}
 ?>

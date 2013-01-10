@@ -1,6 +1,10 @@
 <?php
+
 include'include/fonctions.php';
 session_start();
+if (securite())
+{
+
 ?>
     <form id="form_prof_eleve" name="form1" action="#" method="POST">
         <fieldset>
@@ -73,3 +77,11 @@ session_start();
         </fieldset>
     </form>
 
+<?php }
+else
+{
+     echo'<SCRIPT LANGUAGE="JavaScript">
+     document.location.href="index.php" 
+</SCRIPT>';
+}
+?>

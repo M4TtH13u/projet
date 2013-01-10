@@ -1,6 +1,9 @@
 <?php
 include'include/debut.php';
 include'include/fonctions.php';
+session_start();
+if (securite())
+{
 
 ?>
 <form id="form_DS" action="#" method="POST">    <!--Création d'un formulaire-->
@@ -54,5 +57,12 @@ include'include/fonctions.php';
         deconnect($cnx); 
         echo 'Le DS à bien été ajouté'; 
     }     
- include'include/fin.php';   
+ include'include/fin.php'; 
+}
+ else
+{
+     echo'<SCRIPT LANGUAGE="JavaScript">
+     document.location.href="index.php" 
+</SCRIPT>';
+}
  ?>
