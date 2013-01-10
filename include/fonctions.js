@@ -109,6 +109,24 @@ function professeur()
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send(null);
 }
+function examen()
+{
+    var xhr;
+    var pere;
+    var reponse;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            
+            pere = document.getElementById('center');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","include/ajout_DS.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send(null);
+}
 function ajoutProfEleve()
 {
     var xhr;
