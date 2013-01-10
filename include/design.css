@@ -117,7 +117,7 @@ li li:hover ul.niveau3 {display:block;}
 
 /* Mise en forme des formulaires */
 
-#eleve_delete,#prof_delete, #eleve_CPI1,#eleve_CPI2
+#eleve_delete,#prof_delete, #eleve_CPI1,#eleve_CPI2, #matiere1, #matiere2
 {display:none;}
 
 #form_prof_eleve{
