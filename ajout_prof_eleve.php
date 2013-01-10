@@ -3,7 +3,7 @@ include'include/fonctions.php';
 session_start();
 
 
-if (securite())
+if (securite(4))
 {
   ?>
 <form id="form_prof_eleve" method="POST">
