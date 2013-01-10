@@ -27,6 +27,7 @@ else // sinon on affiche son nom et prénom
         {
             
                 echo'<script type="text/javascript"> admin();</script>';
+                echo'<img src="image/accueil.jpg" />';
                
    // Page par défaut quant elle n'existe pas dans le tableau
             }
