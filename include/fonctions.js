@@ -219,15 +219,15 @@ function ajout_DS()
 {
      var cpi1=document.getElementById("CPI1");
     if (cpi1.checked){
-        document.getElementById("matiere").style.display="block";
+        document.getElementById("matiere1").style.display="block";
     }else{
-        document.getElementById("matiere").style.display="none";
+        document.getElementById("matiere1").style.display="none";
     }   
     var cpi2=document.getElementById("CPI2");
      if (cpi2.checked){
-        document.getElementById("eleve_CPI2").style.display="block";
+        document.getElementById("matiere2").style.display="block";
     }else{
-        document.getElementById("eleve_CPI2").style.display="none";
+        document.getElementById("matiere2").style.display="none";
     } 
 }
 function reinitialiser()
