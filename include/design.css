@@ -6,12 +6,11 @@ position:fixed;
 top:0px;
 right:0px;
 width:20%;
-height: 19.8%;
+height: 21%;
 min-height: 22.5%;
 min-width: 20%;
-background-color: white;
-border : 1px solid black;  
-border-radius: 20 px;
+background-color: activecaption;
+border-left: 3px solid black;  
 }
 #menu
 {
@@ -23,10 +22,9 @@ width:80%;
 height: 20%;
 min-height: 22.7%;
 min-width: 20%;
-background-color: black;
+background-color: activecaption;
 color: black;
 text-align: center;
-border-radius: 20px;
 
 
 }
@@ -49,12 +47,14 @@ li {
 background-color: white;
 list-style-type: none;
 position: relative;
+top:20px;
 width: 140px;
 height:40px;
 margin: 0px;
 padding: 0px;
 border-radius:10px;
 cursor:pointer;
+border: 1px solid black;
 
 }
 
@@ -90,23 +90,22 @@ background : grey;
 }
 .niveau2 li{
 background-image: linear-gradient;
-border: 1px solid #ff3300;
-background: #333333;
+border: 1px solid black;
+background: cornflowerblue;
 height:37px;
 }
 .niveau2{display:none;}
 
 li:hover ul.niveau2 {display:inline-block;}
 
-li:hover {background-color: blue;}
+li:hover {background-color: cadetblue;}
 
 #ajout_prof{display:none;}
 
 #ajout_promo{display:none;}
 
 .niveau3 li{
-border:1px solid orangered;
-background: #333333;
+background: cornflowerblue;
 height:37px;
 }
 
