@@ -8,7 +8,19 @@ if (securite(3))
 ?>
 <form id="form_DS" action="#" method="POST">    <!--Création d'un formulaire-->
     <fieldset>
-        <legend>Ajout DS :</legend>     
+        <legend>Ajout DS :</legend> 
+        <label>Choisir la promo</label>
+                <?php
+                   $cnx=connect();
+                   $req='select * from promo';
+                   $res=execReq($req);
+                   while($promo=mysql_fetch_assoc($res))
+                   {
+                       echo'<input type ="radio" name="promo" onClick="ajout_DS();" id="'.$promo['libelle'].'" value="'.$promo['idPromo'].'">'.$promo['libelle'].'</input>';
+                   }
+                   deconnect($cnx);
+                   ?>
+        <br/>
         <label>Nom de l'examen : </label><input type="text" name="libelle"/><br/>   <!--Création d'un libellé avec le nom de l'examen-->
             <label>Matiere :</label>
                 <select name="matiere">
