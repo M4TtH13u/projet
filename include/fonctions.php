@@ -28,9 +28,8 @@ function execReq($req){
 	}
 	return $res;
 }
-function securite(){
-    echo$_SERVER['SCRIPT_FILENAME'];
-    if ($_SESSION['idUtil']){
+function securite($nb){
+    if (isset($_SESSION['idUtil']) && $_SESSION['idRole']>= $nb){
          return 1;
     }
     else   {return 0;}

@@ -2,7 +2,7 @@
 include'include/debut.php';
 include'include/fonctions.php';
 session_start();
-if (securite())
+if (securite(3))
 {
 
 ?>
