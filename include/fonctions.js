@@ -109,6 +109,7 @@ function professeur()
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send(null);
 }
+
 function examen()
 {
     var xhr;
@@ -123,7 +124,7 @@ function examen()
             pere.innerHTML = reponse;
       }
     }
-    xhr.open("POST","include/ajout_DS.php",true);
+    xhr.open("POST","ajout_DS.php",true);
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send(null);
 }
