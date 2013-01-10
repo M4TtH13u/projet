@@ -116,13 +116,17 @@ li li:hover ul.niveau3 {display:block;}
 
 /* Mise en forme des formulaires */
 
-#eleve_delete,#prof_delete, #eleve_CPI1,#eleve_CPI2
+#eleve_delete,#prof_delete, #eleve_CPI1,#eleve_CPI2, #matiere1, #matiere2
 {display:none;}
 
 #form_prof_eleve{
 text-align: center;
 margin-left: 20%;
 margin-right:20%;
+}
+#form_DS{
+margin-left: 30%;
+margin-right:30%;
 }
 
 input[type=submit]:hover, input[type=reset]:hover {background-image: linear-gradient;}

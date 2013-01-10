@@ -9,8 +9,8 @@ if (securite(4))
     <form id="form_prof_eleve" name="form1" action="#" method="POST">
         <fieldset>
             <legend>Suppression :</legend>
-            <label>Choix de suppression :</label><input type="radio" name="type" id="prof" value="prof" onClick="afficher_delete();"/>Professeur
-                                                 <input type ="radio" name="type" value="eleve" id ="eleve" onClick="afficher_delete();"/>Elève<br/>
+            <label>Choix de suppression :</label><input type="radio" name="type" id="prof" value="prof" onChange="afficher_delete();"/>Professeur
+                                                 <input type ="radio" name="type" value="eleve" id ="eleve" onChange="afficher_delete();"/>Elève<br/>
             <div id="eleve_delete">
                 <label>Choisir la promo</label>
                 <?php
