@@ -5,7 +5,7 @@
     <link rel="stylesheet" media="screen" type="text/css" title="Design" href="include/design.css" />
     <script type="text/javascript" src="include/fonctions.js"></script>
     <STYLE type="text/css">
-       body { background: transparent; background-image: url("image/hiboux.jpg");background-repeat: no-repeat; background-attachment: fixed;background-size: 100%}
+       body { background: transparent; background-image: url("image/fond-du-site.png");background-repeat: no-repeat; background-attachment: fixed;background-size: 100%}
     </STYLE>
 </head>
 <body>
