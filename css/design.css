@@ -154,3 +154,7 @@ table{
     margin-left: 33%;
     width: 450px;
 }
+
+#perso{
+    text-decoration: blink;
+}
