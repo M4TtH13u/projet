@@ -267,3 +267,23 @@ function afficher_matiere()
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send('module='+module);
 }
+
+function afficher_note()
+{
+    var xhr;
+    var pere;
+    var reponse;
+    var module;
+    module= document.getElementById('module').value;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            pere = document.getElementById('affmat');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","display/affichernote.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('module='+module);
+}
