@@ -1,6 +1,5 @@
 <?php
-
-include'fonctions.php';
+include'../fonctions/fonctions.php';
 if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))//si ya eu un login et mdp d'inscrit
 {
                 $cnx=connect();
@@ -30,9 +29,8 @@ if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))//si ya eu un login et mdp
                 }
 		deconnect($cnx);
 }
- echo'<SCRIPT LANGUAGE="JavaScript">
+echo'<SCRIPT LANGUAGE="JavaScript">
      document.location.href="../index.php" 
 </SCRIPT>';
-
 
 ?>

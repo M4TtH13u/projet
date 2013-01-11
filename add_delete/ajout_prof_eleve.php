@@ -1,6 +1,6 @@
 <?php
-include'include/fonctions.php';
-session_start();
+
+
 
 
 if (securite(4))

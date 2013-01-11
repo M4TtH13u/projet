@@ -1,10 +1,20 @@
 <?php
-include'include/debut.php';
-include'include/fonctions.php';
 
 if (securite(3))
 {
-
+  
+ 
+    if ((!empty($_POST['promo']) && !empty($_POST['libelle']) && !empty($_POST['matiere']) && !empty($_POST['date']) && !empty($_POST['type']))){
+        $cnx=connect();
+        mysql_query("SET NAMES UTF8");
+        $req='INSERT INTO examen VALUE("","'.$_POST['libelle'].'","'.$_POST['matiere'].'","'.$_POST['date'].'","'.$_POST['type'].'")';
+        $res=execReq($req);
+        deconnect($cnx); 
+        echo 'Le DS à bien été ajouté'; 
+        } 
+        else
+        {
+       
 ?>
 <form id="form_DS" action="#" method="POST">    <!--Création d'un formulaire-->
     <fieldset>
@@ -23,7 +33,7 @@ if (securite(3))
         <br/>
         <div id="matiere1">
             <label>Matiere :</label>
-                <select name="matiere1">
+                <select name="matiere">
                     <option></option>
                     <?php
                         $cnx=connect();
@@ -91,25 +101,7 @@ if (securite(3))
         <input type="reset" value="Annuler" onClick="reinitialiser();"/>
     </fieldset>
 </form>
-    
 
-
- <?php   
- 
-    if ((!empty($_POST['libelle']) && !empty($_POST['matiere']) && !empty($_POST['date']) && !empty($_POST['type']))){
-        $cnx=connect();
-        mysql_query("SET NAMES UTF8");
-        $req='INSERT INTO examen VALUE("","'.$_POST['libelle'].'","'.$_POST['matiere'].'","'.$_POST['date'].'","'.$_POST['type'].'")';
-        $res=execReq($req);
-        deconnect($cnx); 
-        echo 'Le DS à bien été ajouté'; 
-    }     
- include'include/fin.php'; 
-}
- else
-{
-     echo'<SCRIPT LANGUAGE="JavaScript">
-     document.location.href="index.php" 
-</SCRIPT>';
-}
+<?php
+        }}      
  ?>

@@ -1,5 +1,5 @@
 <?php
-include'fonctions.php';
+
 $cnx=connect();
 mysql_query("SET NAMES UTF8");
 
