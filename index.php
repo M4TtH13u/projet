@@ -32,6 +32,7 @@ else // sinon on affiche son nom et prénom
                 'promo2' =>'display/CPI2.php',
                 'examen' =>'add_delete/ajout_DS.php',
                 'matiere' => 'display/matiere.php',
+                'module' => 'display/module.php',
                 
                 'test' => 'test.html'
 				  );
