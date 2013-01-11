@@ -2,7 +2,6 @@
 
 if (securite(2))
 {
-echo $_SESSION['idRole'];
 ?>
     <form id="form_module" name="form1" action="#" method="POST">
         <fieldset>
