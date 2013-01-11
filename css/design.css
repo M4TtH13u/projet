@@ -118,8 +118,8 @@ li li:hover ul.niveau3 {display:block;}
 {display:none;}
 
 #form_prof_eleve{
-margin-left: 30%;
-margin-right:30%;
+margin-left: 28%;
+margin-right:28%;
 }
 #form_DS{
 margin-left: 30%;
@@ -137,7 +137,7 @@ input[type=submit]:active, input[type=reset]:active {background-image: radial-gr
 label
 {
 display: block;
-width: 200px;
+width: 250px;
 float:left;
 }
 
