@@ -2,7 +2,7 @@
 include'../fonctions/fonctions.php'
 ?>
 <label>Choix de la matière :</label>
-    <select OnChange="afficher_note()" name="module">
+    <select OnChange="afficher_note()" id="matiere">
            <option></option>
            <?php
               $cnx=connect();
