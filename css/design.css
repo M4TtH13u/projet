@@ -124,9 +124,19 @@ margin-left: 30%;
 margin-right:30%;
 }
 
+#form_module{
+margin-left: 30%;
+margin-right:30%;
+}
+
 #moyenne{
 margin-left: 30%;
 margin-right:30%;
+}
+
+#affnote{
+    position: relative;
+    right: 20%;
 }
 input[type=submit]:hover, input[type=reset]:hover {background-image: linear-gradient;}
 
@@ -153,6 +163,7 @@ table{
     border-radius: 8px;
     margin-left: 33%;
     width: 450px;
+    text-align: center;
 }
 
 #perso{
