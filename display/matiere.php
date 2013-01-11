@@ -1,30 +1,59 @@
 <?php
 
-$cnx=connect();
-mysql_query("SET NAMES UTF8");
+if (securite(3))
+{
 
-$req='select ma.libelle libMat,ma.idMat idMat, mo.libelle libMod from matiere ma, module mo where ma.idMat="'.$_POST['nb'].'" AND ma.idMod=mo.idMod';
-    $res=execReq($req);
-    echo'<table>';
-   while($donnee=mysql_fetch_assoc($res))//a modifier afin que le nom de l'exam n'apparaissent qu'une seule fois en haut
-   {
-       echo'<th>'.$donnee['libMod'].'</th><tr><td>'.$donnee['libMat'].'</td></tr>';
-        $moyenne=0;
-        $participant=0;
-        $req2='SELECT pa.note note, u.nom nom, u.prenom prenom, ex.libelle libExam FROM examen ex,participe pa, eleve el, utilisateur u WHERE ex.idMat="'.$donnee['idMat'].'" AND ex.idExam=pa.idExam AND pa.numEtudiant=el.numEtudiant AND el.idUtil=u.idUtil';
-        $res2=execReq($req2);
-        while($note=mysql_fetch_assoc($res2))
-        {
-            echo'<tr><td>'.$note['libExam'].'</td><td>'.$note['nom'].'</td><td>'.$note['prenom'].'</td><td>'.$note['note'].'</td></tr>';
-            $moyenne=$moyenne+$note['note'];
-            $participant++;   
-        }
-        if($participant==0)//eviter la division par zéro
-        {
-            $participant=1;
-        }
-        echo '<tr><td></td><td>Total</td><td>'.$moyenne/$participant.'</td></tr>';
-   }
-   echo'</table>';
-deconnect($cnx); 
 ?>
+<form id="moyenne" action="#" method="POST">    <!--Création d'un formulaire-->
+    <fieldset>
+        <label>Choisir la promo</label>
+                <?php
+                   $cnx=connect();
+                   $req='select * from promo';
+                   $res=execReq($req);
+                   while($promo=mysql_fetch_assoc($res))
+                   {
+                       echo'<input type ="radio" name="promo" onClick="ajout_DS();" id="'.$promo['libelle'].'" value="'.$promo['idPromo'].'">'.$promo['libelle'].'</input>';
+                   }
+                   deconnect($cnx);
+                   ?>
+        <br/>
+        <div id="matiere1">
+            <label>Matiere :</label>
+                <select name="matiere">
+                    <option></option>
+                    <?php
+                        $cnx=connect();
+                        mysql_query("SET NAMES UTF8");
+                        $req='select * from matiere ma, module mo where ma.idMod=mo.idMod and mo.idPromo=1';
+                        $res=execReq($req);
+                        while($matiere=mysql_fetch_assoc($res)){
+                            echo '<option value="'.$matiere['idMat'].'">'.$matiere['libelle'].'</option>';  //création du menu déroulant avec association de la BDD et de la table matière
+                        }      
+                        deconnect($cnx); 
+                    ?>
+                </select>
+        <br>
+        </div>
+        <div id="matiere2">
+            <label>Matiere :</label>
+            <select name="matiere2">
+                <option></option>
+                <?php
+                    $cnx=connect();
+                    mysql_query("SET NAMES UTF8");
+                    $req='select * from matiere ma, module mo where ma.idMod=mo.idMod and mo.idPromo=2';
+                    $res=execReq($req);
+                    while($matiere=mysql_fetch_assoc($res)){
+                        echo '<option value="'.$matiere['idMat'].'">'.$matiere['libelle'].'</option>';  //création du menu déroulant avec association de la BDD et de la table matière
+                    }      
+                    deconnect($cnx); 
+                ?>
+            </select>
+        </div>
+    </fieldset>
+</form>
+
+<?php
+        }    
+ ?>
