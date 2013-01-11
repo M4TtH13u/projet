@@ -1,6 +1,6 @@
 <?php
-include'structur/debut.php';
-include'structur/menu.php';
+include'structure/debut.php';
+include'structure/menu.php';
 if (empty($_SESSION['idUtil']))// si l'utilisateur est pas connecté
 {
 ?>
@@ -23,7 +23,7 @@ else // sinon on affiche son nom et prénom
         {
             echo'<script type="text/javascript"> admin('.$_SESSION['idRole'].');</script>';   
       $pageOK = array(
-                'accueil' => 'structur/accueil.html',
+                'accueil' => 'structure/accueil.html',
                 'ajout_prof_eleve' => 'add_delete/ajout_prof_eleve.php',
                 'delete_prof_eleve' => 'add_delete/delete_prof_eleve.php',
                 'ajout_DS' => 'add_delete/ajout_DS.php',
@@ -41,7 +41,7 @@ else // sinon on affiche son nom et prénom
     include($pageOK[$_GET['page']]);   // Nous appelons le contenu central de la page
   }
   else {
-    include('structur/accueil.html');   // Page par défaut quant elle n'existe pas dans le tableau
+    include('structure/accueil.html');   // Page par défaut quant elle n'existe pas dans le tableau
   }
                
  
@@ -59,4 +59,4 @@ else // sinon on affiche son nom et prénom
 </div>
 
 <?php 
-include 'structur/fin.php';
+include 'structure/fin.php';

@@ -86,7 +86,6 @@ left:0px;
 min-height: 77%;
 min-width: 80%;
 width: 100%;
-
 }
 .niveau2 li{
 border: 1px solid black;
@@ -140,6 +139,7 @@ float:left;
 
 fieldset{
 border: 2px solid darkgray;
+border-radius: 8px;
 }
 
 legend{
