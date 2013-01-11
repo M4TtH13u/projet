@@ -161,11 +161,11 @@ legend{
 table{
     border: 2px solid darkgray;
     border-radius: 8px;
+    margin-top: 1%;
     margin-left: 20%;
     width: 450px;
-    text-align: center;
 }
 
 #perso{
-    background-color: red;
+    color: red;
 }
