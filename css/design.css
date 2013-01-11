@@ -137,7 +137,7 @@ input[type=submit]:active, input[type=reset]:active {background-image: radial-gr
 label
 {
 display: block;
-width: 250px;
+width: 44%;
 float:left;
 }
 
