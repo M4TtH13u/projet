@@ -21,7 +21,8 @@ if (securite(2))
                   </select>
             <div id="affmat">
             </div>
-            
+            <div id="affnote">
+            </div>
             
 <?php }
 else
