@@ -16,42 +16,11 @@ if (securite(4))
                    $res=execReq($req);
                    while($promo=mysql_fetch_assoc($res))
                    {
-                       echo'<input type ="radio" name="promo" onClick="afficher_delete2();" id="'.$promo['libelle'].'" value="'.$promo['idPromo'].'">'.$promo['libelle'].'</input>';
+                       echo'<input type ="radio" name="promo" onClick="afficher_delete2('.$promo['idPromo'].');" id="'.$promo['libelle'].'" value="'.$promo['idPromo'].'">'.$promo['libelle'].'</input>';
                    }
                    deconnect($cnx);
                 ?>
-                <div id="eleve_CPI1">
-                   <label>Choisir l'élève</label>
-                   <select  name="eleve">
-                        <option></option>
-                        <?php
-                           $cnx=connect();
-                           $req='select * from utilisateur u,eleve e  where u.idUtil=e.idUtil and e.idPromo=1';
-                           $res=execReq($req);
-                           while($eleve=mysql_fetch_assoc($res))
-                           {
-                            echo'<option  value="'.$eleve['idUtil'].'">'.$eleve['nom'].' '.$eleve['prenom'].'</option>';
-                           }
-                           deconnect($cnx);
-                         ?>
-
-                    </select>  
-                </div>
-                <div id="eleve_CPI2">
-                    <label>Choisir l'élève</label>
-                    <select  name="eleve">
-                        <option></option>
-                        <?php
-                            $cnx=connect();
-                            $req='select * from utilisateur u,eleve e  where u.idUtil=e.idUtil and e.idPromo=2';
-                            $res=execReq($req);
-                            while($eleve=mysql_fetch_assoc($res))
-                            {
-                             echo'<option  name="eleve" value="'.$eleve['idUtil'].'">'.$eleve['nom'].' '.$eleve['prenom'].'</option>';
-                            }
-                            deconnect($cnx);
-                         ?>
-                    </select>  
+                <div id="choixEleve"> 
                 </div>          
             </div>
             <div id="prof_delete">
