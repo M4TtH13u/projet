@@ -51,119 +51,6 @@ function getXhr(){
 	return xhr;
   }
 
-
-function promo(num_promo){
-    var xhr;
-    var pere;
-    var reponse;
-    xhr = getXhr();
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState == 4 && xhr.status == 200){
-            reponse = xhr.responseText;
-            
-            pere = document.getElementById('center');
-            pere.innerHTML = reponse;
-      }
-    }
-    xhr.open("POST","include/promo.php",true);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    xhr.send("nb="+num_promo);
-  }
-function matiere(num_mat)
-{
-    var xhr;
-    var pere;
-    var reponse;
-    xhr = getXhr();
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState == 4 && xhr.status == 200){
-            reponse = xhr.responseText;
-            
-            pere = document.getElementById('center');
-            pere.innerHTML = reponse;
-      }
-    }
-    xhr.open("POST","include/matiere.php",true);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    xhr.send("nb="+num_mat);
-}
-function faccueil()
-{
-    document.getElementById('center').innerHTML="<img src='image/accueil.jpg' />";
-}
-function professeur()
-{
-    var xhr;
-    var pere;
-    var reponse;
-    xhr = getXhr();
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState == 4 && xhr.status == 200){
-            reponse = xhr.responseText;
-            
-            pere = document.getElementById('center');
-            pere.innerHTML = reponse;
-      }
-    }
-    xhr.open("POST","include/prof.php",true);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    xhr.send(null);
-}
-
-function examen()
-{
-    var xhr;
-    var pere;
-    var reponse;
-    xhr = getXhr();
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState == 4 && xhr.status == 200){
-            reponse = xhr.responseText;
-            
-            pere = document.getElementById('center');
-            pere.innerHTML = reponse;
-      }
-    }
-    xhr.open("POST","ajout_DS.php",true);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    xhr.send(null);
-}
-function ajoutProfEleve()
-{
-    var xhr;
-    var pere;
-    var reponse;
-    xhr = getXhr();
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState == 4 && xhr.status == 200){
-            reponse = xhr.responseText;
-            pere = document.getElementById('center');
-            pere.innerHTML = reponse;
-      }
-    }
-    xhr.open("POST","ajout_prof_eleve.php",true);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    xhr.send(null);
-}
-
-function deleteProfEleve()
-{
-    var xhr;
-    var pere;
-    var reponse;
-    xhr = getXhr();
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState == 4 && xhr.status == 200){
-            reponse = xhr.responseText;
-            pere = document.getElementById('center');
-            pere.innerHTML = reponse;
-      }
-    }
-    xhr.open("POST","delete_prof_eleve.php",true);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    xhr.send(null);
-}
-
 function verif()
 {
     alert("à faire (ajout d'utils)");
@@ -194,7 +81,7 @@ function prof(){
 
 function afficher_delete()
 {
-     var eleve=document.getElementById("eleve");
+    var eleve=document.getElementById("eleve");
     if (eleve.checked){
         document.getElementById("eleve_delete").style.display="block";
     }else{
@@ -207,21 +94,24 @@ function afficher_delete()
         document.getElementById("prof_delete").style.display="none";
     }   
 }
-function afficher_delete2()
+function afficher_delete2(idPromo)
 {
-     var cpi1=document.getElementById("CPI1");
-    if (cpi1.checked){
-        document.getElementById("eleve_CPI1").style.display="block";
-    }else{
-        document.getElementById("eleve_CPI1").style.display="none";
-    }   
-    var cpi2=document.getElementById("CPI2");
-     if (cpi2.checked){
-        document.getElementById("eleve_CPI2").style.display="block";
-    }else{
-        document.getElementById("eleve_CPI2").style.display="none";
-    } 
+    var xhr;
+    var pere;
+    var reponse;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4){
+            reponse = xhr.responseText;
+            pere = document.getElementById('choixEleve');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","fonctions/delete_eleve.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('idPromo='+idPromo);
 }
+
 function ajout_DS()
 {
      var cpi1=document.getElementById("CPI1");
@@ -246,10 +136,8 @@ function reinitialiser()
     }
    else
     {
-        document.getElementById("eleve_CPI1").style.display="none";
-        document.getElementById("eleve_CPI2").style.display="none";
-        document.getElementById("prof_delete").style.display="none";
         document.getElementById("eleve_delete").style.display="none";
+        document.getElementById("prof_delete").style.display="none";
     }
    
 }
@@ -269,7 +157,7 @@ function afficher_matiere()
             pere.innerHTML = reponse;
       }
     }
-    xhr.open("POST","display/afficherMatiere.php",true);
+    xhr.open("POST","fonctions/afficherMatiere.php",true);
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send('module='+module);
 }
@@ -289,7 +177,7 @@ function afficher_note()
             pere.innerHTML = reponse;
       }
     }
-    xhr.open("POST","display/moyenne.php",true);
+    xhr.open("POST","fonctions/moyenne.php",true);
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send('nb='+matiere);
 }
