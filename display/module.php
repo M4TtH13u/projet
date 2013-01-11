@@ -7,17 +7,22 @@ if (securite(2))
         <fieldset>
             <label>Choix du module :</label>
                  <select OnChange="afficher_matiere()" id="module">
-                        <option></option>
+                    <option></option>
                         <?php
-                           $cnx=connect();
-                           $req='select * from module m, eleve e  where e.idUtil="'.$_SESSION['idUtil'].'" and e.idPromo=m.idPromo';
-                           $res=execReq($req);
-                           while($module=mysql_fetch_assoc($res))
-                           {
-                            echo'<option  value="'.$module['idMod'].'">'.$module['libelle'].'</option>';
-                           }
-                           deconnect($cnx);
-                         ?>
+                            $cnx=connect();
+                            if ($_SESSION['idRole']==2){
+                                $req='select * from module m, eleve e  where e.idUtil="'.$_SESSION['idUtil'].'" and e.idPromo=m.idPromo';
+                            }
+                            else {
+                                $req='select * from module';
+                            }
+                            $res=execReq($req);
+                            while($module=mysql_fetch_assoc($res))
+                            {
+                            echo'<option  value="'.$module['idMod'].'">'.$module['libelle'].' - CPI'.$module['idPromo'].'</option>';
+                            }
+                            deconnect($cnx);
+                        ?>
                   </select>
             <div id="affmat">
             </div>

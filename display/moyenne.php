@@ -5,7 +5,7 @@ mysql_query("SET NAMES UTF8");
 
 $req='select ma.libelle libMat,ma.idMat idMat, mo.libelle libMod from matiere ma, module mo where ma.idMat="'.$_POST['nb'].'" AND ma.idMod=mo.idMod';
     $res=execReq($req);
-    echo'<table boreder="3">';
+    echo'<table>';
    while($donnee=mysql_fetch_assoc($res))//a modifier afin que le nom de l'exam n'apparaissent qu'une seule fois en haut
    {
        echo'<th>'.$donnee['libMod'].'</th><tr><td>'.$donnee['libMat'].'</td></tr>';
