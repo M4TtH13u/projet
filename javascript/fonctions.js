@@ -166,7 +166,13 @@ function deleteProfEleve()
 
 function verif()
 {
-    alert('à faire');
+    alert("à faire (ajout d'utils)");
+    //a faire
+}
+
+function verif2()
+{
+    alert("à faire (supprim d'utils)");
     //a faire
 }
 
