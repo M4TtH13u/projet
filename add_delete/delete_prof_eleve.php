@@ -70,7 +70,8 @@ if (securite(4))
                      ?>
                  </select>
              </div>
-             <input type="submit" value='Supprimer'/><input type="reset" onClick="reinitialiser();"/>
+             <input type="submit" onClick="verif2()" value='Supprimer'/>
+             <input type="reset" onClick="reinitialiser();"/>
         </fieldset>
     </form>
 
