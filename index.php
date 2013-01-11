@@ -1,7 +1,7 @@
 <?php
 include'structure/debut.php';
 include'structure/menu.php';
-if (empty($_SESSION['idUtil']))// si l'utilisateur est pas connecté
+if (empty($_SESSION['idUtil']))// si l'utilisateur est pas connectÃ©
 {
 ?>
 <form id="cnx" action="connect/login.php" method="POST">
@@ -13,9 +13,9 @@ if (empty($_SESSION['idUtil']))// si l'utilisateur est pas connecté
 
 <?php
 }
-else // sinon on affiche son nom et prénom
+else // sinon on affiche son nom et prÃ©nom
 {
-   echo'<div id="cnx" >'.$_SESSION['nom'].' '.$_SESSION['prenom'].'<br/> <a href="connect/logout.php">Se déconnecter</a></div>';
+   echo'<div id="cnx" >'.$_SESSION['nom'].' '.$_SESSION['prenom'].'<br/> <a href="connect/logout.php">Se dÃ©connecter</a></div>';
 }?>
 <div id="center"><!-- Pour afficher le contenu de la page -->
 <?php 
@@ -36,13 +36,13 @@ else // sinon on affiche son nom et prénom
                 'test' => 'test.html'
 				  );
 
-  // On teste que le paramètre d'url existe et qu'il est bien autorisé
+  // On teste que le paramÃ¨tre d'url existe et qu'il est bien autorisÃ©
   // -----------------------------------------------------------------
   if ( (isset($_GET['page'])) && (isset($pageOK[$_GET['page']])) ) {
     include($pageOK[$_GET['page']]);   // Nous appelons le contenu central de la page
   }
   else {
-    include('structure/accueil.html');   // Page par défaut quant elle n'existe pas dans le tableau
+    include('structure/accueil.html');   // Page par dÃ©faut quant elle n'existe pas dans le tableau
   }
                
  
