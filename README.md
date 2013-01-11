@@ -47,3 +47,9 @@ Il nous reste plusieurs choses à faire :
         .Téléphone de bureau
     -Créer une fonction permettant d'ajouter/supprimer une matière associée à un professeur. Utilisable uniquement par l'admin
 Et plusieurs autres mais nous verrons cela plus tard.
+
+11/01/13
+=============
+quelque bug : 
+-supprimer un eleve par rapport à l'ajax
+-abdel à disparu définitivement de la table utilisateur de la BDD (j'ai jamais changé le BDD.sql...)
