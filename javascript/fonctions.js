@@ -53,14 +53,38 @@ function getXhr(){
 
 function verif()
 {
-    alert("à faire (ajout d'utils)");
-    //a faire
+    var xhr;
+    var pere;
+    var reponse;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4){
+            reponse = xhr.responseText;
+            pere = document.getElementById('res');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","fonctions/delete_eleve.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send(null);
 }
 
 function verif2()
 {
-    alert("à faire (supprim d'utils)");
-    //a faire
+     var xhr;
+    var pere;
+    var reponse;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4){
+            reponse = xhr.responseText;
+            pere = document.getElementById('res');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","fonctions/delete_eleve.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send(null);
 }
 
 function prof(){
