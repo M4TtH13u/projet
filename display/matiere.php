@@ -1,5 +1,5 @@
 <?php
-
+include'moyenne.php';
 if (securite(3))
 {
 
