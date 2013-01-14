@@ -22,17 +22,22 @@ include'fonctions/fonctions.php';
         Professeurs
     </li>
     <li class="admin" >
-        Gérer les utilisateurs
-        <ul class="niveau2">
+        Gestions les utilisateurs
+            <ul class="niveau2">
                 <li onclick="JavaScript:document.location='index.php?page=ajout_prof_eleve';">ajouter utilisateurs</li>
                 <li onclick="JavaScript:document.location='index.php?page=delete_prof_eleve';">supprimer utilisateurs</li>
             </ul>
     </li>
-    <li class="prof" onclick="JavaScript:document.location='index.php?page=examen';" >
-        Ajouter un examen
-    </li>
-    <li class="prof" onclick="JavaScript:document.location='index.php?page=ajout_note';" >
-        Ajouter des notes
+    <li class="prof">
+        Gestions des notes
+       <ul class="niveau2">
+           <li class="prof" onclick="JavaScript:document.location='index.php?page=examen';">
+                 Ajouter un examen
+           </li>
+           <li class="prof" onclick="JavaScript:document.location='index.php?page=ajout_note';" >
+            Ajouter des notes
+           </li>
+        </ul>
     </li>
    
 </ul>
