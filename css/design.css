@@ -6,7 +6,7 @@ bottom:77%;
 left:83%;
 width:17%;
 height: 23%;
-min-height: 22%;
+min-height: 23%;
 min-width: 17%;
 background-color: activecaption;
 border-left: 3px solid black;  
@@ -15,37 +15,35 @@ border-left: 3px solid black;
 #menu {
 z-index:2;
 position:fixed;
-bottom:77%;
-right:15%;
-width:85%;
-height: 20%;
+bottom:74.9%;
+right:17%;
+width:81%;
+height: 23%;
 min-height: 23%;
-min-width: 15%;
+min-width: 17%;
 background-color: activecaption;
 color: black;
-text-align: center;
+text-align:center;
+
 }
 
 /*Mise en forme du menu */
 
-ul {
-margin: 0%;
-padding: 0%;
-}
 
-li {
-background-color: white;
+ul li {
+background-color: red;
 position: relative;
 top:10px;
 width: 140px;
 height:40px;
 border-radius:10px;
 cursor:pointer;
-border: 1px solid black;
+border: 1px solid black;   
+display: inline-block;
+padding-top: 10px;
 }
 
 ul ul {
-display: none;
 position: absolute;
 left: -0.5%;
 top: 42px;
@@ -53,21 +51,14 @@ margin: 0px;
 padding: 0px;
 }
 
-ul li {
-display:inline-block;
-padding-top: 10px;
-}
-
 .niveau2 li{
+position: relative;
 border: 1px solid black;
 background: cornflowerblue;
 height:37px;
 }
 
 .eleve, .prof, .admin {
-display:none;
-width: 11%;
-height: 23%;
 text-align: center;
 }
 
