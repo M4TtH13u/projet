@@ -26,13 +26,26 @@ color: black;
 text-align: center;
 }
 
-ul ul { /*Mise en forme du menu */
+/*Mise en forme du menu */
+
+ul {
+margin: 0px;
+padding: 0px;
+list-style : none;
+}
+
+ul ul {
 display: none;
 position: absolute;
 left: -0.5%;
 top: 42px;
 margin: 0px;
 padding: 0px;
+}
+
+ul li {
+display:inline-block;
+padding-top: 10px;
 }
 
 li {
@@ -45,17 +58,6 @@ height:40px;
 border-radius:10px;
 cursor:pointer;
 border: 1px solid black;
-}
-
-ul li {
-display:inline-block;
-padding-top: 10px;
-}
-
-ul {
-margin: 0px;
-padding: 0px;
-list-style : none;
 }
 
 .eleve, .prof, .admin{display:none;}
