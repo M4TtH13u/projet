@@ -7,13 +7,19 @@ switch (nb)
 case 2: 
 for (var i=0;i<change.length;i++){
 change[i].style.display="inline-block";}
+document.getElementById('menu').style.width="100%";
+    document.getElementById('menu').style.right="0%";
+
 break; 
 case 3: 
 for (var i=0;i<change.length;i++){
 change[i].style.display="inline-block";}
 for(var i=0;i<change2.length;i++){
     change2[i].style.display="inline-block";
+    document.getElementById('menu').style.width="100%";
+    document.getElementById('menu').style.right="0%";
 }
+
 break; 
 case 4: 
     for (var i=0;i<change.length;i++){
@@ -23,10 +29,15 @@ for(var i=0;i<change2.length;i++){
 }
 for(var i=0;i<change3.length;i++){
     change3[i].style.display="inline-block";
+    document.getElementById('menu').style.width="100%";
+    document.getElementById('menu').style.right="0%";
 }
+
 break; 
 default: 
 break; 
+
+
 }
 
 

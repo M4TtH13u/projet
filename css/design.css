@@ -60,6 +60,7 @@ height:37px;
 
 .eleve, .prof, .admin {
 text-align: center;
+display:none;
 }
 
 img {
