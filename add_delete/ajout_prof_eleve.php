@@ -80,7 +80,7 @@ if (securite(4))
                       </select>
                  </span>
                   <span id="ajout_prof">
-                      <label>Tel :</label><input type="text" name="tel"/><br/>
+                      <label>Tel :</label><input type="tel" name="tel"/><br/>
                       <label>Numéro bureau :</label><input type="text" name="numBureau"/><br/>   
                  </span>
                   <?php

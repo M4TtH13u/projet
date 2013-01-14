@@ -205,3 +205,62 @@ function afficher_note()
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send('nb='+matiere);
 }
+function afficher_matiere2()
+{
+    var xhr;
+    var pere;
+    var reponse;
+    var module;
+    module= document.getElementById('module').value;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            pere = document.getElementById('affmat');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","modifier/modifier_note_matiere.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('module='+module);
+}
+
+function modifier_note2()
+{
+    var xhr;
+    var pere;
+    var reponse;
+    var ds;
+    ds= document.getElementById('DS').value;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            pere = document.getElementById('affnote');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","modifier/modifier_note.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('nb='+ds);
+}
+
+function modifier_note()
+{
+    var xhr;
+    var pere;
+    var reponse;
+    var matiere;
+    matiere= document.getElementById('matiere').value;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            pere = document.getElementById('affds');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","modifier/modifier_note_DS.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('nb='+matiere);
+}
