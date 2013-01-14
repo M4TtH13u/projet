@@ -1,10 +1,9 @@
 /* CSS Pour la partie principal */
-#cnx
-{
+#cnx {
 z-index:3;
 position:fixed;
-top:0px;
-right:0px;
+bottom:77%;
+left:85%;
 width:15%;
 height: 23%;
 min-height: 22%;
@@ -12,12 +11,12 @@ min-width: 15%;
 background-color: activecaption;
 border-left: 3px solid black;  
 }
-#menu
-{
+
+#menu {
 z-index:2;
 position:fixed;
-top:0px;
-left:0px;
+bottom:77%;
+right:15%;
 width:85%;
 height: 20%;
 min-height: 23%;
@@ -26,6 +25,7 @@ background-color: activecaption;
 color: black;
 text-align: center;
 }
+
 ul ul { /*Mise en forme du menu */
 display: none;
 position: absolute;
@@ -34,13 +34,7 @@ top: 42px;
 margin: 0px;
 padding: 0px;
 }
-ul ul ul{
-position: absolute;
-left: 140px;
-top: -10px;
-margin: 0px;
-padding: 0px;  
-}
+
 li {
 background-color: white;
 list-style-type: none;
@@ -48,12 +42,9 @@ position: relative;
 top:10px;
 width: 140px;
 height:40px;
-margin: 0px;
-padding: 0px;
 border-radius:10px;
 cursor:pointer;
 border: 1px solid black;
-
 }
 
 ul li
@@ -99,16 +90,6 @@ li:hover {background-color: cadetblue;}
 #ajout_prof{display:none;}
 
 #ajout_promo{display:none;}
-
-.niveau3 li{
-background: cornflowerblue;
-height:37px;
-}
-
-.niveau3{display : none;}
-
-li li:hover ul.niveau3 {display:block;}
-
 
 /* Mise en forme des formulaires */
 
