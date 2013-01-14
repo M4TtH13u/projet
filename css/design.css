@@ -60,6 +60,12 @@ display:inline-block;
 padding-top: 10px;
 }
 
+.niveau2 li{
+border: 1px solid black;
+background: cornflowerblue;
+height:37px;
+}
+
 .eleve, .prof, .admin{display:none;}
 
 img {
@@ -75,12 +81,6 @@ left:0px;
 min-height: 77%;
 min-width: 80%;
 width: 100%;
-}
-
-.niveau2 li{
-border: 1px solid black;
-background: cornflowerblue;
-height:37px;
 }
 
 .niveau2{display:none;}
