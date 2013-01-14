@@ -10,5 +10,5 @@ $cnx=connect();
                     echo'<tr><td>'.$nom['nom'].'</td><td>'. $nom['prenom'].'</td></tr>';
                 }
                 echo'</table>';
-		
+		deconnect($cnx);
 ?>
