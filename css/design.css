@@ -34,6 +34,18 @@ padding: 0px;
 list-style : none;
 }
 
+li {
+background-color: white;
+list-style-type: none;
+position: relative;
+top:10px;
+width: 140px;
+height:40px;
+border-radius:10px;
+cursor:pointer;
+border: 1px solid black;
+}
+
 ul ul {
 display: none;
 position: absolute;
@@ -46,18 +58,6 @@ padding: 0px;
 ul li {
 display:inline-block;
 padding-top: 10px;
-}
-
-li {
-background-color: white;
-list-style-type: none;
-position: relative;
-top:10px;
-width: 140px;
-height:40px;
-border-radius:10px;
-cursor:pointer;
-border: 1px solid black;
 }
 
 .eleve, .prof, .admin{display:none;}
