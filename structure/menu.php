@@ -31,6 +31,9 @@ include'fonctions/fonctions.php';
     <li class="prof" onclick="JavaScript:document.location='index.php?page=examen';" >
         Ajouter un examen
     </li>
+    <li class="prof" onclick="JavaScript:document.location='index.php?page=ajout_note';" >
+        Ajouter des notes
+    </li>
    
 </ul>
  
