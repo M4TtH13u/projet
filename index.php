@@ -33,28 +33,36 @@ else // sinon on affiche son nom et prénom
                 'examen' =>'add_delete/ajout_DS.php',
                 'matiere' => 'display/matiere.php',
                 'module' => 'display/module.php',
+                'login' =>'connect/message_connexion.php',
                 
                 'test' => 'test.html'
 				  );
 
   // On teste que le paramètre d'url existe et qu'il est bien autorisé
   // -----------------------------------------------------------------
-  if ( (isset($_GET['page'])) && (isset($pageOK[$_GET['page']])) ) {
-    include($pageOK[$_GET['page']]);   // Nous appelons le contenu central de la page
-  }
-  else {
-    include('structure/accueil.html');   // Page par défaut quant elle n'existe pas dans le tableau
-  }
-               
+             
  
-            }
+        }
           
 	 
         
         else
         {
-        echo'<img src="image/accueil.jpg" />';   
+        $pageOK = array(
+                'accueil' => 'structure/accueil.html',
+               'logout' =>'connect/message_deconnexion.php',
+                
+                
+                'test' => 'test.html'
+				  );
         }
+        if ( (isset($_GET['page'])) && (isset($pageOK[$_GET['page']])) ) {
+    include($pageOK[$_GET['page']]);   // Nous appelons le contenu central de la page
+  }
+  else {
+    include('structure/accueil.html');   // Page par défaut quant elle n'existe pas dans le tableau
+  }
+    
         
     ?>
 
