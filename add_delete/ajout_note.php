@@ -18,7 +18,7 @@ if (securite(2))
                             $res=execReq($req);
                             while($module=mysql_fetch_assoc($res))
                             {
-                            echo'<option  value="'.$module['idMod'].'">'.$module['libelle'].' - CPI'.$module['idPromo'].'</option>';
+                            echo'<option  value="'.$module['idMod'].'">'.$module['libelle'].'</option>';
                             }
                             deconnect($cnx);
                         ?>

@@ -13,10 +13,7 @@ if (empty($_SESSION['idUtil']))// si l'utilisateur est pas connecté
 
 <?php
 }
-else // sinon on affiche son nom et prénom
-{
-   echo'<div id="cnx" >'.$_SESSION['nom'].' '.$_SESSION['prenom'].'<br/> <a href="connect/logout.php">Se déconnecter</a></div>';
-}?>
+?>
 <div id="center"><!-- Pour afficher le contenu de la page -->
 <?php 
         if (isset($_SESSION['idRole']))
