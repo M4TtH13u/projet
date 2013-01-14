@@ -14,8 +14,8 @@ include'fonctions/fonctions.php';
     <li class="eleve" >
         Promo
         <ul class="niveau2">
-            <li onClick="JavaScript:document.location='index.php?page=promo1';">CPI1</li>
-            <li onClick="JavaScript:document.location='index.php?page=promo2';">CPI2</li>
+            <li onclick="JavaScript:document.location='index.php?page=promo1';">CPI1</li>
+            <li onclick="JavaScript:document.location='index.php?page=promo2';">CPI2</li>
         </ul>
     </li>
      <li class="eleve" onclick="JavaScript:document.location='index.php?page=professeur';">
@@ -23,10 +23,10 @@ include'fonctions/fonctions.php';
     </li>
     <li class="admin" >
         Gestions des utilisateurs
-            <ul class="niveau2">
-                <li onclick="JavaScript:document.location='index.php?page=ajout_prof_eleve';">ajouter utilisateurs</li>
-                <li onclick="JavaScript:document.location='index.php?page=delete_prof_eleve';">supprimer utilisateurs</li>
-            </ul>
+        <ul class="niveau2">
+            <li onclick="JavaScript:document.location='index.php?page=ajout_prof_eleve';">ajouter utilisateurs</li>
+            <li onclick="JavaScript:document.location='index.php?page=delete_prof_eleve';">supprimer utilisateurs</li>
+        </ul>
     </li>
     <li class="prof">
         Gestions des notes
