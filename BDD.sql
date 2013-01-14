@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Lun 07 Janvier 2013 à 20:16
+-- Généré le: Lun 14 Janvier 2013 à 22:23
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.3.13
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `eleve` (
   `idPromo` int(2) NOT NULL,
   `idUtil` int(5) NOT NULL,
   PRIMARY KEY (`numEtudiant`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=162 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=164 ;
 
 --
 -- Contenu de la table `eleve`
@@ -199,7 +199,9 @@ INSERT INTO `eleve` (`numEtudiant`, `anneeRedouble`, `idPromo`, `idUtil`) VALUES
 (158, 0, 1, 162),
 (159, 0, 1, 163),
 (160, 0, 2, 164),
-(161, 0, 1, 210);
+(161, 0, 1, 210),
+(162, 0, 2, 208),
+(163, 0, 2, 210);
 
 -- --------------------------------------------------------
 
@@ -236,26 +238,27 @@ CREATE TABLE IF NOT EXISTS `matiere` (
   `idMod` int(2) NOT NULL,
   `idProf` int(2) NOT NULL,
   PRIMARY KEY (`idMat`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Contenu de la table `matiere`
 --
 
 INSERT INTO `matiere` (`idMat`, `libelle`, `coefMat`, `idMod`, `idProf`) VALUES
-(1, 'informatique', 7, 1, 1),
-(2, 'mathématiques', 10, 3, 2),
+(1, 'PHP-BDD', 7, 1, 1),
+(2, 'mathematiques', 10, 3, 2),
 (3, 'physique', 3, 4, 6),
-(4, 'éléctronique', 3, 4, 7),
-(5, 'français', 2, 5, 3),
+(4, 'electronique', 3, 4, 7),
+(5, 'francais', 2, 5, 3),
 (6, 'anglais', 2, 2, 4),
 (7, 'anglais', 2, 2, 5),
 (8, 'informatique', 4, 7, 1),
-(9, 'mathématiques', 10, 9, 8),
-(10, 'physique', 6, 10, 9),
-(11, 'éléctronique', 3, 10, 7),
-(12, 'français', 2, 11, 10),
-(13, 'anglais', 2, 8, 4);
+(9, 'mathematiques', 10, 9, 8),
+(10, 'physique', 6, 10, 6),
+(11, 'electronique', 3, 10, 7),
+(12, 'francais', 2, 11, 3),
+(13, 'anglais', 2, 8, 4),
+(14, 'CPI2 C++', 7, 1, 9);
 
 -- --------------------------------------------------------
 
@@ -277,13 +280,13 @@ CREATE TABLE IF NOT EXISTS `module` (
 INSERT INTO `module` (`idMod`, `libelle`, `idPromo`) VALUES
 (1, 'Informatique-CPI2', 2),
 (2, 'Langues-CPI2', 2),
-(3, 'Mathématiques-CPI2', 2),
+(3, 'Mathematiques-CPI2', 2),
 (4, 'Physique-CPI2', 2),
 (5, 'Relations Humaines-CPI2', 2),
 (6, 'Tranverse-CPI2', 2),
 (7, 'Informatique-CPI1', 1),
 (8, 'Langues-CPI1', 1),
-(9, 'Mathématiques-CPI1', 1),
+(9, 'Mathematiques-CPI1', 1),
 (10, 'Physique-CPI1', 1),
 (11, 'Relations Humaines-CPI1', 1),
 (12, 'Tranverse-CPI1', 1);
@@ -322,22 +325,22 @@ CREATE TABLE IF NOT EXISTS `prof` (
   `telBureau` int(10) NOT NULL,
   `idUtil` int(2) NOT NULL,
   PRIMARY KEY (`idProf`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Contenu de la table `prof`
 --
 
 INSERT INTO `prof` (`idProf`, `numBureau`, `telBureau`, `idUtil`) VALUES
-(1, 'CY301', 134852653, 200),
-(2, 'TG302', 165452545, 201),
-(3, 'TG305', 136654745, 202),
-(4, 'TG201', 154855226, 203),
-(5, 'TG103', 125699532, 204),
+(1, '', 134852653, 200),
+(2, '', 165452545, 201),
+(3, '', 136654745, 202),
+(4, '', 154855226, 203),
+(5, '', 125699532, 204),
 (6, 'AUCUN', 125458516, 205),
-(7, 'CY205', 145956418, 206),
-(8, 'CY204', 145956418, 207),
-(9, 'CY102', 145956418, 208);
+(7, '', 145956418, 206),
+(8, '', 145956418, 207),
+(9, '', 145956418, 208);
 
 -- --------------------------------------------------------
 
@@ -418,7 +421,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `prenom` varchar(30) NOT NULL,
   `idRole` int(2) NOT NULL,
   PRIMARY KEY (`idUtil`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=208 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=213 ;
 
 --
 -- Contenu de la table `utilisateur`
@@ -590,12 +593,14 @@ INSERT INTO `utilisateur` (`idUtil`, `login`, `pass`, `nom`, `prenom`, `idRole`)
 (163, 'villaincle', 'c16da4ad70df593520193184381b9f21', 'Villain', 'Clement', 2),
 (164, 'zambazamba', 'c16da4ad70df593520193184381b9f21', 'Zamba-Zamba', 'Fady', 2),
 (200, 'Georgebart', 'd450c5dbcc10db0749277efc32f15f9f', 'George', 'Bartholomew', 3),
+(201, 'Eljanatiab', 'd450c5dbcc10db0749277efc32f15f9f', 'El Janati', 'Abdessalam', 3),
 (202, 'Perraultbr', 'd450c5dbcc10db0749277efc32f15f9f', 'Perrault', 'Brigitte', 3),
 (203, 'Bustonmari', 'd450c5dbcc10db0749277efc32f15f9f', 'Buston', 'Marie-Helene', 3),
 (204, 'Danielvale', 'd450c5dbcc10db0749277efc32f15f9f', 'Daniel', 'Valerie', 3),
 (205, 'Hammoumrac', 'd450c5dbcc10db0749277efc32f15f9f', 'Hammoum', 'Rachid', 3),
 (206, 'Almouznigu', 'd450c5dbcc10db0749277efc32f15f9f', 'Almouzni', 'Guy', 3),
-(207, 'Baskiotisd', 'd450c5dbcc10db0749277efc32f15f9f', 'Baskiotis', 'Despina', 3);
+(207, 'Baskiotisd', 'd450c5dbcc10db0749277efc32f15f9f', 'Baskiotis', 'Despina', 3),
+(208, 'Bornhofens', 'd450c5dbcc10db0749277efc32f15f9f', 'Bornhofen', 'Stefan', 3);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
