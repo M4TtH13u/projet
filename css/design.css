@@ -15,12 +15,13 @@ border-left: 3px solid black;
 #menu {
 z-index:2;
 position:fixed;
-bottom:74.9%;
+bottom:77%;
 right:17%;
 width:81%;
 height: 23%;
 min-height: 23%;
 min-width: 17%;
+margin:0%;
 background-color: activecaption;
 color: black;
 text-align:center;
