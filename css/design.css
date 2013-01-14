@@ -3,11 +3,11 @@
 z-index:3;
 position:fixed;
 bottom:77%;
-left:85%;
-width:15%;
+left:83%;
+width:17%;
 height: 23%;
 min-height: 22%;
-min-width: 15%;
+min-width: 17%;
 background-color: activecaption;
 border-left: 3px solid black;  
 }
@@ -30,6 +30,7 @@ text-align: center;
 
 ul {
 margin: 0%;
+padding: 0%;
 }
 
 li {
