@@ -18,7 +18,7 @@ include'fonctions/fonctions.php';
             <li onclick="JavaScript:document.location='index.php?page=promo2';">CPI2</li>
         </ul>
     </li>
-     <li class="eleve" onclick="JavaScript:document.location='index.php?page=professeur';">
+    <li class="eleve" onclick="JavaScript:document.location='index.php?page=professeur';">
         Professeurs
     </li>
     <li class="admin" >
@@ -37,11 +37,10 @@ include'fonctions/fonctions.php';
            <li class="prof" onclick="JavaScript:document.location='index.php?page=ajout_note';" >
             Ajouter des notes
            </li>
-        </ul>
-        <li class="eleve" onclick="JavaScript:document.location='connect/logout.php';" >
+       </ul>
+    <li class="eleve" onclick="JavaScript:document.location='connect/logout.php';" >
             Se déconnecter
-           </li>
     </li>
-   
+
 </ul>
  
