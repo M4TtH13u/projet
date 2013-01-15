@@ -4,7 +4,7 @@ if (securite(3))
 {
   
  
-    if ((!empty($_POST['promo']) && !empty($_POST['libelle']) && !empty($_POST['matiere']) && !empty($_POST['date']) && !empty($_POST['type']))){
+    if ((!empty($_POST['libelle']) && (!empty($_POST['matiere'])) && (!empty($_POST['date'])) && (!empty($_POST['type'])))){
         $cnx=connect();
         mysql_query("SET NAMES UTF8");
         $req='INSERT INTO examen VALUE("","'.$_POST['libelle'].'","'.$_POST['matiere'].'","'.$_POST['date'].'","'.$_POST['type'].'")';
@@ -14,7 +14,7 @@ if (securite(3))
         } 
         else
         {
-       
+      
 ?>
 <form id="form_DS" action="#" method="POST">    <!--Création d'un formulaire-->
     <fieldset>
@@ -31,72 +31,10 @@ if (securite(3))
                    deconnect($cnx);
                    ?>
         <br/>
-        <div id="matiere1">
-            <label>Matiere :</label>
-                <select name="matiere">
-                    <option></option>
-                    <?php
-                        $cnx=connect();
-                        mysql_query("SET NAMES UTF8");
-                        $req='select * from matiere ma, module mo where ma.idMod=mo.idMod and mo.idPromo=1';
-                        $res=execReq($req);
-                        while($matiere=mysql_fetch_assoc($res)){
-                            echo '<option value="'.$matiere['idMat'].'">'.$matiere['libelle'].'</option>';  //création du menu déroulant avec association de la BDD et de la table matière
-                        }      
-                        deconnect($cnx); 
-                    ?>
-                </select></br>
-                <label>Nom de l'examen : </label><input type="text" name="libelle"/><br/>   <!--Création d'un libellé avec le nom de l'examen-->
-            <label>Date : </label><input type="date" name="date"/><br/>
-            <label>Type d'examen :</label>
-                <select name="type">
-                    <option></option>
-                    <?php
-                        $cnx=connect();
-                        mysql_query("SET NAMES UTF8");
-                        $req='select * from typexam';
-                        $res=execReq($req);
-                        while($type=mysql_fetch_assoc($res)){
-                            echo '<option value="'.$type['idType'].'">'.$type['libelle'].'</option>';   //création du menu déroulant avec association de la BDD et de la table typexam
-                        }      
-                        deconnect($cnx); 
-                    ?>
-                </select>
-        <br>
+        <div id="matiere">
+            
         </div>
-        <div id="matiere2">
-            <label>Matiere :</label>
-            <select name="matiere2">
-                <option></option>
-                <?php
-                    $cnx=connect();
-                    mysql_query("SET NAMES UTF8");
-                    $req='select * from matiere ma, module mo where ma.idMod=mo.idMod and mo.idPromo=2';
-                    $res=execReq($req);
-                    while($matiere=mysql_fetch_assoc($res)){
-                        echo '<option value="'.$matiere['idMat'].'">'.$matiere['libelle'].'</option>';  //création du menu déroulant avec association de la BDD et de la table matière
-                    }      
-                    deconnect($cnx); 
-                ?>
-            </select></br>
-            <label>Nom de l'examen : </label><input type="text" name="libelle"/><br/>   <!--Création d'un libellé avec le nom de l'examen-->
-            <label>Date : </label><input type="date" name="date"/><br/>
-            <label>Type d'examen :</label>
-                <select name="type">
-                    <option></option>
-                    <?php
-                        $cnx=connect();
-                        mysql_query("SET NAMES UTF8");
-                        $req='select * from typexam';
-                        $res=execReq($req);
-                        while($type=mysql_fetch_assoc($res)){
-                            echo '<option value="'.$type['idType'].'">'.$type['libelle'].'</option>';   //création du menu déroulant avec association de la BDD et de la table typexam
-                        }      
-                        deconnect($cnx); 
-                    ?>
-                </select>
-        <br>
-        </div>
+        
         <input type="submit" value="Envoyer" />
         <input type="reset" value="Annuler" onClick="reinitialiser();"/>
     </fieldset>

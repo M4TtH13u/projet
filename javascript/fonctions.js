@@ -146,21 +146,33 @@ function afficher_delete2(idPromo)
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send('idPromo='+idPromo);
 }
-
+function ajout_DS1(nb)
+{
+    var xhr;
+    var pere;
+    var reponse;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4){
+            reponse = xhr.responseText;
+            pere = document.getElementById('matiere');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","fonctions/ajout_ds2.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('nb='+nb);
+}
 function ajout_DS()
 {
      var cpi1=document.getElementById("CPI1");
     if (cpi1.checked){
-        document.getElementById("matiere1").style.display="block";
-    }else{
-        document.getElementById("matiere1").style.display="none";
+        ajout_DS1(1);
     }   
     var cpi2=document.getElementById("CPI2");
      if (cpi2.checked){
-        document.getElementById("matiere2").style.display="block";
-    }else{
-        document.getElementById("matiere2").style.display="none";
-    } 
+        ajout_DS1(2);
+    }
 }
 function reinitialiser()
 {
