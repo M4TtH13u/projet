@@ -2,16 +2,16 @@
 if (securite(4))
 {
 
-    if ((!empty($_POST['type']) && !empty($_POST['prof'])) || (!empty($_POST['type']) && !empty($_POST['eleve'])))
+    if (!empty($_POST['type']) && (!empty($_POST['prof2']) || !empty($_POST['eleve'])))
     {
-        if (!empty($_POST['prof']))
+        if (!empty($_POST['prof2']))
         {
             $cnx=connect();
-            $req='UPDATE matiere m, prof p SET m.idProf=null WHERE m.idProf=p.idProf AND p.idUtil="'.$_POST['prof'].'"';
+            $req='UPDATE matiere m, prof p SET m.idProf=null WHERE m.idProf=p.idProf AND p.idUtil="'.$_POST['prof2'].'"';
             $res=execReq($req);
-            $req='DELETE FROM prof WHERE idUtil="'.$_POST['prof'].'"';
+            $req='DELETE FROM prof WHERE idUtil="'.$_POST['prof2'].'"';
             $res=execReq($req);
-            $req='DELETE FROM utilisateur WHERE idUtil="'.$_POST['prof'].'"';
+            $req='DELETE FROM utilisateur WHERE idUtil="'.$_POST['prof2'].'"';
             $res=execReq($req);
             deconnect($cnx);
             echo "l'utilisateur a bien été retiré";
@@ -52,7 +52,7 @@ else{
             </div>
             <div id="prof_delete">
                 <label>Choisir le professeur</label>
-                <select name="prof">
+                <select name="prof2">
                     <option></option>
                     <?php
                        $cnx=connect();
