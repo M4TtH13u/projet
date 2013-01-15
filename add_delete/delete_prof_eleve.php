@@ -18,10 +18,18 @@ if (securite(4))
         }
         else{
             $cnx=connect();
-            $req='DELETE FROM utilisateur WHERE idUtil"'.$_POST['eleve'].'"';
+            $req='DELETE FROM utilisateur WHERE idUtil="'.$_POST['eleve'].'"';
             $res=execReq($req);
-            $req='DELETE FROM participe p, eleve e WHERE idUtil="'.$_POST['eleve'].'" AND p.numEtudiant=e.numEtudiant';
+            $req2='select numEtudiant from eleve where idUtil="'.$_POST['eleve'].'"';
+            $res2=execReq($req2);
+            while ($num=  mysql_fetch_assoc($res2))
+            {
+             $req='DELETE FROM participe WHERE numEtudiant='.$num['numEtudiant'];
             $res=execReq($req);
+             $req='DELETE FROM eleve WHERE numEtudiant='.$num['numEtudiant'];
+            $res=execReq($req);
+            }
+           
             deconnect($cnx);
             echo "l'utilisateur a bien été retiré";
         }
