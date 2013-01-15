@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Lun 14 Janvier 2013 à 22:23
+-- Généré le: Mar 15 Janvier 2013 à 17:28
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.3.13
 
@@ -216,14 +216,15 @@ CREATE TABLE IF NOT EXISTS `examen` (
   `date` date NOT NULL,
   `idType` int(2) NOT NULL,
   PRIMARY KEY (`idExam`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `examen`
 --
 
 INSERT INTO `examen` (`idExam`, `libelle`, `idMat`, `date`, `idType`) VALUES
-(1, 'DS BDD', 1, '2012-10-01', 1);
+(1, 'DS BDD', 1, '2012-10-01', 1),
+(2, 'DS', 8, '2013-01-11', 1);
 
 -- --------------------------------------------------------
 
@@ -238,7 +239,7 @@ CREATE TABLE IF NOT EXISTS `matiere` (
   `idMod` int(2) NOT NULL,
   `idProf` int(2) NOT NULL,
   PRIMARY KEY (`idMat`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Contenu de la table `matiere`
@@ -246,19 +247,21 @@ CREATE TABLE IF NOT EXISTS `matiere` (
 
 INSERT INTO `matiere` (`idMat`, `libelle`, `coefMat`, `idMod`, `idProf`) VALUES
 (1, 'PHP-BDD', 7, 1, 1),
-(2, 'mathematiques', 10, 3, 2),
-(3, 'physique', 3, 4, 6),
+(2, 'Series', 10, 3, 2),
+(3, 'Electromagnetisme', 3, 4, 6),
 (4, 'electronique', 3, 4, 7),
-(5, 'francais', 2, 5, 3),
-(6, 'anglais', 2, 2, 4),
-(7, 'anglais', 2, 2, 5),
-(8, 'informatique', 4, 7, 1),
+(5, 'Francais-Philosophie', 2, 5, 3),
+(6, 'Anglais', 2, 2, 4),
+(7, 'Kholles d''anglais', 2, 2, 5),
+(8, 'Programmation', 4, 7, 1),
 (9, 'mathematiques', 10, 9, 8),
 (10, 'physique', 6, 10, 6),
-(11, 'electronique', 3, 10, 7),
+(11, 'Automatique', 3, 10, 7),
 (12, 'francais', 2, 11, 3),
 (13, 'anglais', 2, 8, 4),
-(14, 'CPI2 C++', 7, 1, 9);
+(14, 'C++', 7, 1, 9),
+(15, 'TIPE', 3, 6, 9),
+(16, 'Analyse dans Rn', 10, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -310,7 +313,7 @@ CREATE TABLE IF NOT EXISTS `participe` (
 
 INSERT INTO `participe` (`numEtudiant`, `idExam`, `note`) VALUES
 (1, 1, 15),
-(7, 1, 7),
+(7, 1, 9),
 (9, 1, 18);
 
 -- --------------------------------------------------------
@@ -325,7 +328,7 @@ CREATE TABLE IF NOT EXISTS `prof` (
   `telBureau` int(10) NOT NULL,
   `idUtil` int(2) NOT NULL,
   PRIMARY KEY (`idProf`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Contenu de la table `prof`
@@ -340,7 +343,9 @@ INSERT INTO `prof` (`idProf`, `numBureau`, `telBureau`, `idUtil`) VALUES
 (6, 'AUCUN', 125458516, 205),
 (7, '', 145956418, 206),
 (8, '', 145956418, 207),
-(9, '', 145956418, 208);
+(9, '', 145956418, 208),
+(10, '', 0, 209),
+(11, '', 0, 210);
 
 -- --------------------------------------------------------
 
@@ -421,7 +426,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `prenom` varchar(30) NOT NULL,
   `idRole` int(2) NOT NULL,
   PRIMARY KEY (`idUtil`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=213 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=212 ;
 
 --
 -- Contenu de la table `utilisateur`
@@ -600,7 +605,9 @@ INSERT INTO `utilisateur` (`idUtil`, `login`, `pass`, `nom`, `prenom`, `idRole`)
 (205, 'Hammoumrac', 'd450c5dbcc10db0749277efc32f15f9f', 'Hammoum', 'Rachid', 3),
 (206, 'Almouznigu', 'd450c5dbcc10db0749277efc32f15f9f', 'Almouzni', 'Guy', 3),
 (207, 'Baskiotisd', 'd450c5dbcc10db0749277efc32f15f9f', 'Baskiotis', 'Despina', 3),
-(208, 'Bornhofens', 'd450c5dbcc10db0749277efc32f15f9f', 'Bornhofen', 'Stefan', 3);
+(208, 'Bornhofens', 'd450c5dbcc10db0749277efc32f15f9f', 'Bornhofen', 'Stefan', 3),
+(209, 'Lamouriine', 'd450c5dbcc10db0749277efc32f15f9f', 'Lamouri', 'Ines', 3),
+(210, 'Sabramaher', 'd450c5dbcc10db0749277efc32f15f9f', 'Sabra', 'Maher', 3);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
