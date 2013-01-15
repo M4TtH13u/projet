@@ -2,7 +2,7 @@
 include '../fonctions/fonctions.php';
 ?>
 <label>Choisir l'élève</label>
-                    <select>
+                    <select name="eleve">
                         <option></option>
                         <?php
                             $cnx=connect();
@@ -10,7 +10,7 @@ include '../fonctions/fonctions.php';
                             $res=execReq($req);
                             while($eleve=mysql_fetch_assoc($res))
                             {
-                             echo'<option  name="eleve" value="'.$eleve['idUtil'].'">'.$eleve['nom'].' '.$eleve['prenom'].'</option>';
+                             echo'<option   value="'.$eleve['idUtil'].'">'.$eleve['nom'].' '.$eleve['prenom'].'</option>';
                             }
                             deconnect($cnx);
                          ?>
