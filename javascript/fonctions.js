@@ -189,6 +189,27 @@ function reinitialiser()
    
 }
 
+function afficher_note()
+{
+    var xhr;
+    var pere;
+    var reponse;
+    var matiere;
+    matiere= document.getElementById('matiere').value;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            pere = document.getElementById('affnote');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","fonctions/moyenne.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('nb='+matiere);
+}
+
+
 function afficher_matiere()
 {
     var xhr;
@@ -209,25 +230,6 @@ function afficher_matiere()
     xhr.send('module='+module);
 }
 
-function afficher_note()
-{
-    var xhr;
-    var pere;
-    var reponse;
-    var matiere;
-    matiere= document.getElementById('matiere').value;
-    xhr = getXhr();
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState == 4 && xhr.status == 200){
-            reponse = xhr.responseText;
-            pere = document.getElementById('affnote');
-            pere.innerHTML = reponse;
-      }
-    }
-    xhr.open("POST","fonctions/moyenne.php",true);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    xhr.send('nb='+matiere);
-}
 function afficher_matiere2()
 {
     var xhr;
@@ -248,26 +250,6 @@ function afficher_matiere2()
     xhr.send('module='+module);
 }
 
-function modifier_note2()
-{
-    var xhr;
-    var pere;
-    var reponse;
-    var ds;
-    ds= document.getElementById('DS').value;
-    xhr = getXhr();
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState == 4 && xhr.status == 200){
-            reponse = xhr.responseText;
-            pere = document.getElementById('affnote');
-            pere.innerHTML = reponse;
-      }
-    }
-    xhr.open("POST","modifier/modifier_note.php",true);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    xhr.send('nb='+ds);
-}
-
 function modifier_note()
 {
     var xhr;
@@ -286,4 +268,25 @@ function modifier_note()
     xhr.open("POST","modifier/modifier_note_DS.php",true);
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send('nb='+matiere);
+}
+
+
+function modifier_note2()
+{
+    var xhr;
+    var pere;
+    var reponse;
+    var ds;
+    ds= document.getElementById('DS').value;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            pere = document.getElementById('affnote');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","modifier/modifier_note.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('nb='+ds);
 }

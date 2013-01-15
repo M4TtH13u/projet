@@ -10,7 +10,7 @@ include'../fonctions/fonctions.php'
               $res=execReq($req);
               while($matiere=mysql_fetch_assoc($res))
               {
-                   echo'<option  value="'.$matiere['idMat'].'">'.$matiere['libelle'].'</option>';
+                   echo'<option  value="'.$matiere['idExam'].'">'.$matiere['libelle'].'</option>';
               }
               deconnect($cnx);
             ?>

@@ -4,7 +4,7 @@ session_start();
 $cnx=connect();
 mysql_query("SET NAMES UTF8");
 
-$req='select ma.libelle libMat,ma.idMat idMat, mo.libelle libMod from matiere ma, module mo where ma.idMat="'.$_POST['nb'].'" AND ma.idMod=mo.idMod';// on prend le bon examen dans la bdd
+$req='select ma.libelle libMat,ma.idMat idMat, ex.idExam, mo.libelle libMod from matiere ma, examen ex, module mo where ex.idExam="'.$_POST['nb'].'" AND ex.idMat=ma.idMat AND ma.idMod=mo.idMod';// on prend le bon examen dans la bdd
     $res=execReq($req);
     echo'<table>';// on construit notre tableau
    while($donnee=mysql_fetch_assoc($res))//a modifier afin que le nom de l'exam n'apparaissent qu'une seule fois en haut
@@ -12,7 +12,7 @@ $req='select ma.libelle libMat,ma.idMat idMat, mo.libelle libMod from matiere ma
             echo'<th>'.$donnee['libMod'].'</th><tr><td colspan=6>'.$donnee['libMat'].'</td></tr>';
             echo'<tr><td>Type d\'examen</td><td>Nom</td><td>Prénom</td><td>Note</td><td>Absence</td><td id="justification">Justifié</td></tr>';
        
-        $req2='SELECT pa.note note, u.idUtil idUtil, u.nom nom, u.prenom prenom, ex.libelle libExam FROM examen ex,participe pa, eleve el, utilisateur u WHERE ex.idMat="'.$donnee['idMat'].'" AND ex.idExam=pa.idExam AND pa.numEtudiant=el.numEtudiant AND el.idUtil=u.idUtil';
+        $req2='SELECT pa.note note, u.idUtil idUtil, u.nom nom, u.prenom prenom, ex.libelle libExam FROM examen ex,participe pa, eleve el, utilisateur u WHERE ex.idExam="'.$donnee['idExam'].'" AND ex.idExam=pa.idExam AND pa.numEtudiant=el.numEtudiant AND el.idUtil=u.idUtil';
         $res2=execReq($req2);
         while($note=mysql_fetch_assoc($res2))
         {
