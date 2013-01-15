@@ -2,7 +2,7 @@
 if (securite(4))
 {
 
-    if (!empty($_POST['type']) && (!empty($_POST['prof2']) || !empty($_POST['eleve'])))
+    if (!empty($_POST['type']) && ((!empty($_POST['prof2']) || (!empty($_POST['eleve'])))))
     {
         if (!empty($_POST['prof2']))
         {

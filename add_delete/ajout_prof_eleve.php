@@ -48,7 +48,7 @@ if (securite(4))
 
     else
     {
-           echo $_POST['promo'];
+           echo (($_POST['choixUtil']=="2") && !empty($_POST['promo']));
         ?>
       <form id="form_prof_eleve" method="POST">
           <fieldset>
@@ -88,7 +88,7 @@ if (securite(4))
                   
                   ?>
               <br>
-              <?php echo '<input type="submit" onClick="verif()" value="Envoyer" />'; ?>
+              <?php echo '<input type="submit"  value="Envoyer" />'; ?>
               <input type="reset" value="Annuler" onClick="reinitialiser();"/>
           </fieldset>
       </form>  
