@@ -32,10 +32,15 @@ if (securite(3))
                    ?>
         <br/>
         <div id="matiere">
-            
         </div>
+        <br/>
+        <div id="eleve">
+        </div>
+        <br/>
+        <span id="button">
+        <input type="button" value="Envoyer" Onclick="Exam_eleve();" />
+        </span>
         
-        <input type="submit" value="Envoyer" />
         <input type="reset" value="Annuler" onClick="reinitialiser();"/>
     </fieldset>
 </form>
