@@ -48,7 +48,6 @@ if (securite(4))
 
     else
     {
-           echo (($_POST['choixUtil']=="2") && !empty($_POST['promo']));
         ?>
       <form id="form_prof_eleve" method="POST">
           <fieldset>

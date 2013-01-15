@@ -1,6 +1,18 @@
 <?php
 if (securite(2))
 {
+    if(isset($_POST['DS'])){
+    $cnx=connect();
+    $req='SELECT el.idUtil FROM eleve el, participe pa WHERE pa.idExam="'.$_POST['DS'].'" AND pa.numEtudiant=el.numEtudiant';
+    $res=execReq($req);
+    while($donnee=mysql_fetch_assoc($res))
+    {
+        $req2='UPDATE participe pa, eleve el SET pa.note="'.$_POST['note_'.$donnee['idUtil'].''].'" WHERE pa.numEtudiant=el.numEtudiant AND el.idUtil="'.$donnee['idUtil'].'"';
+        $res2=execReq($req2);
+    }
+    echo'les notes ont bien été modifiées';
+    }
+    else{
 ?>
     <form id="form_module" name="form1" action="#" method="POST">
         <fieldset>
@@ -31,7 +43,7 @@ if (securite(2))
             </div>
     </form>
             
-<?php }
+<?php } }
 else
 {
      echo'<SCRIPT LANGUAGE="JavaScript">

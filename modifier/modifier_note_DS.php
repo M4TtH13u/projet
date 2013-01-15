@@ -2,7 +2,7 @@
 include'../fonctions/fonctions.php'
 ?>
 <label>Choix de l'examen :</label>
-    <select OnChange="modifier_note2()" id="DS">
+    <select OnChange="modifier_note2()" name="DS" id="DS">
            <option></option>
            <?php
               $cnx=connect();
