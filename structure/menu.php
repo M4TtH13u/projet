@@ -38,7 +38,12 @@ include'fonctions/fonctions.php';
             Ajouter des notes
            </li>
        </ul>
-    <li class="eleve" onclick="JavaScript:document.location='connect/logout.php';" >
+    </li>
+    <li  class="eleve" id="co" onclick="JavaScript:document.location='connect/logout.php';" >
+        <STYLE type="text/css">
+            #co {font-style: italic; font-size:large; background-color: #eeeef1;}
+            #co:hover {color:red; background-color: #d8d8db; font-size:large;}
+        </style>
             Se déconnecter
     </li>
 
