@@ -35,7 +35,7 @@ if (securite(3))
         <br/>
         <div id="matiere">
         </div>
-        <div id="eleve">
+        <div id="choixeleve">
         </div>
         <span id="button">
         <input type="button" value="Envoyer" Onclick="Exam_eleve();" />

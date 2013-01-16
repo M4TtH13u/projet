@@ -1,6 +1,6 @@
 <?php 
 include '../fonctions/fonctions.php';?>
-<label>Matiere :</label>
+<label>Module :</label>
                 <select name="matiere">
                     <option></option>
                     <?php
