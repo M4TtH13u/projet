@@ -9,6 +9,8 @@ if (securite(3))
         mysql_query("SET NAMES UTF8");
         $req='INSERT INTO examen VALUE("","'.$_POST['libelle'].'","'.$_POST['matiere'].'","'.$_POST['date'].'","'.$_POST['type'].'")';
         $res=execReq($req);
+//        $req='INSERT INTO participe VALUE("'.$_POST['idUtil'].'","","")';
+//        $res=execReq($req);
         deconnect($cnx); 
         echo 'Le DS à bien été ajouté'; 
         } 
