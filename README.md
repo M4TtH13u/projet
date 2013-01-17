@@ -65,3 +65,8 @@ quelque bug :
             La modification a bien lieu mais sur tous les examen qui concerne l'élève en question.
             Absence et Justifié fonctionnent.
             Un autre problème survient lorsque l'on veut ajouter un étudiant qui est déjà dans l'examen en cours. Il faudrait rajouter une impossibilité de cocher une case d'un élève déjà présent.
+
+17/01/13 (minuit)
+=============
+ajout_note mis a jour pour ne modifier les notes que d'un examen
+On ne peut plus entrer deux fois le même élève (message d'erreur a modifier si nécéssaire dans ajouter_note.php ligne 39)
