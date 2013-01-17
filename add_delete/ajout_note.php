@@ -25,8 +25,19 @@ if (securite(2))
     }
     if(isset($_POST['util'])){
         foreach (($_POST['util']) as $nb){
-        $req='INSERT INTO participe VALUES("'.$nb.'","'.$_POST['DS'].'","")';
-        $res=execReq($req);
+            $req='SELECT el.idUtil FROM eleve el, participe pa WHERE pa.idExam="'.$_POST['DS'].'" AND pa.numEtudiant=el.numEtudiant';
+            $res=execReq($req);
+            $verif=true;
+            while($donnee=mysql_fetch_assoc($res)){
+                if ($donnee['idUtil']=$nb){$verif=false;}
+            }
+            if ($verif){
+                $req='INSERT INTO participe VALUES("'.$nb.'","'.$_POST['DS'].'","") IF NOT EXISTS (die(mysql_error()))';
+                $res=execReq($req);
+            }
+            else{
+                echo 'Vous ne pouvez pas entrer deux fois le même élève pour un même examen<br/>';
+            }
         }
         deconnect($cnx);
         }
