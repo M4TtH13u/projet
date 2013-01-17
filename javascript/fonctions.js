@@ -133,7 +133,7 @@ function afficher_delete2(idPromo)
 
 function ajout_DS()
 {
-     var cpi1=document.getElementById("CPI1");
+    var cpi1=document.getElementById("CPI1");
     if (cpi1.checked){
         ajout_DS1(1);
     }   
@@ -159,25 +159,6 @@ function ajout_DS1(nb)
     xhr.open("POST","fonctions/ajout_ds2.php",true);
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send('nb='+nb);
-}
-
-function tableau(nom){
-    if (nom.checked){
-            var xhr;
-            var pere;
-            var reponse;
-            xhr = getXhr();
-            xhr.onreadystatechange = function(){
-              if(xhr.readyState == 4){
-                    reponse = xhr.responseText;
-                    pere = document.getElementById('tableau');
-                    pere.innerHTML = reponse;
-              }
-            }
-            xhr.open("POST","add_delete/ajout_tableau.php",true);
-            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-            xhr.send('nb='+nom.name);
-        }
 }
 
 function Exam_eleve()

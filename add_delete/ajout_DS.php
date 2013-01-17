@@ -2,21 +2,27 @@
 
 if (securite(3))
 {
-    $tableau=array();
-    global $tableau;
   
  
     if ((!empty($_POST['libelle']) && (!empty($_POST['matiere'])) && (!empty($_POST['date'])) && (!empty($_POST['type'])))){
-/*        $cnx=connect();
+        $cnx=connect();
         mysql_query("SET NAMES UTF8");
         $req='INSERT INTO examen VALUE("","'.$_POST['libelle'].'","'.$_POST['matiere'].'","'.$_POST['date'].'","'.$_POST['type'].'")';
         $res=execReq($req);
-        for ($i=0;$i<$length;$i++){
-        $req='INSERT INTO participe pa ("'.$_POST['idUtil'].'",idExam,"") SELECT idExam FROM examen WHERE libelle="'.$_POST['libelle'].'"';
+        $req='SELECT idExam FROM examen WHERE libelle="'.$_POST['libelle'].'"';
+        $res=execReq($req);
+        while($donnee=mysql_fetch_assoc($res))
+            {
+                $exam=$donnee['idExam'];
+                echo $exam;
+            }
+        foreach (($_POST['util']) as $nb){
+        $req='INSERT INTO participe VALUES("'.$nb.'","'.$exam.'","")';
         $res=execReq($req);
         }
         deconnect($cnx); 
-*/        echo 'Le DS à bien été ajouté';
+        echo 'Le DS à bien été ajouté';
+            
         } 
         else
         {
