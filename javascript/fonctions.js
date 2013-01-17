@@ -332,6 +332,30 @@ function eleve_note(promo){
     xhr.send('nb='+promo);
 }
 
+function cocher(){
+    var box=document.getElementsByTagName('input');
+    var i;
+    var len=box.length;
+    for (i=0; i<len; i++){
+         if (box[i].type=='checkbox' )
+            {
+                box[i].checked = true;
+            }
+    }
+}
+
+function decocher(){
+    var box=document.getElementsByTagName('input');
+    var i;
+    var len=box.length;
+    for (i=0; i<len; i++){
+         if (box[i].type=='checkbox' )
+            {
+                box[i].checked = false;
+            }
+    }
+}
+
 function export_eleve()
 {
     var xhr;
