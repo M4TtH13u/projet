@@ -10,6 +10,11 @@ if (securite(2))
         $req2='UPDATE participe pa, eleve el SET pa.note="'.$_POST['note_'.$donnee['idUtil'].''].'" WHERE pa.numEtudiant=el.numEtudiant AND el.idUtil="'.$donnee['idUtil'].'"';
         $res2=execReq($req2);
     }
+    foreach (($_POST['util']) as $nb){
+    $req='INSERT INTO participe VALUES("'.$nb.'","'.$_POST['DS'].'","")';
+    $res=execReq($req);
+    }
+    deconnect($cnx);
     echo'les notes ont bien été modifiées';
     }
     else{
@@ -40,6 +45,8 @@ if (securite(2))
              <div id="affds">
             </div>
             <div id="affnote">
+            </div>
+            <div id="choixeleve">
             </div>
     </form>
             

@@ -9,6 +9,7 @@ $req='select ma.libelle libMat,ma.idMat idMat, ex.idExam, mo.libelle libMod from
     echo'<table class="modnote">';// on construit notre tableau
    while($donnee=mysql_fetch_assoc($res))
    {
+       $promo=$donnee['idPromo'];
             echo'<th>'.$donnee['libMod'].'</th><tr><td colspan=6>'.$donnee['libMat'].'</td></tr>';
             echo'<tr><td>Nom de l\'examen</td><td>Nom de l\'étudiant</td><td>Prénom de l\'étudiant</td><td>Note</td><td>Absence</td><td id="justification">Justifié</td></tr>';
        
@@ -28,6 +29,7 @@ $req='select ma.libelle libMat,ma.idMat idMat, ex.idExam, mo.libelle libMod from
         }
        
    }
+   echo'</table><input type="button" onClick="eleve_note('.$promo.');" value="ajouter un elève"/>';
    echo'</table><input type="submit" value="Modifier"/>';
 deconnect($cnx); 
 ?>
