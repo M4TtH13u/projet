@@ -7,12 +7,19 @@ if (securite(2))
     $res=execReq($req);
     while($donnee=mysql_fetch_assoc($res))
     {
-        if(($_POST['abs_'.$donnee['idUtil']])!='on'){
-            $req2='UPDATE participe pa, eleve el SET pa.note="'.$_POST['note_'.$donnee['idUtil'].''].'" WHERE pa.numEtudiant=el.numEtudiant AND el.idUtil="'.$donnee['idUtil'].'"';
-            $res2=execReq($req2);
+        if(empty($_POST['justifier_'.$donnee['idUtil']])){
+            if(empty($_POST['abs_'.$donnee['idUtil']])){
+                $req2='UPDATE participe pa, eleve el SET pa.note="'.$_POST['note_'.$donnee['idUtil'].''].'" WHERE pa.numEtudiant=el.numEtudiant AND el.idUtil="'.$donnee['idUtil'].'"';
+                $res2=execReq($req2);
+            }
+            else{
+                $req2='UPDATE participe pa, eleve el SET pa.note="0" WHERE pa.numEtudiant=el.numEtudiant AND el.idUtil="'.$donnee['idUtil'].'"';
+                $res2=execReq($req2);
+            }
         }
         else{
-            $req2='UPDATE participe pa, eleve el SET pa.note="0" WHERE pa.numEtudiant=el.numEtudiant AND el.idUtil="'.$donnee['idUtil'].'"';
+            
+            $req2='UPDATE participe pa, eleve el SET pa.note="-1" WHERE pa.numEtudiant=el.numEtudiant AND el.idUtil="'.$donnee['idUtil'].'"';
             $res2=execReq($req2);
         }
     }
