@@ -4,11 +4,12 @@ session_start();
 $cnx=connect();
 mysql_query("SET NAMES UTF8");
 
-$req='select ma.libelle libMat,ma.idMat idMat, ex.idExam, mo.libelle libMod from matiere ma, examen ex, module mo where ex.idExam="'.$_POST['nb'].'" AND ex.idMat=ma.idMat AND ma.idMod=mo.idMod';// on prend le bon examen dans la bdd
-    $res=execReq($req);
-    echo'<table class="modnote">';// on construit notre tableau
+$req='select ma.libelle libMat,ma.idMat idMat, ex.idExam, mo.idPromo, mo.libelle libMod from matiere ma, examen ex, module mo where ex.idExam="'.$_POST['nb'].'" AND ex.idMat=ma.idMat AND ma.idMod=mo.idMod';// on prend le bon examen dans la bdd
+   $res=execReq($req);
+   echo'<table class="modnote">';// on construit notre tableau
    while($donnee=mysql_fetch_assoc($res))//a modifier afin que le nom de l'exam n'apparaissent qu'une seule fois en haut
    {
+       $promo=$donnee['idPromo'];
             echo'<th>'.$donnee['libMod'].'</th><tr><td colspan=6>'.$donnee['libMat'].'</td></tr>';
             echo'<tr><td>Type d\'examen</td><td>Nom</td><td>Prénom</td><td>Note</td><td>Absence</td><td id="justification">Justifié</td></tr>';
        
@@ -28,6 +29,7 @@ $req='select ma.libelle libMat,ma.idMat idMat, ex.idExam, mo.libelle libMod from
         }
        
    }
+   echo'</table><input type="button" onClick="eleve_note('.$promo.');" value="ajouter un elève"/>';
    echo'</table><input type="submit" value="Modifier"/>';
 deconnect($cnx); 
 ?>

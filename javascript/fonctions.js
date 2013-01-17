@@ -315,6 +315,23 @@ function modifier_note2()
     xhr.send('nb='+ds);
 }
 
+function eleve_note(promo){
+    var xhr;
+    var pere;
+    var reponse;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4){
+            reponse = xhr.responseText;
+            pere = document.getElementById('choixeleve');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","add_delete/ajout_DS_eleve.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('nb='+promo);
+}
+
 function export_eleve()
 {
     var xhr;
