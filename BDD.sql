@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mar 15 Janvier 2013 à 17:28
+-- Généré le: Jeu 17 Janvier 2013 à 18:49
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.3.13
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `eleve` (
   `idPromo` int(2) NOT NULL,
   `idUtil` int(5) NOT NULL,
   PRIMARY KEY (`numEtudiant`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=164 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=165 ;
 
 --
 -- Contenu de la table `eleve`
@@ -198,10 +198,7 @@ INSERT INTO `eleve` (`numEtudiant`, `anneeRedouble`, `idPromo`, `idUtil`) VALUES
 (157, 0, 1, 161),
 (158, 0, 1, 162),
 (159, 0, 1, 163),
-(160, 0, 2, 164),
-(161, 0, 1, 210),
-(162, 0, 2, 208),
-(163, 0, 2, 210);
+(160, 0, 2, 164);
 
 -- --------------------------------------------------------
 
@@ -216,7 +213,7 @@ CREATE TABLE IF NOT EXISTS `examen` (
   `date` date NOT NULL,
   `idType` int(2) NOT NULL,
   PRIMARY KEY (`idExam`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Contenu de la table `examen`
@@ -224,7 +221,8 @@ CREATE TABLE IF NOT EXISTS `examen` (
 
 INSERT INTO `examen` (`idExam`, `libelle`, `idMat`, `date`, `idType`) VALUES
 (1, 'DS BDD', 1, '2012-10-01', 1),
-(2, 'DS', 8, '2013-01-11', 1);
+(2, 'DS', 8, '2013-01-11', 1),
+(3, 'test', 1, '2013-01-17', 1);
 
 -- --------------------------------------------------------
 
@@ -239,7 +237,7 @@ CREATE TABLE IF NOT EXISTS `matiere` (
   `idMod` int(2) NOT NULL,
   `idProf` int(2) NOT NULL,
   PRIMARY KEY (`idMat`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Contenu de la table `matiere`
@@ -261,7 +259,8 @@ INSERT INTO `matiere` (`idMat`, `libelle`, `coefMat`, `idMod`, `idProf`) VALUES
 (13, 'anglais', 2, 8, 4),
 (14, 'C++', 7, 1, 9),
 (15, 'TIPE', 3, 6, 9),
-(16, 'Analyse dans Rn', 10, 3, 2);
+(16, 'Analyse dans Rn', 10, 3, 2),
+(17, 'TIPE', 3, 12, 9);
 
 -- --------------------------------------------------------
 
@@ -312,9 +311,11 @@ CREATE TABLE IF NOT EXISTS `participe` (
 --
 
 INSERT INTO `participe` (`numEtudiant`, `idExam`, `note`) VALUES
-(1, 1, 15),
-(7, 1, 9),
-(9, 1, 18);
+(1, 1, 0),
+(1, 2, 0),
+(7, 1, 5),
+(9, 1, 5),
+(15, 1, 5);
 
 -- --------------------------------------------------------
 
@@ -324,28 +325,28 @@ INSERT INTO `participe` (`numEtudiant`, `idExam`, `note`) VALUES
 
 CREATE TABLE IF NOT EXISTS `prof` (
   `idProf` int(2) NOT NULL AUTO_INCREMENT,
-  `numBureau` varchar(5) NOT NULL,
-  `telBureau` int(10) NOT NULL,
+  `numBureau` varchar(10) NOT NULL DEFAULT 'INCONNU',
+  `telBureau` int(10) NOT NULL DEFAULT '0',
   `idUtil` int(2) NOT NULL,
   PRIMARY KEY (`idProf`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Contenu de la table `prof`
 --
 
 INSERT INTO `prof` (`idProf`, `numBureau`, `telBureau`, `idUtil`) VALUES
-(1, '', 134852653, 200),
-(2, '', 165452545, 201),
-(3, '', 136654745, 202),
-(4, '', 154855226, 203),
-(5, '', 125699532, 204),
-(6, 'AUCUN', 125458516, 205),
-(7, '', 145956418, 206),
-(8, '', 145956418, 207),
-(9, '', 145956418, 208),
-(10, '', 0, 209),
-(11, '', 0, 210);
+(1, 'INCONNU', 0, 200),
+(2, 'INCONNU', 0, 201),
+(3, 'INCONNU', 0, 202),
+(4, 'INCONNU', 0, 203),
+(5, 'INCONNU', 0, 204),
+(6, 'INCONNU', 0, 205),
+(7, 'INCONNU', 0, 206),
+(8, 'INCONNU', 0, 207),
+(9, 'INCONNU', 0, 208),
+(10, 'INCONNU', 0, 209),
+(11, 'INCONNU', 0, 210);
 
 -- --------------------------------------------------------
 
@@ -426,7 +427,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `prenom` varchar(30) NOT NULL,
   `idRole` int(2) NOT NULL,
   PRIMARY KEY (`idUtil`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=212 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=215 ;
 
 --
 -- Contenu de la table `utilisateur`
@@ -607,7 +608,7 @@ INSERT INTO `utilisateur` (`idUtil`, `login`, `pass`, `nom`, `prenom`, `idRole`)
 (207, 'Baskiotisd', 'd450c5dbcc10db0749277efc32f15f9f', 'Baskiotis', 'Despina', 3),
 (208, 'Bornhofens', 'd450c5dbcc10db0749277efc32f15f9f', 'Bornhofen', 'Stefan', 3),
 (209, 'Lamouriine', 'd450c5dbcc10db0749277efc32f15f9f', 'Lamouri', 'Ines', 3),
-(210, 'Sabramaher', 'd450c5dbcc10db0749277efc32f15f9f', 'Sabra', 'Maher', 3);
+(210, 'Sabramaher', 'd450c5dbcc10db0749277efc32f15f9f', 'Sabra', 'Maher', 3),
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
