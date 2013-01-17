@@ -161,6 +161,14 @@ function ajout_DS1(nb)
     xhr.send('nb='+nb);
 }
 
+function checked(){
+    alert('coucou');
+//    var input=document.getElementByName(idUtil);
+//    if (input[i].checked){
+//            alert('coucou');
+//        }
+}
+
 function Exam_eleve()
 {
     var xhr;
@@ -173,7 +181,7 @@ function Exam_eleve()
     xhr.onreadystatechange = function(){
       if(xhr.readyState == 4){
             reponse = xhr.responseText;
-            pere = document.getElementById('eleve');
+            pere = document.getElementById('choixeleve');
             pere.innerHTML = reponse;
       }
     }
@@ -186,6 +194,13 @@ function Exam_eleve()
     else{
         xhr.send('nb='+2);
     }
+}
+function checked(){
+    alert('coucou');
+//    var input=document.getElementByName(idUtil);
+//    if (input[i].checked){
+//            alert('coucou');
+//        }
 }
 
 function reinitialiser()
