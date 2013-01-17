@@ -7,14 +7,18 @@ if (securite(2))
     $res=execReq($req);
     while($donnee=mysql_fetch_assoc($res))
     {
-        $req2='UPDATE participe pa, eleve el SET pa.note="'.$_POST['note_'.$donnee['idUtil'].''].'" WHERE pa.numEtudiant=el.numEtudiant AND el.idUtil="'.$donnee['idUtil'].'"';
-        $res2=execReq($req2);
+        if(ok){
+            $req2='UPDATE participe pa, eleve el SET pa.note="'.$_POST['note_'.$donnee['idUtil'].''].'" WHERE pa.numEtudiant=el.numEtudiant AND el.idUtil="'.$donnee['idUtil'].'"';
+            $res2=execReq($req2);
+        }
     }
-    foreach (($_POST['util']) as $nb){
-    $req='INSERT INTO participe VALUES("'.$nb.'","'.$_POST['DS'].'","")';
-    $res=execReq($req);
-    }
-    deconnect($cnx);
+    if(isset($_POST['util'])){
+        foreach (($_POST['util']) as $nb){
+        $req='INSERT INTO participe VALUES("'.$nb.'","'.$_POST['DS'].'","")';
+        $res=execReq($req);
+        }
+        deconnect($cnx);
+        }
     echo'les notes ont bien été modifiées';
     }
     else{
