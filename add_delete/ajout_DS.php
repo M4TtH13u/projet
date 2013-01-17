@@ -14,7 +14,6 @@ if (securite(3))
         while($donnee=mysql_fetch_assoc($res))
             {
                 $exam=$donnee['idExam'];
-                echo $exam;
             }
         foreach (($_POST['util']) as $nb){
         $req='INSERT INTO participe VALUES("'.$nb.'","'.$exam.'","")';
