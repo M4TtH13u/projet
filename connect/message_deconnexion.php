@@ -1,3 +1,3 @@
 <?php
-echo'Vous avez été deconnecté, à bientôt !';
+echo'<img src="image/accueil2.jpg"/>';
 ?>
