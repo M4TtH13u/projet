@@ -1,12 +1,12 @@
 <?php 
 include '../fonctions/fonctions.php';?>
-<label>Module :</label>
+<label>Matiere :</label>
                 <select name="matiere">
                     <option></option>
                     <?php
                         $cnx=connect();
                         mysql_query("SET NAMES UTF8");
-                        $req='select * from matiere ma, module mo where ma.idMod=mo.idMod and mo.idPromo='.$_POST['nb'];
+                        $req='select idMat, ma.libelle from matiere ma, module mo where ma.idMod=mo.idMod and mo.idPromo='.$_POST['nb'];
                         $res=execReq($req);
                         while($matiere=mysql_fetch_assoc($res)){
                             echo '<option value="'.$matiere['idMat'].'">'.$matiere['libelle'].'</option>';  //création du menu déroulant avec association de la BDD et de la table matière
