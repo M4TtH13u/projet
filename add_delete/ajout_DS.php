@@ -51,7 +51,7 @@ if (securite(3))
         <div id="choixeleve">
         </div>
         <span id="button">
-        <input type="button" value="Envoyer" Onclick="Exam_eleve();" />
+        <input type="button" value="Envoyer" Onclick="Exam_eleve();"/>
         </span>
         
         <input type="reset" value="Annuler" onClick="reinitialiser();"/>
