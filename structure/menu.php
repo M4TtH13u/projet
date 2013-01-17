@@ -39,15 +39,15 @@ include'fonctions/fonctions.php';
            </li>
        </ul>
     </li>
+    <li class ="eleve" onclick="JavaScript:document.location='index.php?page=export'">
+        exporter
+    </li>
     <li  class="eleve" id="co" onclick="JavaScript:document.location='connect/logout.php';" >
         <STYLE type="text/css">
             #co {font-style: italic; font-size:large; background-color: #eeeef1;}
             #co:hover {color:red; background-color: #d8d8db; font-size:large;}
         </style>
             Se déconnecter
-    </li>
-    <li onclick="JavaScript:document.location='index.php?page=export'">
-        exporter
     </li>
 
 </ul>
