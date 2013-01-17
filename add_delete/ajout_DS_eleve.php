@@ -7,7 +7,7 @@ $res=execReq($req);
 while($donnee=mysql_fetch_assoc($res)){
     echo '<label>'.$donnee['nom'].' '.$donnee['prenom'].'</label><input name="util[]" type="checkbox" value="'.$donnee['numEtudiant'].'"/></br>';
 }
-echo '<br/><span onClick="cocher();" id="total">Tout selectionner</span><span onClick="decocher();" id="total">Tout deselectionner</span>';
+echo '<span onClick="cocher();" id="total">Tout selectionner</span><span onClick="decocher();" id="total">Tout deselectionner</span>';
 deconnect($cnx); 
 
 ?>
