@@ -53,3 +53,15 @@ Et plusieurs autres mais nous verrons cela plus tard.
 quelque bug : 
 -supprimer un eleve par rapport à l'ajax
 -abdel à disparu définitivement de la table utilisateur de la BDD (j'ai jamais changé le BDD.sql...)
+
+17/01/13
+=============
+à corriger :
+    Dans "Gestion des notes" :
+        Dans "Ajouter un Examen" :
+            -le bouton "Annuler" ne reinitialise pas toute la page et donc créé un petit problème car la promo reste prises en compte.
+        Dans "Ajouter des notes" :
+            la mise à jour des notes ne fonctionne pas.
+            La modification a bien lieu mais sur tous les examen qui concerne l'élève en question.
+            Absence et Justifié fonctionnent.
+            Un autre problème survient lorsque l'on veut ajouter un étudiant qui est déjà dans l'examen en cours. Il faudrait rajouter une impossibilité de cocher une case d'un élève déjà présent.
