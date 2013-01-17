@@ -23,6 +23,7 @@ if (securite(3))
 <form id="form_DS" action="#" method="POST">    <!--Création d'un formulaire-->
     <fieldset>
         <legend>Ajout DS :</legend> 
+        <div id="promo">
         <label>Choisir la promo</label>
                 <?php
                    $cnx=connect();
@@ -34,7 +35,7 @@ if (securite(3))
                    }
                    deconnect($cnx);
                    ?>
-        <br/>
+        </div>
         <div id="matiere">
         </div>
         <div id="choixeleve">

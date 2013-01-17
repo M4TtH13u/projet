@@ -177,6 +177,7 @@ function Exam_eleve()
     var bouton = document.getElementById('button');
     bouton.innerHTML= '<input type="submit" value="Envoyer">';
     document.getElementById("matiere").style.display="none";
+    document.getElementById("promo").style.display="none";
     xhr = getXhr();
     xhr.onreadystatechange = function(){
       if(xhr.readyState == 4){
