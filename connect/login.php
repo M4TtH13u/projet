@@ -30,7 +30,7 @@ if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))//si ya eu un login et mdp
 		deconnect($cnx);
 }
 echo'<SCRIPT LANGUAGE="JavaScript">
-     document.location.href="../index.php?page=login" 
+     document.location.href="../index.php?page=accueil" 
 </SCRIPT>';
 
 ?>
