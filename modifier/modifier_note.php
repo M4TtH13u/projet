@@ -7,7 +7,7 @@ mysql_query("SET NAMES UTF8");
 $req='select ma.libelle libMat,ma.idMat idMat, ex.idExam, mo.libelle libMod from matiere ma, examen ex, module mo where ex.idExam="'.$_POST['nb'].'" AND ex.idMat=ma.idMat AND ma.idMod=mo.idMod';// on prend le bon examen dans la bdd
     $res=execReq($req);
     echo'<table class="modnote">';// on construit notre tableau
-   while($donnee=mysql_fetch_assoc($res))//a modifier afin que le nom de l'exam n'apparaissent qu'une seule fois en haut
+   while($donnee=mysql_fetch_assoc($res))
    {
             echo'<th>'.$donnee['libMod'].'</th><tr><td colspan=6>'.$donnee['libMat'].'</td></tr>';
             echo'<tr><td>Nom de l\'examen</td><td>Nom de l\'étudiant</td><td>Prénom de l\'étudiant</td><td>Note</td><td>Absence</td><td id="justification">Justifié</td></tr>';

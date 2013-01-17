@@ -162,6 +162,9 @@ margin-left: 30%;
 width: 450px;
 }
 
+th{
+height: 50px;
+}
 td{
 border: 1px solid black;
 text-align: center;
@@ -173,6 +176,7 @@ color: red;
 
 .modnote{
 margin-left:0%;
+min-width:600px;
 }
 
 #choixeleve{
