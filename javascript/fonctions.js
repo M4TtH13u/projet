@@ -161,12 +161,23 @@ function ajout_DS1(nb)
     xhr.send('nb='+nb);
 }
 
-function checked(){
-    alert('coucou');
-//    var input=document.getElementByName(idUtil);
-//    if (input[i].checked){
-//            alert('coucou');
-//        }
+function tableau(nom){
+    if (nom.checked){
+            var xhr;
+            var pere;
+            var reponse;
+            xhr = getXhr();
+            xhr.onreadystatechange = function(){
+              if(xhr.readyState == 4){
+                    reponse = xhr.responseText;
+                    pere = document.getElementById('matiere');
+                    pere.innerHTML = reponse;
+              }
+            }
+            xhr.open("POST","fonctions/ajout_tableau.php",true);
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+            xhr.send('nb='+nom.name);
+        }
 }
 
 function Exam_eleve()
@@ -195,13 +206,6 @@ function Exam_eleve()
     else{
         xhr.send('nb='+2);
     }
-}
-function checked(){
-    alert('coucou');
-//    var input=document.getElementByName(idUtil);
-//    if (input[i].checked){
-//            alert('coucou');
-//        }
 }
 
 function reinitialiser()
