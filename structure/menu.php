@@ -46,6 +46,9 @@ include'fonctions/fonctions.php';
         </style>
             Se déconnecter
     </li>
+    <li onclick="JavaScript:document.location='index.php?page=export'">
+        exporter
+    </li>
 
 </ul>
  

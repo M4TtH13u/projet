@@ -32,6 +32,7 @@ if (empty($_SESSION['idUtil']))// si l'utilisateur est pas connecté
                 'module' => 'display/module.php',
                 'login' =>'connect/message_connexion.php',
                 'ajout_note' =>'add_delete/ajout_note.php',
+                'export' =>'export/choix_export.php',
                 'test' => 'test.html'
 				  );
 

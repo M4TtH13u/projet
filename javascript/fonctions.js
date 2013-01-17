@@ -305,3 +305,82 @@ function modifier_note2()
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send('nb='+ds);
 }
+
+function export_eleve()
+{
+    var xhr;
+    var pere;
+    var reponse;
+    var promo;
+    promo= document.getElementById('export_promo').value;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            pere = document.getElementById('eleve_export');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","export/eleve_export.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('nb='+promo);
+}
+function export_module()
+{
+    var xhr;
+    var pere;
+    var reponse;
+    var ds;
+    ds= document.getElementById('DS').value;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            pere = document.getElementById('eleve_export');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","modifier/modifier_note.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('nb='+ds);
+}
+function export_matiere()
+{
+    var xhr;
+    var pere;
+    var reponse;
+    var ds;
+    ds= document.getElementById('DS').value;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            pere = document.getElementById('affnote');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","modifier/modifier_note.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('nb='+ds);
+   
+}
+function export_ds()
+{
+    var xhr;
+    var pere;
+    var reponse;
+    var ds;
+    ds= document.getElementById('ds_export').value;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            pere = document.getElementById('affnote');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","modifier/modifier_note.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('nb='+ds);
+   
+}
