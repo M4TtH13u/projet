@@ -182,3 +182,9 @@ min-width:600px;
 #choixeleve{
 width: 100%;
 }
+
+#mod{
+position:relative;
+width:600px;
+font-size: larger;
+}

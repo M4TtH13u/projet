@@ -36,6 +36,7 @@ if (securite(2))
 ?>
     <form id="form_module" name="form1" action="#" method="POST">
         <fieldset>
+            <legend>Mettre à jour les notes </legend>
             <label>Choix du module :</label>
                  <select OnChange="afficher_matiere2()" id="module">
                     <option></option>
