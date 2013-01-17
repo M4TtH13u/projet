@@ -170,11 +170,11 @@ function tableau(nom){
             xhr.onreadystatechange = function(){
               if(xhr.readyState == 4){
                     reponse = xhr.responseText;
-                    pere = document.getElementById('matiere');
+                    pere = document.getElementById('tableau');
                     pere.innerHTML = reponse;
               }
             }
-            xhr.open("POST","fonctions/ajout_tableau.php",true);
+            xhr.open("POST","add_delete/ajout_tableau.php",true);
             xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
             xhr.send('nb='+nom.name);
         }

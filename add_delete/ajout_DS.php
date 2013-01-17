@@ -2,6 +2,8 @@
 
 if (securite(3))
 {
+    $tableau=array();
+    global $tableau;
   
  
     if ((!empty($_POST['libelle']) && (!empty($_POST['matiere'])) && (!empty($_POST['date'])) && (!empty($_POST['type'])))){
@@ -37,6 +39,8 @@ if (securite(3))
                    ?>
         </div>
         <div id="matiere">
+        </div>
+         <div id="tableau">
         </div>
         <div id="choixeleve">
         </div>
