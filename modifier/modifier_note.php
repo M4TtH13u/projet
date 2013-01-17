@@ -11,7 +11,7 @@ $req='select ma.libelle libMat,ma.idMat idMat, ex.idExam, mo.idPromo, mo.libelle
    {
        $promo=$donnee['idPromo'];
             echo'<th>'.$donnee['libMod'].'</th><tr><td colspan=6>'.$donnee['libMat'].'</td></tr>';
-            echo'<tr><td>Type d\'examen</td><td>Nom</td><td>Prénom</td><td>Note</td><td>Absence</td><td id="justification">Justifié</td></tr>';
+            echo'<tr><td>Nom de l\'examen</td><td>Nom de l\'étudiant</td><td>Prénom de l\'étudiant</td><td>Note</td><td>Absence</td><td id="justification">Justifié</td></tr>';
        
         $req2='SELECT pa.note note, u.idUtil idUtil, u.nom nom, u.prenom prenom, ex.libelle libExam FROM examen ex,participe pa, eleve el, utilisateur u WHERE ex.idExam="'.$donnee['idExam'].'" AND ex.idExam=pa.idExam AND pa.numEtudiant=el.numEtudiant AND el.idUtil=u.idUtil';
         $res2=execReq($req2);
