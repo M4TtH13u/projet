@@ -71,3 +71,9 @@ quelque bug :
 ajout_note mis a jour pour ne modifier les notes que d'un examen
 On ne peut plus entrer deux fois le même élève (message d'erreur a modifier si nécéssaire dans ajouter_note.php ligne 39)
 css ligne 22 à changer (pour le bouton tout selectionner et tout deselectionner)
+
+Dans "Ajouter un Examen" :
+            -le bouton "Annuler" ne reinitialise pas toute la page et donc créé un petit problème car la promo reste prises en compte.
+IL N'Y A PAS QUE DANS EXAMEN!
+    ex= dans module, changer le module quand un tableau est afficher n'efface pas le tableau,
+        ajouter des notes pareil, etc...
