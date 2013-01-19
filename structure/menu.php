@@ -1,5 +1,4 @@
 <?php
-include'fonctions/fonctions.php';
 
 
 ?>

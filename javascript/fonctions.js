@@ -133,7 +133,7 @@ function afficher_delete2(idPromo)
 
 function ajout_DS()
 {
-    var cpi1=document.getElementById("CPI1");
+     var cpi1=document.getElementById("CPI1");
     if (cpi1.checked){
         ajout_DS1(1);
     }   
@@ -163,38 +163,28 @@ function ajout_DS1(nb)
 
 function Exam_eleve()
 {
-    var champs1 = document.getElementsByName('matiere');
-    var champs2 = document.getElementsByName('libelle');
-    var champs3 = document.getElementsByName('date');
-    var champs4 = document.getElementsByName('type');
-    if(((champs1[0].value)!="") && ((champs2[0].value)!="") && ((champs3[0].value)!="") && ((champs4[0].value)!="")){
-        var xhr;
-        var pere;
-        var reponse;
-        var bouton = document.getElementById('button');
-        bouton.innerHTML= '<input type="submit" value="Envoyer">';
-        document.getElementById("matiere").style.display="none";
-        document.getElementById("promo").style.display="none";
-        xhr = getXhr();
-        xhr.onreadystatechange = function(){
-          if(xhr.readyState == 4){
-                reponse = xhr.responseText;
-                pere = document.getElementById('choixeleve');
-                pere.innerHTML = reponse;
-          }
-        }
-        xhr.open("POST","add_delete/ajout_DS_eleve.php",true);
-        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-        var cpi1=document.getElementById("CPI1");
-        if (document.getElementById("CPI1").checked){
-            xhr.send('nb='+1);
-        }
-        else{
-            xhr.send('nb='+2);
-        }
+    var xhr;
+    var pere;
+    var reponse;
+    var bouton = document.getElementById('button');
+    bouton.innerHTML= '<input type="submit" value="Envoyer">';
+    document.getElementById("matiere").style.display="none";
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4){
+            reponse = xhr.responseText;
+            pere = document.getElementById('eleve');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","add_delete/ajout_DS_eleve.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    var cpi1=document.getElementById("CPI1");
+    if (document.getElementById("CPI1").checked){
+        xhr.send('nb='+1);
     }
     else{
-    alert('tous les champs doivent être remplis');
+        xhr.send('nb='+2);
     }
 }
 
@@ -260,12 +250,6 @@ function afficher_matiere2()
     var pere;
     var reponse;
     var module;
-    var pere2 = document.getElementById('affds');
-    pere2.innerHTML = '';
-    var pere3 = document.getElementById('affnote');
-    pere3.innerHTML = ''; 
-    var pere4 = document.getElementById('choixeleve');
-    pere4.innerHTML = '';
     module= document.getElementById('module').value;
     xhr = getXhr();
     xhr.onreadystatechange = function(){
@@ -286,12 +270,6 @@ function modifier_note()
     var pere;
     var reponse;
     var matiere;
-    var pere2 = document.getElementById('affds');
-    pere2.innerHTML = ''; 
-    var pere3 = document.getElementById('affnote');
-    pere3.innerHTML = ''; 
-    var pere4 = document.getElementById('choixeleve');
-    pere4.innerHTML = '';
     matiere= document.getElementById('matiere').value;
     xhr = getXhr();
     xhr.onreadystatechange = function(){
@@ -325,124 +303,4 @@ function modifier_note2()
     xhr.open("POST","modifier/modifier_note.php",true);
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send('nb='+ds);
-}
-
-function eleve_note(promo){
-    var xhr;
-    var pere;
-    var reponse;
-    xhr = getXhr();
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState == 4){
-            reponse = xhr.responseText;
-            pere = document.getElementById('choixeleve');
-            pere.innerHTML = reponse;
-      }
-    }
-    xhr.open("POST","add_delete/ajout_DS_eleve.php",true);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    xhr.send('nb='+promo);
-}
-
-function cocher(){
-    var box=document.getElementsByTagName('input');
-    var i;
-    var len=box.length;
-    for (i=0; i<len; i++){
-         if (box[i].type=='checkbox' )
-            {
-                box[i].checked = true;
-            }
-    }
-}
-
-function decocher(){
-    var box=document.getElementsByTagName('input');
-    var i;
-    var len=box.length;
-    for (i=0; i<len; i++){
-         if (box[i].type=='checkbox' )
-            {
-                box[i].checked = false;
-            }
-    }
-}
-
-function export_eleve()
-{
-    var xhr;
-    var pere;
-    var reponse;
-    var promo;
-    promo= document.getElementById('export_promo').value;
-    xhr = getXhr();
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState == 4 && xhr.status == 200){
-            reponse = xhr.responseText;
-            pere = document.getElementById('eleve_export');
-            pere.innerHTML = reponse;
-      }
-    }
-    xhr.open("POST","export/eleve_export.php",true);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    xhr.send('nb='+promo);
-}
-function export_module()
-{
-    var xhr;
-    var pere;
-    var reponse;
-    var ds;
-    ds= document.getElementById('DS').value;
-    xhr = getXhr();
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState == 4 && xhr.status == 200){
-            reponse = xhr.responseText;
-            pere = document.getElementById('eleve_export');
-            pere.innerHTML = reponse;
-      }
-    }
-    xhr.open("POST","modifier/modifier_note.php",true);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    xhr.send('nb='+ds);
-}
-function export_matiere()
-{
-    var xhr;
-    var pere;
-    var reponse;
-    var ds;
-    ds= document.getElementById('DS').value;
-    xhr = getXhr();
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState == 4 && xhr.status == 200){
-            reponse = xhr.responseText;
-            pere = document.getElementById('affnote');
-            pere.innerHTML = reponse;
-      }
-    }
-    xhr.open("POST","modifier/modifier_note.php",true);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    xhr.send('nb='+ds);
-   
-}
-function export_ds()
-{
-    var xhr;
-    var pere;
-    var reponse;
-    var ds;
-    ds= document.getElementById('ds_export').value;
-    xhr = getXhr();
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState == 4 && xhr.status == 200){
-            reponse = xhr.responseText;
-            pere = document.getElementById('affnote');
-            pere.innerHTML = reponse;
-      }
-    }
-    xhr.open("POST","modifier/modifier_note.php",true);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    xhr.send('nb='+ds);
-   
 }

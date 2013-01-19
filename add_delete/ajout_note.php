@@ -9,10 +9,15 @@ if (securite(2))
     {
         if(empty($_POST['justifier_'.$donnee['idUtil']])){
             if(empty($_POST['abs_'.$donnee['idUtil']])){
-                $req2='UPDATE participe pa, eleve el SET pa.note="'.$_POST['note_'.$donnee['idUtil'].''].'" WHERE pa.numEtudiant=el.numEtudiant AND el.idUtil="'.$donnee['idUtil'].'" AND pa.idExam="'.$_POST['DS'].'"';
-                $res2=execReq($req2);
+                if(($_POST['note_'.$donnee['idUtil'].'']>=0) && ($_POST['note_'.$donnee['idUtil'].'']<=20)){
+                    $req2='UPDATE participe pa, eleve el SET pa.note="'.$_POST['note_'.$donnee['idUtil'].''].'" WHERE pa.numEtudiant=el.numEtudiant AND el.idUtil="'.$donnee['idUtil'].'" AND pa.idExam="'.$_POST['DS'].'"';
+                    $res2=execReq($req2);
+                    }
+                elseif($_POST['note_'.$donnee['idUtil'].'']!=-1){
+                    echo'Vous avez entré une note incorrecte<br/>';
+                }
             }
-            else{
+          else{
                 $req2='UPDATE participe pa, eleve el SET pa.note="0" WHERE pa.numEtudiant=el.numEtudiant AND el.idUtil="'.$donnee['idUtil'].'" AND pa.idExam="'.$_POST['DS'].'"';
                 $res2=execReq($req2);
             }

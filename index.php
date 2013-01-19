@@ -1,6 +1,8 @@
 <?php
+include'fonctions/fonctions.php';
 include'structure/debut.php';
 include'structure/menu.php';
+
 if (empty($_SESSION['idUtil']))// si l'utilisateur est pas connecté
 {
 ?>

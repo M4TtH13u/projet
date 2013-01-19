@@ -1,4 +1,5 @@
 <?php
+include'../fonctions/fonctions.php';
 if (securite(4))
 {
 
