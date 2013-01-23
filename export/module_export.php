@@ -6,11 +6,11 @@
            <option></option>
            <?php
               $cnx=connect();
-              $req='SELECT * FROM module WHERE idMod='.$_POST['module'].'';
+              $req='SELECT * FROM module ';
               $res=execReq($req);
-              while($matiere=mysql_fetch_assoc($res))
+              while($module=mysql_fetch_assoc($res))
               {
-                   echo'<option  value="'.$matiere['idMat'].'">'.$matiere['libelle'].'</option>';
+                   echo'<option  value="'.$module['idMod'].'">'.$module['libelle'].'</option>';
               }
               deconnect($cnx);
             ?>

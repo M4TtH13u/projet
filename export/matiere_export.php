@@ -3,7 +3,7 @@
 include'../fonctions/fonctions.php'
 ?>
 <label>Choix de la matière :</label>
-    <select OnChange="export_ds()" id="export_matiere">
+    <select id="export_matiere">
            <option></option>
            <?php
               $cnx=connect();
@@ -16,4 +16,5 @@ include'../fonctions/fonctions.php'
               deconnect($cnx);
             ?>
      </select>
+<input type="submit" value="Exporter"/>
 

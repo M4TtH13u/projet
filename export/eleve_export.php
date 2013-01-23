@@ -7,4 +7,6 @@
           while($eleve=mysql_fetch_assoc($res)){
               echo'<label>'.$eleve['nom'].' '.$eleve['prenom'].' </label><input name="eleve" type="checkbox" value="'.$eleve['idUtil'].'" />';
           }
+          deconnect($cnx);
+          echo"<input type='submit' value='exporter'/>";
 ?>

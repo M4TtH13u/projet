@@ -20,3 +20,9 @@ include'../fonctions/fonctions.php'
           deconnect($cnx); 
       ?>
 </select>
+<?php
+if (($_POST['nb'])==0)
+{
+    echo"<input type='submit' value='exporter'/>";
+}
+?>

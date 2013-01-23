@@ -310,18 +310,18 @@ function export_eleve()
     var pere;
     var reponse;
     var promo;
-    pere = document.getElementById('choix_export');
-            pere.innerHTML = "";
+    
+           
     promo= document.getElementById('export_promo').value;
     xhr = getXhr();
     xhr.onreadystatechange = function(){
       if(xhr.readyState == 4 && xhr.status == 200){
             reponse = xhr.responseText;
-            pere = document.getElementById('choix_export');
+            pere = document.getElementById('choix2_export');
             pere.innerHTML = reponse;
       }
     }
-    xhr.open("POST","export/",true);
+    xhr.open("POST","export/eleve_export.php",true);
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send('nb='+promo);
 }
@@ -330,9 +330,10 @@ function export_promo(choix)
     var xhr;
     var pere;
     var reponse;
-    
+    var divchoix2 = document.getElementById('choix2_export');
+    divchoix2.innerHTML = "";
     pere = document.getElementById('choix_export');
-            pere.innerHTML = "";
+            
     xhr = getXhr();
     xhr.onreadystatechange = function(){
       if(xhr.readyState == 4 && xhr.status == 200){
@@ -350,20 +351,41 @@ function export_matiere()
     var xhr;
     var pere;
     var reponse;
-    var ds;
-    pere = document.getElementById('choix_export');
-            pere.innerHTML = "";
-    ds= document.getElementById('DS').value;
+    var module;
+    module= document.getElementById('export_module').value;
     xhr = getXhr();
     xhr.onreadystatechange = function(){
       if(xhr.readyState == 4 && xhr.status == 200){
             reponse = xhr.responseText;
-            pere = document.getElementById('affnote');
+            pere = document.getElementById('choix2_export');
             pere.innerHTML = reponse;
       }
     }
-    xhr.open("POST","modifier/modifier_note.php",true);
+    xhr.open("POST","export/matiere_export.php",true);
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    xhr.send('nb='+ds);
+    xhr.send('module='+module);
+   
+}
+function export_module()
+{
+    var xhr;
+    var pere;
+    var reponse;
+    
+    pere = document.getElementById('choix_export');
+            pere.innerHTML = "";
+    var divchoix2 = document.getElementById('choix2_export');
+    divchoix2.innerHTML = "";
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            pere = document.getElementById('choix_export');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","export/module_export.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send(null);
    
 }
