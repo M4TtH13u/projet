@@ -304,3 +304,66 @@ function modifier_note2()
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send('nb='+ds);
 }
+function export_eleve()
+{
+    var xhr;
+    var pere;
+    var reponse;
+    var promo;
+    pere = document.getElementById('choix_export');
+            pere.innerHTML = "";
+    promo= document.getElementById('export_promo').value;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            pere = document.getElementById('choix_export');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","export/",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('nb='+promo);
+}
+function export_promo(choix)
+{
+    var xhr;
+    var pere;
+    var reponse;
+    
+    pere = document.getElementById('choix_export');
+            pere.innerHTML = "";
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+                        pere.innerHTML = reponse;
+
+      }
+    }
+    xhr.open("POST","export/promo_export.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('nb='+choix);
+}
+function export_matiere()
+{
+    var xhr;
+    var pere;
+    var reponse;
+    var ds;
+    pere = document.getElementById('choix_export');
+            pere.innerHTML = "";
+    ds= document.getElementById('DS').value;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+            pere = document.getElementById('affnote');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","modifier/modifier_note.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('nb='+ds);
+   
+}

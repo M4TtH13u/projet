@@ -1,5 +1,16 @@
+<form>
+    <fieldset>
+   <legend> Exportation </legend>
+ 
+    
+ <p>Voulez vous exporter par rapport à:</p>
+<label>une matiere</label><input type="radio" name="choix"  onChange="export_matiere();"/>
+<label>une promo</label><input type="radio" name="choix"   onChange="export_promo(0);"/>
+<label>un(e) élève</label><input type="radio" name="choix" onChange="export_promo(1);"/>
 
+<!--
 <label>Promo :</label>
+
 <select name="promo" onChange="export_eleve();" id="export_promo">
       <option></option>
       
@@ -15,7 +26,8 @@
           deconnect($cnx); 
       ?>
 </select>
-<div id="eleve_export"></div>
-<div id="module_export"></div>
-<div id="matiere_export"></div>
-<div id="examen_export"></div>
+-->
+<div id="choix_export"></div>
+
+</fieldset>
+</form>
