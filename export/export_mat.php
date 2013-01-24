@@ -10,9 +10,9 @@ if (securite(2))
 $outputCsv = '';
 
 // Nom du fichier final
-$fileName = 'export-csv.csv';
+$fileName = time().'.csv';
 
-$requete = "SELECT * FROM examen";
+$requete = "SELECT * FROM examen where idMat='".$_POST['mat']."'";
 $sql = mysql_query($requete);
 if(mysql_num_rows($sql) > 0)
 {
