@@ -1,7 +1,7 @@
 <?php
 if (securite(4))
 {
-
+            //condition de déclenchement de modification de la BDD
     if ((!empty($_POST['choixUtil']) && !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['login']) && !empty($_POST['pass']) && !empty($_POST['repass']))&&($_POST['pass']==$_POST['repass'])&&( ($_POST['choixUtil']=="4") || (($_POST['choixUtil']=="2") && !empty($_POST['promo'])) || (($_POST['choixUtil']=="3"))))
 { 
     if ($_POST['choixUtil']=="4")
@@ -49,25 +49,22 @@ if (securite(4))
     else
     {
         ?>
-      <form id="form_prof_eleve" method="POST">
+      <form id="form_prof_eleve" method="POST">   <!--Création d'un formulaire-->
           <fieldset>
               <legend>Inscription :</legend>
-              <?php
-            
-                  echo '<label>Type :</label><input type="radio" name="choixUtil" onClick="prof();" value="4"/> Administrateur';
-                  echo '<input type="radio" name="choixUtil" id="prof1" onClick="prof();" value="3"/>Professeur';
-                  echo '<input type="radio" name="choixUtil" id="eleve1" onClick="prof();" value="2"/>Elève<br/>';
-                  echo '<label>Nom :</label><input type="text" name="nom"/><br/>';
-                  echo '<label>Prénom : </label><input type="text" name="prenom"/><br/>';
-                  echo '<label>Identifiant : </label><input type="text" name="login"/><br/>';
-                  echo '<label>Mot de passe : </label><input type="password" name="pass"/><br/>';
-                  echo '<label>Confirmation mot de passe : </label><input type="password" name="repass"/><br/>';
-                  ?>
+                <label>Type :</label><input type="radio" name="choixUtil" onClick="prof();" value="4"/> Administrateur
+                <input type="radio" name="choixUtil" id="prof1" onClick="prof();" value="3"/>Professeur
+                <input type="radio" name="choixUtil" id="eleve1" onClick="prof();" value="2"/>Elève<br/>
+                <label>Nom :</label><input type="text" name="nom"/><br/>
+                <label>Prénom : </label><input type="text" name="prenom"/><br/>
+                <label>Identifiant : </label><input type="text" name="login"/><br/>
+                <label>Mot de passe : </label><input type="password" name="pass"/><br/>
+                <label>Confirmation mot de passe : </label><input type="password" name="repass"/><br/>
                   <span id="ajout_promo">
                       <label>Promo :</label>
                       <select name="promo">
                           <option></option>
-                          <?php
+                          <?php         // menu déroulant pour la promo
                               $cnx=connect();
                               mysql_query("SET NAMES UTF8");
                               $req='select * from promo';
@@ -83,11 +80,8 @@ if (securite(4))
                       <label>Tel :</label><input type="tel" name="tel"/><br/>
                       <label>Numéro bureau :</label><input type="text" name="numBureau"/><br/>   
                  </span>
-                  <?php
-                  
-                  ?>
               <br>
-              <?php echo '<input type="submit"  value="Envoyer" />'; ?>
+              <input type="submit"  value="Envoyer" />
               <input type="reset" value="Annuler" onClick="reinitialiser();"/>
           </fieldset>
       </form>  
