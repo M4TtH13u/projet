@@ -1,6 +1,8 @@
 <?PHP
-include'../fonctions/fonctions.php'
+include'../fonctions/fonctions.php';
+//on affiche un formulaire pour afficher l'ensemble des examens dans la matière
 ?>
+
 <label>Choix de l'examen :</label>
     <select OnChange="modifier_note2()" name="DS" id="DS">
            <option></option>

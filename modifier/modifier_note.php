@@ -3,7 +3,7 @@ include'../fonctions/fonctions.php';
 session_start();
 $cnx=connect();
 mysql_query("SET NAMES UTF8");
-
+//on va selectionner l'ensemble des notes dans la base de données par rapport a l'examen sélectionné précédemment par l'utilisateur
 $req='select ma.libelle libMat,ma.idMat idMat, ex.idExam, mo.idPromo, mo.libelle libMod from matiere ma, examen ex, module mo where ex.idExam="'.$_POST['nb'].'" AND ex.idMat=ma.idMat AND ma.idMod=mo.idMod';// on prend le bon examen dans la bdd
    $res=execReq($req);
    echo'<table class="modnote">';// on construit notre tableau
@@ -17,7 +17,7 @@ $req='select ma.libelle libMat,ma.idMat idMat, ex.idExam, mo.idPromo, mo.libelle
         $res2=execReq($req2);
         while($note=mysql_fetch_assoc($res2))
         {
-            if ($note['idUtil']==$_SESSION['idUtil']){
+            if ($note['idUtil']==$_SESSION['idUtil']){// s'il s'agit de la ligne de l'élève connecté elle s'affiche en rouge
                 echo'<tr id="perso">';
             }
             else{

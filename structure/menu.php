@@ -1,7 +1,12 @@
-<?php
+<!-- 
+Le menu est une liste toute simple sur laquelle chaque lien est réalisé à l'aide d'un onClick
+Chaque class détermine l'affichage des listes :
+eleve : s'affiche pour les élèves professeurs et administrateurs;
+prof : s'affiche pour les professeurs et administrateurs;
+prof : s'affiche pour les professeurs seulement;
+admin : s'affiche pour les élèves administrateurs;
 
-
-?>
+-->
 <ul id="menu">
     <li onclick="JavaScript:document.location='index.php?page=accueil';">
         Accueil

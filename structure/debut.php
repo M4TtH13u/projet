@@ -10,5 +10,5 @@
 </head>
 <body>
 <?php 
-session_start();
+session_start();// on inclu toutes les valeurs de la session si elle existe ( si l'utilisateur s'est connecté)
 ?>

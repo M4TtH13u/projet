@@ -1,5 +1,6 @@
 <?PHP
 include'../fonctions/fonctions.php'
+//on affiche un formulaire pour afficher l'ensemble des matières dans le module
 ?>
 <label>Choix de la matière :</label>
     <select OnChange="modifier_note()" id="matiere">

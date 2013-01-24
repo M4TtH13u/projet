@@ -28,8 +28,9 @@ function execReq($req){
 	}
 	return $res;
 }
+//fonction sécurité
 function securite($nb){
-    if (isset($_SESSION['idUtil']) && $_SESSION['idRole']>= $nb){
+    if (isset($_SESSION['idUtil']) && $_SESSION['idRole']>= $nb){// si l'utilisateur est connecté et qu'il a le droit d'être là on retourne vrai
          return 1;
     }
     else   {return 0;}
