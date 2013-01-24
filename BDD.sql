@@ -347,7 +347,7 @@ INSERT INTO `prof` (`idProf`, `numBureau`, `telBureau`, `idUtil`) VALUES
 (4, 'INCONNU', 0, 203),
 (5, 'INCONNU', 0, 204),
 (6, 'INCONNU', 0, 205),
-(7, 'INCONNU', 0, 206),
+(7, 'CY307', 0, 206),
 (8, 'INCONNU', 0, 207),
 (9, 'INCONNU', 0, 208),
 (10, 'INCONNU', 0, 209),

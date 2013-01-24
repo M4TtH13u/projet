@@ -1,6 +1,6 @@
 <?php
 //Page principale d'ajout d'examen
-if (securite(3))
+if (securite(4))
 {
     if ((!empty($_POST['libelle']) && (!empty($_POST['matiere'])) && (!empty($_POST['date'])) && (!empty($_POST['type'])))){//vérification du remplissage des données remplies
         if (!empty($_POST['util'])){// vérification des élève qui y participe
