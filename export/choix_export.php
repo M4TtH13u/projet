@@ -5,15 +5,15 @@ if (securite(2))
     {
         if ($_POST['choix']=="matiere")
         {
-            include 'export/export_mat';
+            include 'export/export_mat.php';
         }
         elseif ($_POST['choix']=="promo")
         {
-            include 'export/export_promo';
+            include 'export/export_promo.php';
         }
         elseif ($_POST['choix']=="eleve")
         {
-            include 'export/export_eleve';
+            include 'export/export_eleve.php';
         }
     }
     else
