@@ -9,7 +9,7 @@
            <option></option>
            <?php
               $cnx=connect();
-              $req='SELECT * FROM module ';
+              $req='SELECT * FROM module ';// on sélectionne tous les modules on les affiches dans un select
               $res=execReq($req);
               while($module=mysql_fetch_assoc($res))
               {

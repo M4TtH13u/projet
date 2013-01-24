@@ -10,8 +10,8 @@ if (securite(2))
            <option></option>
            <?php
               $cnx=connect();
-              $req='SELECT * FROM matiere WHERE idMod='.$_POST['module'].'';
-              $res=execReq($req);
+              $req='SELECT * FROM matiere WHERE idMod='.$_POST['module'].'';// on sélectionne tous les matières dont le module est celui sélectionné par l'utilisateur
+             $res=execReq($req);
               while($matiere=mysql_fetch_assoc($res))
               {
                    echo'<option  value="'.$matiere['idMat'].'">'.$matiere['libelle'].'</option>';

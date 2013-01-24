@@ -35,7 +35,7 @@ if(mysql_num_rows($sql) > 0)
         // On parcours $Row et on ajout chaque valeur à cette ligne
         $outputCsv = $outputCsv.' Nom de l\'examen ; Note obtenue ';
          $outputCsv =$outputCsv."\n";
-         if ($Row['note']=(-1)) 
+         if ($Row['note']=(-1)) // si la note est -1 cela veut dire que l'élève était absent
          {
              $Row['note']="ABS";
          }
