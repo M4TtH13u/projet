@@ -218,19 +218,23 @@ function afficher_note()
     var xhr;
     var pere;
     var reponse;
+    var div2 = document.getElementById('affnote');
+    div2.innerHTML = '';
     var matiere;
     matiere= document.getElementById('matiere').value;
-    xhr = getXhr();
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState == 4 && xhr.status == 200){
-            reponse = xhr.responseText;
-            pere = document.getElementById('affnote');
-            pere.innerHTML = reponse;
-      }
-    }
-    xhr.open("POST","fonctions/moyenne.php",true);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    xhr.send('nb='+matiere);
+    if (matiere!=''){
+        xhr = getXhr();
+        xhr.onreadystatechange = function(){
+          if(xhr.readyState == 4 && xhr.status == 200){
+                reponse = xhr.responseText;
+                pere = document.getElementById('affnote');
+                pere.innerHTML = reponse;
+          }
+        }
+        xhr.open("POST","fonctions/moyenne.php",true);
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+        xhr.send('nb='+matiere);
+    }   
 }
 
 
@@ -241,26 +245,21 @@ function afficher_matiere()
     var reponse;
     var module;
     module= document.getElementById('module').value;
-    if (module!=''){
-        xhr = getXhr();
-        xhr.onreadystatechange = function(){
-          if(xhr.readyState == 4 && xhr.status == 200){
-                reponse = xhr.responseText;
-                pere = document.getElementById('affmat');
-                pere.innerHTML = reponse;
-          }
-        }
-        xhr.open("POST","fonctions/afficherMatiere.php",true);
-        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-        xhr.send('module='+module);
-    }
-    else
-        {
+    var div = document.getElementById('affmat');
+    div.innerHTML = '';
+    var div2 = document.getElementById('affnote');
+    div2.innerHTML = '';
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
             pere = document.getElementById('affmat');
-            pere.innerHTML = '';
-            pere = document.getElementById('affnote');
-            pere.innerHTML = '';
-        }
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","fonctions/afficherMatiere.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('module='+module);
 }
 
 function afficher_matiere2()

@@ -3,6 +3,8 @@ $cnx=connect();
 mysql_query("SET NAMES UTF8");
 $req='select u.nom nom,u.prenom prenom, u.idUtil idUtil, e.numEtudiant numEtudiant from utilisateur u, eleve e where e.idPromo="2" AND u.idUtil=e.idUtil';
    $res=execReq($req);
+   $promo=0;
+   $eleve=0;
    echo'<table>';
    echo'<tr><td>Nom</td><td>Prenom</td><td>Numéro d\'étudiant</td><td>Moyenne</td></tr>';
    while($donnee=mysql_fetch_assoc($res))
@@ -18,6 +20,8 @@ $req='select u.nom nom,u.prenom prenom, u.idUtil idUtil, e.numEtudiant numEtudia
         }
         if ($coef==0){$coef=1;};//division par zéro
         $moyenne=$moyenne/$coef;
+        $promo=$promo+$moyenne;
+        $eleve++;
         if ($donnee['idUtil']==$_SESSION['idUtil']){
                 echo'<tr id="perso"><td>'.$donnee['nom'].'</td><td>'.$donnee['prenom'].'</td><td>'.$donnee['numEtudiant'].'</td><td>'.$moyenne.'</td></tr>';
             }
@@ -25,6 +29,7 @@ $req='select u.nom nom,u.prenom prenom, u.idUtil idUtil, e.numEtudiant numEtudia
                 echo'<tr><td>'.$donnee['nom'].'</td><td>'.$donnee['prenom'].'</td><td>'.$donnee['numEtudiant'].'</td><td>'.$moyenne.'</td></tr>';
             }
    }
+   echo'<tr><td colspan=4>'.$promo/$eleve.'</td></tr>';
    echo'</table>';
 deconnect($cnx); 
 ?>
