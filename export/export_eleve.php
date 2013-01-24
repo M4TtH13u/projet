@@ -10,9 +10,9 @@ if (securite(2))
 $outputCsv = '';
 
 // Nom du fichier final
-$fileName = 'export-csv.csv';
+$fileName = time().'.csv';
 
-$requete = "SELECT * FROM examen";
+$requete = "SELECT u.nom nom, u.prenom prenom, pa.note note, ex.libelle libelle FROM utilisateur u,examen ex , eleve el , participe pa where el.idUtil='".$_SESSION['transitoire']."' and el.numEtudiant = pa.numEtudiant and pa.idExam = ex.idExam";
 $sql = mysql_query($requete);
 if(mysql_num_rows($sql) > 0)
 {
@@ -25,10 +25,11 @@ if(mysql_num_rows($sql) > 0)
         // Si c'est la 1er boucle, on affiche le nom des champs pour avoir un titre pour chaque colonne
         if($i == 1)
         {
+             $outputCsv = $row['nom'].' '.$row['prenom'];
             foreach($Row as $clef => $valeur)
                 $outputCsv .= trim($clef).';';
 
-            $outputCsv = rtrim($outputCsv, ';');
+            $outputCsv .= rtrim($outputCsv, ';');
             $outputCsv .= "\n";
         }
 
@@ -58,9 +59,7 @@ header("Expires: 0");
 
 echo $outputCsv;
 exit();
-echo'<SCRIPT LANGUAGE="JavaScript">
-     document.location.href="../index.php" 
-</SCRIPT>';
+
 }
 else
 {
