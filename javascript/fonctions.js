@@ -347,7 +347,7 @@ function export_eleve()
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send('nb='+promo);
 }
-function export_promo(choix)
+function export_promo0()
 {
     var xhr;
     var pere;
@@ -366,7 +366,28 @@ function export_promo(choix)
     }
     xhr.open("POST","export/promo_export.php",true);
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    xhr.send('nb='+choix);
+    xhr.send('nb='+"0");
+}
+function export_promo1()
+{
+    var xhr;
+    var pere;
+    var reponse;
+    var divchoix2 = document.getElementById('choix2_export');
+    divchoix2.innerHTML = "";
+    pere = document.getElementById('choix_export');
+            
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+                        pere.innerHTML = reponse;
+
+      }
+    }
+    xhr.open("POST","export/promo_export.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('nb='+"1");
 }
 function export_matiere()
 {
