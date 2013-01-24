@@ -30,20 +30,21 @@ if (securite(2))
     }
     if(isset($_POST['util'])){//ajout d'élève supplémentaires qui participent au DS
         foreach (($_POST['util']) as $nb){
-            $req='SELECT el.idUtil FROM eleve el, participe pa WHERE pa.idExam="'.$_POST['DS'].'" AND pa.numEtudiant=el.numEtudiant';
+            $req='SELECT el.idUtil FROM eleve el, participe pa WHERE pa.idExam="'.$_POST['DS'].'" AND pa.numEtudiant=el.numEtudiant'; //ERREUR !!!!!!!!!!!!!!!!
             $res=execReq($req);
             $verif=true;
             while($donnee=mysql_fetch_assoc($res)){
-                if ($donnee['idUtil']=$nb){$verif=false;}
+                if ($donnee['idUtil']=$nb){$verif=false; echo $donnee['idUtil'];
+                echo $nb;
+                echo'coucou';
+                
+                }
             }
             if ($verif){
                 $req='INSERT INTO participe VALUES("'.$nb.'","'.$_POST['DS'].'","") IF NOT EXISTS (die(mysql_error()))';
                 $res=execReq($req);
             }
             else{
-                echo $donnee['idUtil'];
-                echo $nb;
-                echo $_POST['DS'];
                 echo 'Vous ne pouvez pas entrer deux fois le même élève pour un même examen<br/>';
             }
         }
