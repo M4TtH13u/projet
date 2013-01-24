@@ -34,6 +34,7 @@ if (securite(2))
             $res=execReq($req);
             $verif=true;
             while($donnee=mysql_fetch_assoc($res)){
+                echo $donnee['idUtil'].'<br/>'; echo $nb.'<br/>';
                 if ($donnee['idUtil']==$nb){$verif=false;}//on verifie si l'élève est déjà dans l'examen
             }
             if ($verif){
