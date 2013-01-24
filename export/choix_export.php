@@ -5,7 +5,9 @@ if (securite(2))
     {
         if ($_POST['choix']=="matiere")
         {
-            include 'export/export_mat.php';
+           echo'<SCRIPT LANGUAGE="JavaScript">
+     document.location.href="export/export_mat.php" 
+</SCRIPT>';'export/export_mat.php';
         }
         elseif ($_POST['choix']=="promo")
         {
