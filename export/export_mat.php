@@ -12,7 +12,7 @@ $outputCsv = '';
 // Nom du fichier final
 $fileName = time().'.csv';
 
-$requete = "SELECT * FROM examen where idMat='".$_POST['nb']."'";
+$requete = "SELECT * FROM examen where idMat='".$_POST['mat']."'";
 $sql = mysql_query($requete);
 if(mysql_num_rows($sql) > 0)
 {
