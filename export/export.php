@@ -1,5 +1,6 @@
 <?php
 include'../fonctions/fonctions.php';
+session_start();
 if (securite(2))
 {
  $cnx=connect();
