@@ -1,4 +1,4 @@
-<?PHP
+<?PHP       // affichage des matières dans l'ajout d'examen et les modules 
 include'../fonctions/fonctions.php'
 ?>
 <label>Choix de la matière :</label>  <!-- menu déroulant des matières qui déclenchent l'affichage des notes -->
