@@ -161,6 +161,25 @@ function ajout_DS1(nb)
     xhr.send('nb='+nb);
 }
 
+function tableau(nom){
+    if (nom.checked){
+            var xhr;
+            var pere;
+            var reponse;
+            xhr = getXhr();
+            xhr.onreadystatechange = function(){
+              if(xhr.readyState == 4){
+                    reponse = xhr.responseText;
+                    pere = document.getElementById('tableau');
+                    pere.innerHTML = reponse;
+              }
+            }
+            xhr.open("POST","add_delete/ajout_tableau.php",true);
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+            xhr.send('nb='+nom.name);
+        }
+}
+
 function Exam_eleve()
 {
     var xhr;
@@ -169,11 +188,12 @@ function Exam_eleve()
     var bouton = document.getElementById('button');
     bouton.innerHTML= '<input type="submit" value="Envoyer">';
     document.getElementById("matiere").style.display="none";
+    document.getElementById("promo").style.display="none";
     xhr = getXhr();
     xhr.onreadystatechange = function(){
       if(xhr.readyState == 4){
             reponse = xhr.responseText;
-            pere = document.getElementById('eleve');
+            pere = document.getElementById('choixeleve');
             pere.innerHTML = reponse;
       }
     }
@@ -304,6 +324,8 @@ function modifier_note2()
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send('nb='+ds);
 }
+
+
 function export_eleve()
 {
     var xhr;
