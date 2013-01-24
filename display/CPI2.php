@@ -15,8 +15,11 @@ $req='select u.nom nom,u.prenom prenom, u.idUtil idUtil, e.numEtudiant numEtudia
         $res2=execReq($req2);
         while($note=mysql_fetch_assoc($res2))
         {
-            $moyenne=$moyenne+($note['note']*$note['coef']);
-            $coef=$coef+$note['coef'];
+            if(($note['note']>=(0))&&($note['note']<=20))
+                {
+                $moyenne=$moyenne+($note['note']*$note['coef']);
+                $coef=$coef+$note['coef'];
+                }
         }
         if ($coef==0){$coef=1;};//division par zéro
         $moyenne=$moyenne/$coef;
