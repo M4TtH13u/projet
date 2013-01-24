@@ -26,7 +26,7 @@ if (securite(2))
 <?php
 if (($_POST['nb'])==0)
 {
-    echo"<input type='submit' value='exporter'/>";
+    echo"<br/><input type='submit' value='exporter'/>";
 }
 }
 else
