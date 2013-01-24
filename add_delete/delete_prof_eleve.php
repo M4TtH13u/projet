@@ -1,7 +1,7 @@
 <?php
 if (securite(4))
 {
-
+            //condition de déclenchement de modification de la BDD
     if (!empty($_POST['type']) && ((!empty($_POST['prof2']) || (!empty($_POST['eleve'])))))
     {
         if (!empty($_POST['prof2']))
@@ -38,14 +38,14 @@ else{
 
     
 ?>
-    <form id="form_prof_eleve" name="form1" action="#" method="POST">
+    <form id="form_prof_eleve" name="form1" action="#" method="POST">   <!--Création d'un formulaire-->
         <fieldset>
             <legend>Suppression :</legend>
             <label>Choix de suppression :</label><input type="radio" name="type" id="prof" value="prof" onChange="afficher_delete();"/>Professeur
                                                  <input type ="radio" name="type" value="eleve" id ="eleve" onChange="afficher_delete();"/>Elève<br/>
             <div id="eleve_delete">
                 <label>Choisir la promo</label>
-                <?php
+                <?php         // radio de selection de la promo
                    $cnx=connect();
                    $req='select * from promo';
                    $res=execReq($req);
@@ -55,14 +55,14 @@ else{
                    }
                    deconnect($cnx);
                 ?>
-                <div id="choixEleve"> 
+                <div id="choixEleve"> <!-- div destinée aux choix de l'élève à modifier -->
                 </div>          
             </div>
             <div id="prof_delete">
                 <label>Choisir le professeur</label>
                 <select name="prof2">
                     <option></option>
-                    <?php
+                    <?php         // menu de selection des profs
                        $cnx=connect();
                        $req='select u.idUtil idUtil, u.nom nom, u.prenom prenom from utilisateur u ,prof p where p.idUtil=u.idUtil';
                        $res=execReq($req);
