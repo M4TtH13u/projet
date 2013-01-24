@@ -2,6 +2,7 @@ function admin(nb){
 var change = document.getElementsByClassName('eleve');
 var change2 = document.getElementsByClassName('prof');
 var change3 = document.getElementsByClassName('admin');
+var change4 = document.getElementById('prof2');
 switch (nb) 
 { 
 case 2: 
@@ -19,6 +20,7 @@ for(var i=0;i<change2.length;i++){
     document.getElementById('menu').style.width="100%";
     document.getElementById('menu').style.right="0%";
 }
+change4.style.display="inline-block";
 
 break; 
 case 4: 
