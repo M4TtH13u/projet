@@ -163,29 +163,38 @@ function ajout_DS1(nb)
 
 function Exam_eleve()
 {
-    var xhr;
-    var pere;
-    var reponse;
-    var bouton = document.getElementById('button');
-    bouton.innerHTML= '<input type="submit" value="Envoyer">';
-    document.getElementById("matiere").style.display="none";
-    document.getElementById("promo").style.display="none";
-    xhr = getXhr();
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState == 4){
-            reponse = xhr.responseText;
-            pere = document.getElementById('choixeleve');
-            pere.innerHTML = reponse;
-      }
-    }
-    xhr.open("POST","add_delete/ajout_DS_eleve.php",true);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    var cpi1=document.getElementById("CPI1");
-    if (document.getElementById("CPI1").checked){
-        xhr.send('nb='+1);
+    var champs1 = document.getElementsByName('matiere');
+    var champs2 = document.getElementsByName('libelle');
+    var champs3 = document.getElementsByName('date');
+    var champs4 = document.getElementsByName('type');
+    if(((champs1[0].value)!="") && ((champs2[0].value)!="") && ((champs3[0].value)!="") && ((champs4[0].value)!="")){
+        var xhr;
+        var pere;
+        var reponse;
+        var bouton = document.getElementById('button');
+        bouton.innerHTML= '<input type="submit" value="Envoyer">';
+        document.getElementById("matiere").style.display="none";
+        document.getElementById("promo").style.display="none";
+        xhr = getXhr();
+        xhr.onreadystatechange = function(){
+          if(xhr.readyState == 4){
+                reponse = xhr.responseText;
+                pere = document.getElementById('choixeleve');
+                pere.innerHTML = reponse;
+          }
+        }
+        xhr.open("POST","add_delete/ajout_DS_eleve.php",true);
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+        var cpi1=document.getElementById("CPI1");
+        if (document.getElementById("CPI1").checked){
+            xhr.send('nb='+1);
+        }
+        else{
+            xhr.send('nb='+2);
+        }
     }
     else{
-        xhr.send('nb='+2);
+    alert('tous les champs doivent Ãªtre remplis');
     }
 }
 
