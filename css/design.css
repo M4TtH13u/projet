@@ -195,11 +195,12 @@ color:blue;
 text-decoration: underline;
 }
 
+#choix2_export{
+}
 
 #exportation{
-    position:relative;
-    background:red;
-    margin-right: 35%;
-    margin-left: 35%;
-    text-align:center;
+position:relative;
+margin-right: 35%;
+margin-left: 35%;
+text-align:center;
 }
