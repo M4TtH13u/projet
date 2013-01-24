@@ -12,7 +12,7 @@ $outputCsv = '';
 // Nom du fichier final
 $fileName = time().'.csv';
 
-$requete = "SELECT u.nom nom, u.prenom prenom, pa.note note, ex.libelle libelle FROM utilisateur u,examen ex , eleve el , participe pa where el.idUtil='".$_SESSION['transitoire']."' and el.numEtudiant = pa.numEtudiant and pa.idExam = ex.idExam";
+$requete = "SELECT u.nom nom, u.prenom prenom, pa.note note, ex.libelle libelle FROM utilisateur u,examen ex , eleve el , participe pa where u.idUtil = '".$_SESSION['transitoire']."' and el.idUtil='".$_SESSION['transitoire']."' and el.numEtudiant = pa.numEtudiant and pa.idExam = ex.idExam";
 $sql = mysql_query($requete);
 if(mysql_num_rows($sql) > 0)
 {
@@ -25,20 +25,19 @@ if(mysql_num_rows($sql) > 0)
         // Si c'est la 1er boucle, on affiche le nom des champs pour avoir un titre pour chaque colonne
         if($i == 1)
         {
-             $outputCsv = $row['nom'].' '.$row['prenom'];
-            foreach($Row as $clef => $valeur)
-                $outputCsv .= trim($clef).';';
-
-            $outputCsv .= rtrim($outputCsv, ';');
-            $outputCsv .= "\n";
+             $outputCsv = ' nom ; prenom ';
+             $outputCsv =$outputCsv."\n";
+             $outputCsv = $outputCsv.$Row['nom'].';'.$Row['prenom'];
+             $outputCsv =$outputCsv."\n";
+             $outputCsv =$outputCsv."\n";
         }
 
         // On parcours $Row et on ajout chaque valeur à cette ligne
-        foreach($Row as $clef => $valeur)
-            $outputCsv .= trim($valeur).';';
+        $outputCsv = $outputCsv.' Nom de l\'examen ; Note obtenue ';
+         $outputCsv =$outputCsv."\n";
+        $outputCsv=$outputCsv.$Row['libelle'].';'.$Row['note'];
 
-        // Suppression du ; qui traine à la fin
-        $outputCsv = rtrim($outputCsv, ';');
+      
 
         // Saut de ligne
         $outputCsv .= "\n";
