@@ -6,7 +6,7 @@ if (securite(2))
 {
 ?>
 <label>Choix de la matière :</label>
-    <select name="mat" id="export_matiere">
+    <select name="mat" id="exporter_matiere">
            <option></option>
            <?php
               $cnx=connect();
