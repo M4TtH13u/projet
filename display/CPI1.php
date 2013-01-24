@@ -5,7 +5,7 @@ mysql_query("SET NAMES UTF8");
 $req='select u.nom nom,u.prenom prenom, u.idUtil idUtil, e.numEtudiant numEtudiant from utilisateur u, eleve e where e.idPromo="1" AND u.idUtil=e.idUtil';
     $res=execReq($req);
     echo'<table>';
-     echo'<tr><td>Nom</td><td>Prenom</td><td>Numéro d\'étudiant</td></tr>';
+    echo'<tr><td>Nom</td><td>Prenom</td><td>Numéro d\'étudiant</td></tr>';
    while($donnee=mysql_fetch_assoc($res))
    {
        if ($donnee['idUtil']==$_SESSION['idUtil']){
