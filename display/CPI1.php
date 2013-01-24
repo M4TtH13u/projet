@@ -1,4 +1,4 @@
-<?php
+<?php           //affiche le tableau de la promo
 $cnx=connect();
 mysql_query("SET NAMES UTF8");
 

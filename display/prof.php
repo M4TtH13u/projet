@@ -1,4 +1,4 @@
-<?php
+<?php           //afficher le tableau des professeurs
 
 $cnx=connect();
 		mysql_query("SET NAMES UTF8");
