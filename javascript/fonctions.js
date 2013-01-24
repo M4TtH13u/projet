@@ -286,6 +286,12 @@ function modifier_note()
     var pere;
     var reponse;
     var matiere;
+    var pere2 = document.getElementById('affds');
+    pere2.innerHTML = ''; 
+    var pere3 = document.getElementById('affnote');
+    pere3.innerHTML = ''; 
+    var pere4 = document.getElementById('choixeleve');
+    pere4.innerHTML = '';
     matiere= document.getElementById('matiere').value;
     xhr = getXhr();
     xhr.onreadystatechange = function(){
@@ -299,7 +305,6 @@ function modifier_note()
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send('nb='+matiere);
 }
-
 
 function modifier_note2()
 {
