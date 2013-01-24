@@ -1,6 +1,8 @@
 
-<?PHP
-include'../fonctions/fonctions.php'
+<?php
+include'../fonctions/fonctions.php';
+if (securite(4))
+{
 ?>
 <label>Choix de la matière :</label>
     <select id="export_matiere">
@@ -17,4 +19,13 @@ include'../fonctions/fonctions.php'
             ?>
      </select>
 <input type="submit" value="Exporter"/>
+<?php
+}
+else
+{
+     echo'<SCRIPT LANGUAGE="JavaScript">
+     document.location.href="../index.php" 
+</SCRIPT>';
+}
+?>
 

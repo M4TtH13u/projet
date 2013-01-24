@@ -1,5 +1,7 @@
 <?php
 include'../fonctions/fonctions.php';
+if (securite(4))
+{
  $cnx=connect();
 
 
@@ -55,4 +57,11 @@ header("Expires: 0");
 
 echo $outputCsv;
 exit();
+}
+else
+{
+     echo'<SCRIPT LANGUAGE="JavaScript">
+     document.location.href="../index.php" 
+</SCRIPT>';
+}
 ?>

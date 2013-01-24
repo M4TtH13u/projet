@@ -1,3 +1,7 @@
+<?php
+if (securite(4))
+{
+?>
 <form action="#" method="POST">
     <fieldset>
    <legend> Exportation </legend>
@@ -12,3 +16,12 @@
 <div id="choix2_export"></div>
 </fieldset>
 </form>
+<?php
+}
+else
+{
+     echo'<SCRIPT LANGUAGE="JavaScript">
+     document.location.href="../index.php" 
+</SCRIPT>';
+}
+?>
