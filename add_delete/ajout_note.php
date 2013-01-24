@@ -41,6 +41,9 @@ if (securite(2))
                 $res=execReq($req);
             }
             else{
+                echo $donnee['idUtil'];
+                echo $nb;
+                echo $_POST['DS'];
                 echo 'Vous ne pouvez pas entrer deux fois le même élève pour un même examen<br/>';
             }
         }
