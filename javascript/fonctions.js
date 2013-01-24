@@ -241,17 +241,26 @@ function afficher_matiere()
     var reponse;
     var module;
     module= document.getElementById('module').value;
-    xhr = getXhr();
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState == 4 && xhr.status == 200){
-            reponse = xhr.responseText;
-            pere = document.getElementById('affmat');
-            pere.innerHTML = reponse;
-      }
+    if (module!=''){
+        xhr = getXhr();
+        xhr.onreadystatechange = function(){
+          if(xhr.readyState == 4 && xhr.status == 200){
+                reponse = xhr.responseText;
+                pere = document.getElementById('affmat');
+                pere.innerHTML = reponse;
+          }
+        }
+        xhr.open("POST","fonctions/afficherMatiere.php",true);
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+        xhr.send('module='+module);
     }
-    xhr.open("POST","fonctions/afficherMatiere.php",true);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-    xhr.send('module='+module);
+    else
+        {
+            pere = document.getElementById('affmat');
+            pere.innerHTML = '';
+            pere = document.getElementById('affnote');
+            pere.innerHTML = '';
+        }
 }
 
 function afficher_matiere2()
