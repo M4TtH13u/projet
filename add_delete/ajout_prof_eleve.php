@@ -1,12 +1,12 @@
 <?php
 if (securite(4))
 {
-            //condition de déclenchement de modification de la BDD
+            //condition de déclenchement de modification de la BDD (tous les champs remplis)
     if ((!empty($_POST['choixUtil']) && !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['login']) && !empty($_POST['pass']) && !empty($_POST['repass']))&&($_POST['pass']==$_POST['repass'])&&( ($_POST['choixUtil']=="4") || (($_POST['choixUtil']=="2") && !empty($_POST['promo'])) || (($_POST['choixUtil']=="3"))))
-{ 
+{ // selection par type d'utilisateur à ajouter
     if ($_POST['choixUtil']=="4")
     {
-        $cnx=connect();
+        $cnx=connect();//table utilisateur pour l'admin
         mysql_query("SET NAMES UTF8");
         $req='INSERT INTO utilisateur VALUE("","'.$_POST['login'].'","'.md5($_POST['pass']).'","'.$_POST['nom'].'","'.$_POST['prenom'].'",4)';
         $res=execReq($req);
@@ -15,7 +15,7 @@ if (securite(4))
     }
     elseif ($_POST['choixUtil']=="3") 
     {
-        $cnx=connect();
+        $cnx=connect();//table utilisateur, prof pour les professeurs
         mysql_query("SET NAMES UTF8");
         $req='INSERT INTO utilisateur VALUE("","'.$_POST['login'].'","'.md5($_POST['pass']).'","'.$_POST['nom'].'","'.$_POST['prenom'].'",3)';
         $res=execReq($req);
@@ -30,7 +30,7 @@ if (securite(4))
     }
     elseif ($_POST['choixUtil']=="2")
     {
-        $cnx=connect();
+        $cnx=connect();//table utilisateur, eleve pour l'élève
         mysql_query("SET NAMES UTF8");
         $req='INSERT INTO utilisateur VALUE("","'.$_POST['login'].'","'.md5($_POST['pass']).'","'.$_POST['nom'].'","'.$_POST['prenom'].'",2)';
         $res=execReq($req);
@@ -52,7 +52,8 @@ if (securite(4))
       <form id="form_prof_eleve" method="POST">   <!--Création d'un formulaire-->
           <fieldset>
               <legend>Inscription :</legend>
-                <label>Type :</label><input type="radio" name="choixUtil" onClick="prof();" value="4"/> Administrateur<!--choix du rôle de l'utilisateur qui déclenche l'affichage des champs correspondants-->
+              <!--choix du rôle de l'utilisateur qui déclenche l'affichage des champs correspondants-->
+                <label>Type :</label><input type="radio" name="choixUtil" onClick="prof();" value="4"/> Administrateur
                 <input type="radio" name="choixUtil" id="prof1" onClick="prof();" value="3"/>Professeur
                 <input type="radio" name="choixUtil" id="eleve1" onClick="prof();" value="2"/>Elève<br/>
                 <label>Nom :</label><input type="text" name="nom"/><br/>

@@ -1,11 +1,11 @@
-<?php           //seconde page de l'ajout d'un examen
+<?php           //seconde page de l'ajout d'un examen (inclue dans ajout_DS)
 include '../fonctions/fonctions.php';?>
 <label>Matiere :</label>    <!-- formulaire d'ajout d'un examen -->
                 <select name="matiere">
                     <option></option>
                     <?php
                         $cnx=connect();
-                        mysql_query("SET NAMES UTF8");
+                        mysql_query("SET NAMES UTF8");//on selectionne les matière qui correspondent au module choisi dans ajout_DS
                         $req='select idMat, ma.libelle from matiere ma, module mo where ma.idMod=mo.idMod and mo.idPromo='.$_POST['nb'];
                         $res=execReq($req);
                         while($matiere=mysql_fetch_assoc($res)){
@@ -20,7 +20,7 @@ include '../fonctions/fonctions.php';?>
                 <select name="type">
                     <option></option>
                     <?php
-                        $cnx=connect();
+                        $cnx=connect();//on selectionne tous les types d'examen possibles
                         mysql_query("SET NAMES UTF8");
                         $req='select * from typexam';
                         $res=execReq($req);

@@ -14,7 +14,7 @@ echo '<input type="button" onClick="cocher();" value="Tout selectionner"/><input
 deconnect($cnx); 
 
 }
-else
+else// si il n'a pas le droit on le redirige gentillement vers la page d'accueil
 {
      echo'<SCRIPT LANGUAGE="JavaScript">
      document.location.href="../index.php" 

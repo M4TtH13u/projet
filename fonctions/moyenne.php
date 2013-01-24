@@ -12,12 +12,16 @@ $req='select ma.libelle libMat,ma.idMat idMat, mo.libelle libMod from matiere ma
    {
         echo'<th>'.$donnee['libMod'].'</th><tr><td colspan=4>'.$donnee['libMat'].'</td></tr>';
         echo'<tr><td>Nom de l\'examen</td><td>Nom de l\'étudiant</td><td>Prénom de l\'étudiant</td><td>Note</td></tr>';
+        
+        //on selectionne tous les élèves ayant participé à un exam dans cette matière
+        
         $req2='SELECT pa.note note, u.idUtil idUtil, u.nom nom, u.prenom prenom, ex.libelle libExam, ty.coef FROM typexam ty, examen ex,participe pa, eleve el, utilisateur u WHERE ex.idMat="'.$donnee['idMat'].'" AND ex.idExam=pa.idExam AND pa.numEtudiant=el.numEtudiant AND el.idUtil=u.idUtil AND ex.idType=ty.idType';
         $res2=execReq($req2);
         while($note=mysql_fetch_assoc($res2))
         {
             if (($note['note']>=(0))&&($note['note']<=20))
                 {
+                // on ajoute leur note à la moyenne globale en tenant compte du coef
                 $moyenne=$moyenne+($note['note']*$note['coef']);
                 $participant=$participant+$note['coef'];
                 }
@@ -28,7 +32,7 @@ $req='select ma.libelle libMat,ma.idMat idMat, mo.libelle libMod from matiere ma
             
             if ($note['idUtil']==$_SESSION['idUtil']){
                 echo'<tr id="perso"><td>'.$note['libExam'].'</td><td>'.$note['nom'].'</td><td>'.$note['prenom'].'</td><td>'.$note['note'].'</td></tr>';
-               
+               // on met un style particulier pour la ligne de l'utilisateur
             }
             else{
                 echo'<tr><td>'.$note['libExam'].'</td><td>'.$note['nom'].'</td><td>'.$note['prenom'].'</td><td>'.$note['note'].'</td></tr>';

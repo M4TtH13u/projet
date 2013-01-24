@@ -62,7 +62,7 @@ else{
                 <label>Choisir le professeur</label>
                 <select name="prof2">
                     <option></option>
-                    <?php         // menu de selection des profs
+                    <?php         // menu de selection des professeurs
                        $cnx=connect();
                        $req='select u.idUtil idUtil, u.nom nom, u.prenom prenom from utilisateur u ,prof p where p.idUtil=u.idUtil';
                        $res=execReq($req);
@@ -83,7 +83,7 @@ else{
 </div>
 
 <?php } }
-else
+else// si il n'a pas le droit on le redirige gentillement vers la page d'accueil
 {
      echo'<SCRIPT LANGUAGE="JavaScript">
      document.location.href="index.php" 

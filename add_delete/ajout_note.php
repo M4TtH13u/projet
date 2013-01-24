@@ -34,14 +34,10 @@ if (securite(2))
             $res=execReq($req);
             $verif=true;
             while($donnee=mysql_fetch_assoc($res)){
-                if ($donnee['idUtil']=$nb){$verif=false; echo $donnee['idUtil'];
-                echo $nb;
-                echo'coucou';
-                
-                }
+                if ($donnee['idUtil']==$nb){$verif=false;}//on verifie si l'élève est déjà dans l'examen
             }
             if ($verif){
-                $req='INSERT INTO participe VALUES("'.$nb.'","'.$_POST['DS'].'","") IF NOT EXISTS (die(mysql_error()))';
+                $req='INSERT INTO participe VALUES("'.$nb.'","'.$_POST['DS'].'","")';
                 $res=execReq($req);
             }
             else{
@@ -60,7 +56,7 @@ if (securite(2))
             <label>Choix du module :</label>
                  <select OnChange="afficher_matiere2()" id="module"><!--choix du module qui déclenche l'affichage des matieres-->
                     <option></option>
-                        <?php
+                        <?php   //on selectionne les modules possible selon la promo de l'util s'il est un élève
                             $cnx=connect();
                             if ($_SESSION['idRole']==2){
                                 $req='select * from module m, eleve e  where e.idUtil="'.$_SESSION['idUtil'].'" and e.idPromo=m.idPromo';
@@ -87,7 +83,7 @@ if (securite(2))
     </form>
             
 <?php } }
-else
+else// si il n'a pas le droit on le redirige gentillement vers la page d'accueil
 {
      echo'<SCRIPT LANGUAGE="JavaScript">
      document.location.href="index.php" 

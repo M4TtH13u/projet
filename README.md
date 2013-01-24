@@ -77,3 +77,13 @@ Dans "Ajouter un Examen" :
 IL N'Y A PAS QUE DANS EXAMEN!
     ex= dans module, changer le module quand un tableau est afficher n'efface pas le tableau,
         ajouter des notes pareil, etc...
+
+=============
+
+fonctions.js
+structure
+fonctions.php
+export
+connect
+css
+index
