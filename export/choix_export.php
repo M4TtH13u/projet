@@ -26,9 +26,9 @@ if (securite(2))
            <legend> Exportation </legend>
 
 
-         <p>Voulez vous exporter par rapport à:</p>
-        <input type="radio" name="choix" value="matiere" onChange="export_module();">une Matière </input>
-        <input type="radio" name="choix"   value="promo" onChange="export_promo0();">une Promo </input>
+         <p><font size=4><b>Souhaitez-vous exporter :</b></font></p>
+        <input type="radio" name="choix" value="matiere" onChange="export_module();">une matière </input>
+        <input type="radio" name="choix"   value="promo" onChange="export_promo0();">une promo </input>
         <input type="radio" name="choix" value="eleve" onChange="export_promo1();">un(e) élève </input>
 
         <div id="choix_export"></div>
