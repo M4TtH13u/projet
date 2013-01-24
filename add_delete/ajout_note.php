@@ -54,7 +54,7 @@ if (securite(2))
         <fieldset>
             <legend>Mettre à jour les notes </legend>
             <label>Choix du module :</label>
-                 <select OnChange="afficher_matiere2()" id="module">
+                 <select OnChange="afficher_matiere2()" id="module"><!--choix du module qui déclenche l'affichage des matieres-->
                     <option></option>
                         <?php
                             $cnx=connect();

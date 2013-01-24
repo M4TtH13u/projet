@@ -482,3 +482,23 @@ function export_module()
     xhr.send(null);
    
 }
+function exporter_matiere(nb)
+{
+    var xhr;
+    
+    var reponse;
+   
+
+   xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+            reponse = xhr.responseText;
+           alert(reponse);
+           
+      }
+    }
+    xhr.open("POST","export/export_mat.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send("nb="+nb);
+   
+}

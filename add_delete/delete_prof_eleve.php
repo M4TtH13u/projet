@@ -40,12 +40,12 @@ else{
 ?>
     <form id="form_prof_eleve" name="form1" action="#" method="POST">   <!--Création d'un formulaire-->
         <fieldset>
-            <legend>Suppression :</legend>
+            <legend>Suppression :</legend><!--choix de l'utilisateur à supprimer qui déclenche l'affichage des liste d'élève ou du choix de promo-->
             <label>Choix de suppression :</label><input type="radio" name="type" id="prof" value="prof" onChange="afficher_delete();"/>Professeur
                                                  <input type ="radio" name="type" value="eleve" id ="eleve" onChange="afficher_delete();"/>Elève<br/>
             <div id="eleve_delete">
                 <label>Choisir la promo</label>
-                <?php         // radio de selection de la promo
+                <?php         // radio de selection de la promo qui déclenche l'affichage de la liste d'élève
                    $cnx=connect();
                    $req='select * from promo';
                    $res=execReq($req);

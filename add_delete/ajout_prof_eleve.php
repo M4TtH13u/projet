@@ -52,7 +52,7 @@ if (securite(4))
       <form id="form_prof_eleve" method="POST">   <!--Création d'un formulaire-->
           <fieldset>
               <legend>Inscription :</legend>
-                <label>Type :</label><input type="radio" name="choixUtil" onClick="prof();" value="4"/> Administrateur
+                <label>Type :</label><input type="radio" name="choixUtil" onClick="prof();" value="4"/> Administrateur<!--choix du rôle de l'utilisateur qui déclenche l'affichage des champs correspondants-->
                 <input type="radio" name="choixUtil" id="prof1" onClick="prof();" value="3"/>Professeur
                 <input type="radio" name="choixUtil" id="eleve1" onClick="prof();" value="2"/>Elève<br/>
                 <label>Nom :</label><input type="text" name="nom"/><br/>

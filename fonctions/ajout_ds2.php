@@ -1,6 +1,6 @@
-<?php 
+<?php           //seconde page de l'ajout d'un examen
 include '../fonctions/fonctions.php';?>
-<label>Matiere :</label>
+<label>Matiere :</label>    <!-- formulaire d'ajout d'un examen -->
                 <select name="matiere">
                     <option></option>
                     <?php

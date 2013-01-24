@@ -1,7 +1,7 @@
 <?PHP
 include'../fonctions/fonctions.php'
 ?>
-<label>Choix de la matière :</label>
+<label>Choix de la matière :</label>  <!-- menu déroulant des matières qui déclenchent l'affichage des notes -->
     <select OnChange="afficher_note()" id="matiere">
            <option></option>
            <?php
