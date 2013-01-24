@@ -1,4 +1,6 @@
 <?php
+include'../fonctions/fonctions.php';
+session_start();
 if (securite(2))
 {
  $cnx=connect();
@@ -56,6 +58,9 @@ header("Expires: 0");
 
 echo $outputCsv;
 exit();
+echo'<SCRIPT LANGUAGE="JavaScript">
+     document.location.href="../index.php" 
+</SCRIPT>';
 }
 else
 {
