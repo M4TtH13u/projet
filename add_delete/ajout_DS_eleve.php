@@ -1,7 +1,7 @@
 <?php //affiche la liste des élève de la promo sellectionnée avec un choix soux forme de checkbox
 include '../fonctions/fonctions.php';
 session_start();
-if (securite(4))
+if (securite(3))
 {
 $cnx=connect();
 mysql_query("SET NAMES UTF8");
