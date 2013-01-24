@@ -1,11 +1,11 @@
-<?php
+<?php       //page d'affichage des modules
 
 if (securite(2))
 {
 ?>
     <form id="form_module" name="form1" action="#" method="POST">
         <fieldset>
-            <label>Choix du module :</label>
+            <label>Choix du module :</label><!--choix du module qui déclenche l'affichage des matieres-->
                  <select OnChange="afficher_matiere()" id="module">
                     <option></option>
                         <?php

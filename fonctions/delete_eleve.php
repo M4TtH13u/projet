@@ -1,4 +1,4 @@
-<?php
+<?php           //menu déroulant de la liste des élèves pouvant être supprimer
 include '../fonctions/fonctions.php';
 ?>
 <label>Choisir l'élève</label>

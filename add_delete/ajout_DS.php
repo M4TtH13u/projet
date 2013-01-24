@@ -33,7 +33,7 @@ if (securite(3))
     <fieldset>
         <legend>Ajout d'un Examen :</legend> 
         <div id="promo">
-        <label>Choisir la promo</label>
+        <label>Choisir la promo</label><!--choix de la promo qui déclenche l'affichage des matieres-->
                 <?php
                    $cnx=connect();
                    $req='select * from promo';
