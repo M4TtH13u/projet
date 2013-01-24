@@ -1,5 +1,5 @@
 <?php
-if (securite(4))
+if (securite(2))
 {
 ?>
 <form action="#" method="POST">

@@ -1,5 +1,7 @@
 <?php
  include'../fonctions/fonctions.php';
+ if (securite(2))
+{
 ?>
 <label>Choix du module :</label>
     <select OnChange="export_matiere()" id="export_module">
@@ -15,3 +17,12 @@
               deconnect($cnx);
             ?>
      </select>
+<?php
+}
+else
+{
+     echo'<SCRIPT LANGUAGE="JavaScript">
+     document.location.href="../index.php" 
+</SCRIPT>';
+}
+?>
