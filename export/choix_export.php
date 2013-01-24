@@ -5,17 +5,24 @@ if (securite(2))
     {
         if ($_POST['choix']=="matiere")
         {
+            $_SESSION['transitoire']=$_POST['mat'];
            echo'<SCRIPT LANGUAGE="JavaScript">
      document.location.href="export/export_mat.php" 
 </SCRIPT>';
         }
         elseif ($_POST['choix']=="promo")
         {
-            include 'export/export_promo.php';
+            $_SESSION['transitoire']=$_POST['promo'];
+           echo'<SCRIPT LANGUAGE="JavaScript">
+     document.location.href="export/export_promo.php" 
+</SCRIPT>';
         }
         elseif ($_POST['choix']=="eleve")
         {
-            include 'export/export_eleve.php';
+           $_SESSION['transitoire']=$_POST['eleve'];
+           echo'<SCRIPT LANGUAGE="JavaScript">
+     document.location.href="export/export_eleve.php" 
+</SCRIPT>';
         }
     }
     else

@@ -12,7 +12,7 @@ $outputCsv = '';
 // Nom du fichier final
 $fileName = time().'.csv';
 
-$requete = "SELECT * FROM examen where idMat='".$_POST['mat']."'";
+$requete = "SELECT * FROM examen where idMat='".$_SESSION['transitoire']."'";
 $sql = mysql_query($requete);
 if(mysql_num_rows($sql) > 0)
 {
@@ -58,9 +58,7 @@ header("Expires: 0");
 
 echo $outputCsv;
 exit();
-echo'<SCRIPT LANGUAGE="JavaScript">
-     document.location.href="../index.php" 
-</SCRIPT>';
+
 }
 else
 {
