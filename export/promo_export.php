@@ -1,5 +1,7 @@
-<?PHP
-include'../fonctions/fonctions.php'
+<?php
+include'../fonctions/fonctions.php';
+if (securite(2))
+{
 ?>
 <select name="promo"<?php if (($_POST['nb'])==1)
 {
@@ -24,5 +26,12 @@ include'../fonctions/fonctions.php'
 if (($_POST['nb'])==0)
 {
     echo"<input type='submit' value='exporter'/>";
+}
+}
+else
+{
+     echo'<SCRIPT LANGUAGE="JavaScript">
+     document.location.href="../index.php" 
+</SCRIPT>';
 }
 ?>

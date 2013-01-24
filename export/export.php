@@ -1,6 +1,6 @@
 <?php
 include'../fonctions/fonctions.php';
-if (securite(4))
+if (securite(2))
 {
  $cnx=connect();
 
