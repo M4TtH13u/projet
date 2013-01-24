@@ -161,25 +161,6 @@ function ajout_DS1(nb)
     xhr.send('nb='+nb);
 }
 
-function tableau(nom){
-    if (nom.checked){
-            var xhr;
-            var pere;
-            var reponse;
-            xhr = getXhr();
-            xhr.onreadystatechange = function(){
-              if(xhr.readyState == 4){
-                    reponse = xhr.responseText;
-                    pere = document.getElementById('tableau');
-                    pere.innerHTML = reponse;
-              }
-            }
-            xhr.open("POST","add_delete/ajout_tableau.php",true);
-            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-            xhr.send('nb='+nom.name);
-        }
-}
-
 function Exam_eleve()
 {
     var xhr;
@@ -325,6 +306,46 @@ function modifier_note2()
     xhr.send('nb='+ds);
 }
 
+function eleve_note(promo){
+    var xhr;
+    var pere;
+    var reponse;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4){
+            reponse = xhr.responseText;
+            pere = document.getElementById('choixeleve');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","add_delete/ajout_DS_eleve.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('nb='+promo);
+}
+
+function cocher(){
+    var box=document.getElementsByTagName('input');
+    var i;
+    var len=box.length;
+    for (i=0; i<len; i++){
+         if (box[i].type=='checkbox' )
+            {
+                box[i].checked = true;
+            }
+    }
+}
+
+function decocher(){
+    var box=document.getElementsByTagName('input');
+    var i;
+    var len=box.length;
+    for (i=0; i<len; i++){
+         if (box[i].type=='checkbox' )
+            {
+                box[i].checked = false;
+            }
+    }
+}
 
 function export_eleve()
 {
