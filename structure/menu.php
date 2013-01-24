@@ -30,10 +30,10 @@
     <li class="prof">
         Gestions des notes
        <ul class="niveau2">
-           <li class="prof" onclick="JavaScript:document.location='index.php?page=examen';">
+           <li class="admin" onclick="JavaScript:document.location='index.php?page=examen';">
                  Ajouter un examen
            </li>
-           <li class="prof" onclick="JavaScript:document.location='index.php?page=ajout_note';" >
+           <li id="prof2" onclick="JavaScript:document.location='index.php?page=ajout_note';" >
             Ajouter des notes
            </li>
        </ul>
