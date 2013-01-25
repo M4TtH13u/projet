@@ -176,8 +176,6 @@ function dissocier()
    var idProf = document.getElementById('prof_assoc').value;
    if (idProf!=null)
        {
-          
-       alert(idProf);
     xhr = getXhr();
     xhr.onreadystatechange = function(){
       if(xhr.readyState == 4){

@@ -4,11 +4,11 @@
                 include '../fonctions/fonctions.php';
                     $cnx=connect();
                     mysql_query("SET NAMES UTF8");
-                    $req='select * from matiere where idMod="'.$_POST['idMod'].'" and idProf="0"';
+                    $req='select * from matiere where idMod="'.$_POST['idMod'].'"';
                     $res=execReq($req);
                     if (mysql_num_rows($res)==0)
                     {
-                       echo' Aucune matière est libre dans ce module';
+                       echo' Aucune matière n\'est libre dans ce module';
                     }
                     else
                     {?>
