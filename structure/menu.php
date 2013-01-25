@@ -43,7 +43,7 @@ admin : s'affiche pour les élèves administrateurs;
            <li class="admin" onclick="JavaScript:document.location='index.php?page=examen';">
                  Ajouter un examen
            </li>
-           <li id="prof2" onclick="JavaScript:document.location='index.php?page=ajout_note';" >
+           <li id="prof2" onclick="JavaScript:document.location='index.php?page=ajouter_note';" >
             Ajouter des notes
            </li>
        </ul>
