@@ -113,6 +113,25 @@ function gestion(){
         document.getElementById("delete_m").style.display="none";
     }    
 }
+function gestion2(){
+   var xhr;
+    var pere;
+    var reponse;
+    var span2 = document.getElementById('delete_m2');
+    span2.innerHTML = '';
+    var idMod = document.getElementById('gestion_matiere').value;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4){
+            reponse = xhr.responseText;
+            pere = document.getElementById('delete_m2');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","add_delete/gestion_matiere2.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('idMod='+idMod);
+}
 
 
 function afficher_delete()
