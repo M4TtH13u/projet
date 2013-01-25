@@ -53,7 +53,7 @@ if (securite(4))
         <input type="button" value="Envoyer" Onclick="Exam_eleve();"/>
         </span>
         
-        <input type="reset" value="Annuler" onClick="reinitialiser();"/>
+        <input type="reset" value="Annuler" onClick="effacer();"/>
     </fieldset>
 </form>
 

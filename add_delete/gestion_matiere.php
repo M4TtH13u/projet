@@ -30,7 +30,7 @@ if (securite(4))
         <label>Action :</label><input id="ajm" type="radio" name="choixMat" onClick="gestion();"/> Ajouter
         <input type="radio" name="choixMat" id ="delm" onClick="gestion();"/>Supprimer
         <!-- partie ajout -->
-        <div id="ajout_m">
+        <span id="ajout_m">
             <label>Libelle :</label><input type="text" name="libelle"/><br/>
             <label>Coef :</label><input type="text" name="coef"/><br/>
             <label>Module :</label>
@@ -61,9 +61,9 @@ if (securite(4))
                     deconnect($cnx); 
                 ?>
             </select>
-        </div>
+        </span>
         <!-- partie suppression -->
-        <div id="delete_m">
+        <span id="delete_m">
               <label>Matière :</label>
               <select name="delete">
                 <option></option>
@@ -78,10 +78,17 @@ if (securite(4))
                     deconnect($cnx); 
                 ?>
             </select>
-        </div>
+        </span>
       <br>
       <input type="submit"  value="Envoyer" />
       <input type="reset" value="Annuler" onClick="reinitialiser();"/>
   </fieldset>
 </form>  
-<?php } ?>
+<?php } 
+else// si il n'a pas le droit on le redirige gentillement vers la page d'accueil
+{
+     echo'<SCRIPT LANGUAGE="JavaScript">
+     document.location.href="index.php" 
+</SCRIPT>';
+}
+?>

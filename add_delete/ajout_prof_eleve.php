@@ -83,4 +83,11 @@ if (securite(4))
       <input type="reset" value="Annuler" onClick="reinitialiser();"/>
   </fieldset>
 </form>  
-<?php }?>
+<?php }
+else// si il n'a pas le droit on le redirige gentillement vers la page d'accueil
+{
+     echo'<SCRIPT LANGUAGE="JavaScript">
+     document.location.href="index.php" 
+</SCRIPT>';
+}
+?>
