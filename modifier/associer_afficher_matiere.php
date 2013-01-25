@@ -12,7 +12,7 @@
                     }
                     else
                     {?>
-                        <label>Module :</label>
+                        <label>Matière :</label>
               <select name="associer_mat">
                 <option></option>
                         <?php

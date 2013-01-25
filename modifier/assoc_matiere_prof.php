@@ -42,6 +42,7 @@ if (securite(4))
                  ?>
              </select>
         <span id="assoc_mat">
+            <label>Module</label>
               <select name="associer_module" id ="associer_mod" onChange="associer2();">
                 <option></option>
                 <?php         // menu déroulant pour la promo
