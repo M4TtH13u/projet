@@ -27,7 +27,7 @@ if (securite(4))
 <form id="form_prof_eleve" method="POST">   <!--Création d'un formulaire-->
   <fieldset>
       <!--choix du type d'action effectuer qui déclenche l'affichage des champs correspondants-->
-        <label>Action :</label><input id="ajm" type="radio" name="choixMat" onClick="gestion();"/> Ajouter
+        <label class="action">Action :</label><input id="ajm" type="radio" name="choixMat" onClick="gestion();"/> Ajouter
         <input type="radio" name="choixMat" id ="delm" onClick="gestion();"/>Supprimer
         <!-- partie ajout -->
         <span id="ajout_m">
@@ -46,7 +46,7 @@ if (securite(4))
                     }      
                     deconnect($cnx); 
                 ?>
-            </select>
+            </select><br/>
             <label>Professeur en charge :</label>
             <select name="prof">
                 <option></option>
@@ -77,7 +77,7 @@ if (securite(4))
               }
               deconnect($cnx);
             ?>
-     </select>
+     </select><br/>
             <span id="delete_m2"></span>
         </span>
       <br>

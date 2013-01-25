@@ -122,12 +122,12 @@ margin-right:30%;
 }
 
 #ajout_m{
-    text-align:center;
+    width:100%;
     display:none;
 }
 
 #delete_m{
-    text-align:center;
+    width:100%;
     display:none;
 }
 
