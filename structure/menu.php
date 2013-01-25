@@ -11,9 +11,13 @@ admin : s'affiche pour les élèves administrateurs;
     <li onclick="JavaScript:document.location='index.php?page=accueil';">
         Accueil
     </li>
-    <li class="eleve" onclick="JavaScript:document.location='index.php?page=module';">
+    <li class="eleve">
        Module
-       
+       <ul class="niveau2">
+         <li class="eleve"    onclick="JavaScript:document.location='index.php?page=module';">Afficher les modules</li>
+        <li class="admin" onclick="JavaScript:document.location='index.php?page=gestion_module';">Gérer les modules</li>
+         <li class="admin" onclick="JavaScript:document.location='index.php?page=gestion_matière';">Gérer les matières</li>
+       </ul>
     </li>
     <li class="eleve" >
         Promo
@@ -30,8 +34,7 @@ admin : s'affiche pour les élèves administrateurs;
         <ul class="niveau2">
             <li onclick="JavaScript:document.location='index.php?page=ajout_prof_eleve';">ajouter utilisateurs</li>
             <li onclick="JavaScript:document.location='index.php?page=delete_prof_eleve';">supprimer utilisateurs</li>
-            <li onclick="JavaScript:document.location='index.php?page=gestion_module';">gerer les modules</li>
-            <li onclick="JavaScript:document.location='index.php?page=gestion_matière';">gerer les matières</li>
+           
         </ul>
     </li>
     <li class="prof">
