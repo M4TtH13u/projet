@@ -32,7 +32,7 @@ $req='select u.nom nom,u.prenom prenom, u.idUtil idUtil, e.numEtudiant numEtudia
                 echo'<tr><td>'.$donnee['nom'].'</td><td>'.$donnee['prenom'].'</td><td>'.$donnee['numEtudiant'].'</td><td>'.$moyenne.'</td></tr>';
             }
    }
-   echo'<tr><td colspan=4>'.$promo/$eleve.'</td></tr>';
+   echo'<tr><td colspan=4> Moyenne generale : <b>'.$promo/$eleve.'</b></td></tr>';
    echo'</table>';
 deconnect($cnx); 
 ?>
