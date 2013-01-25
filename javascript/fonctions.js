@@ -113,6 +113,40 @@ function gestion(){
         document.getElementById("delete_m").style.display="none";
     }    
 }
+
+function associer2(){
+   var xhr;
+    var pere;
+    var reponse;
+    
+    var idMod = document.getElementById('associer_mod').value;
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4){
+            reponse = xhr.responseText;
+            pere = document.getElementById('afficher_mat');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","modifier/associer_afficher_matiere.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('idMod='+idMod);
+}
+
+function associer(){
+    var asm=document.getElementById("asm");
+    if (asm.checked){
+        document.getElementById("assoc_mat").style.display="block";
+    }else{
+        document.getElementById("assoc_mat").style.display="none";
+    }   
+    var dsm=document.getElementById("dsm");
+    if (dsm.checked){
+        document.getElementById("dissocier_mat").style.display="block";
+    }else{
+        document.getElementById("dissocier_mat").style.display="none";
+    }    
+}
 function gestion2(){
    var xhr;
     var pere;
@@ -132,8 +166,32 @@ function gestion2(){
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
     xhr.send('idMod='+idMod);
 }
-
-
+function dissocier()
+{
+    var dsm=document.getElementById("dsm");
+    if (dsm.checked){
+      var xhr;
+    var pere;
+    var reponse;
+   var idProf = document.getElementById('prof_assoc').value;
+   if (idProf!=null)
+       {
+          
+       alert(idProf);
+    xhr = getXhr();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4){
+            reponse = xhr.responseText;
+            pere = document.getElementById('dissocier_mat');
+            pere.innerHTML = reponse;
+      }
+    }
+    xhr.open("POST","modifier/dissocier_matiere_prof.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+    xhr.send('idProf='+idProf);  
+    }
+    }
+}
 function afficher_delete()
 {
     var eleve=document.getElementById("eleve");

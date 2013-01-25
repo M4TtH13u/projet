@@ -32,10 +32,9 @@ if (empty($_SESSION['idUtil']))// si l'utilisateur est pas connecté
                 'examen' =>'add_delete/ajout_DS.php',
                 'matiere' => 'display/matiere.php',
                 'module' => 'display/module.php',
-                'login' =>'connect/message_connexion.php',
-                'ajout_note' =>'add_delete/ajout_note.php',
+                'ajouter_note' =>'add_delete/ajout_note.php',
                 'export' =>'export/choix_export.php',
-                'test' => 'test.html',
+                'associer_matiere_prof' => 'modifier/assoc_matiere_prof.php',
                 'gestion_matière' => 'add_delete/gestion_matiere.php',
                 'gestion_module' => 'add_delete/gestion_module.php'
 				  );

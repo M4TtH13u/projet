@@ -219,3 +219,7 @@ margin-right: 35%;
 margin-left: 35%;
 text-align:center;
 }
+#assoc_mat, #dissocier_mat {
+    text-align:center;
+    display:none;
+}

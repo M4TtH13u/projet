@@ -34,7 +34,7 @@ admin : s'affiche pour les élèves administrateurs;
         <ul class="niveau2">
             <li onclick="JavaScript:document.location='index.php?page=ajout_prof_eleve';">ajouter utilisateurs</li>
             <li onclick="JavaScript:document.location='index.php?page=delete_prof_eleve';">supprimer utilisateurs</li>
-           
+            <li onclick="JavaScript:document.location='index.php?page=associer_matiere_prof';">Associer une matière à un professeur</li>
         </ul>
     </li>
     <li class="prof">
