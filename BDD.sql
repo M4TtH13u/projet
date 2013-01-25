@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 24 Janvier 2013 à 19:03
+-- Généré le: Ven 25 Janvier 2013 à 20:55
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.3.13
 
@@ -39,11 +39,11 @@ CREATE TABLE IF NOT EXISTS `eleve` (
 --
 
 INSERT INTO `eleve` (`numEtudiant`, `anneeRedouble`, `idPromo`, `idUtil`) VALUES
-(1, 0, 2, 5),
+(1, 0, 1, 5),
 (2, 0, 1, 6),
 (3, 0, 1, 7),
 (4, 0, 1, 8),
-(5, 0, 1, 9),
+(5, 0, 2, 9),
 (6, 0, 1, 10),
 (7, 0, 2, 11),
 (8, 0, 1, 12),
@@ -80,7 +80,7 @@ INSERT INTO `eleve` (`numEtudiant`, `anneeRedouble`, `idPromo`, `idUtil`) VALUES
 (39, 0, 1, 43),
 (40, 0, 1, 44),
 (41, 0, 1, 45),
-(42, 0, 1, 46),
+(42, 0, 2, 46),
 (43, 0, 2, 47),
 (44, 0, 1, 48),
 (45, 0, 2, 49),
@@ -122,10 +122,10 @@ INSERT INTO `eleve` (`numEtudiant`, `anneeRedouble`, `idPromo`, `idUtil`) VALUES
 (81, 0, 1, 85),
 (82, 0, 1, 86),
 (83, 0, 2, 87),
-(84, 0, 2, 88),
+(84, 0, 1, 88),
 (85, 0, 2, 89),
 (86, 0, 2, 90),
-(87, 0, 2, 91),
+(87, 0, 1, 91),
 (88, 0, 2, 92),
 (89, 0, 1, 93),
 (90, 0, 1, 94),
@@ -179,11 +179,11 @@ INSERT INTO `eleve` (`numEtudiant`, `anneeRedouble`, `idPromo`, `idUtil`) VALUES
 (138, 0, 1, 142),
 (139, 0, 1, 143),
 (140, 0, 1, 144),
-(141, 0, 2, 145),
+(141, 0, 1, 145),
 (142, 0, 2, 146),
 (143, 0, 1, 147),
 (144, 0, 1, 148),
-(145, 0, 1, 149),
+(145, 0, 2, 149),
 (146, 0, 2, 150),
 (147, 0, 2, 151),
 (148, 0, 2, 152),
@@ -213,17 +213,15 @@ CREATE TABLE IF NOT EXISTS `examen` (
   `date` date NOT NULL,
   `idType` int(2) NOT NULL,
   PRIMARY KEY (`idExam`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Contenu de la table `examen`
 --
 
 INSERT INTO `examen` (`idExam`, `libelle`, `idMat`, `date`, `idType`) VALUES
-(1, 'DS BDD', 1, '2012-10-01', 1),
-(2, 'DS', 8, '2013-01-11', 1),
-(3, 'test', 1, '2013-01-17', 1),
-(4, 'test2', 1, '2013-01-24', 2);
+(1, 'DS1 BDD', 1, '2012-09-24', 1),
+(2, 'DS', 8, '2013-01-11', 1);
 
 -- --------------------------------------------------------
 
@@ -238,7 +236,7 @@ CREATE TABLE IF NOT EXISTS `matiere` (
   `idMod` int(2) NOT NULL,
   `idProf` int(2) NOT NULL,
   PRIMARY KEY (`idMat`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Contenu de la table `matiere`
@@ -303,7 +301,7 @@ INSERT INTO `module` (`idMod`, `libelle`, `idPromo`) VALUES
 CREATE TABLE IF NOT EXISTS `participe` (
   `numEtudiant` int(10) NOT NULL,
   `idExam` int(3) NOT NULL,
-  `note` int(2) NOT NULL,
+  `note` float NOT NULL,
   PRIMARY KEY (`numEtudiant`,`idExam`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -312,15 +310,66 @@ CREATE TABLE IF NOT EXISTS `participe` (
 --
 
 INSERT INTO `participe` (`numEtudiant`, `idExam`, `note`) VALUES
-(1, 1, 0),
+(1, 1, 11.5),
 (1, 2, 0),
-(1, 4, 10),
-(7, 1, 18),
-(7, 4, 14),
-(9, 1, -1),
-(9, 4, 12),
-(12, 4, -1),
-(15, 1, 0);
+(7, 1, 14.5),
+(9, 1, 12),
+(12, 1, 14.5),
+(14, 1, 7),
+(15, 1, 14.5),
+(19, 1, 13),
+(21, 1, 17.5),
+(22, 1, 10.5),
+(24, 1, 17),
+(32, 1, 15.5),
+(36, 1, 7.5),
+(43, 1, 15),
+(45, 1, 16),
+(50, 1, 18.5),
+(51, 1, 0),
+(56, 1, 16),
+(57, 1, 0),
+(58, 1, 0),
+(60, 1, 0),
+(62, 1, 0),
+(63, 1, 0),
+(70, 1, 0),
+(72, 1, 0),
+(76, 1, 0),
+(79, 1, 0),
+(83, 1, 0),
+(84, 1, 0),
+(85, 1, 0),
+(86, 1, 0),
+(87, 1, 0),
+(88, 1, 0),
+(92, 1, 0),
+(98, 1, 0),
+(99, 1, 0),
+(100, 1, 0),
+(103, 1, 0),
+(105, 1, 0),
+(110, 1, 0),
+(111, 1, 0),
+(114, 1, 0),
+(115, 1, 0),
+(117, 1, 0),
+(118, 1, 0),
+(124, 1, 0),
+(127, 1, 0),
+(129, 1, 0),
+(136, 1, 0),
+(137, 1, 0),
+(141, 1, 0),
+(142, 1, 0),
+(146, 1, 0),
+(147, 1, 0),
+(148, 1, 0),
+(151, 1, 0),
+(152, 1, 0),
+(153, 1, 0),
+(155, 1, 0),
+(160, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -334,7 +383,7 @@ CREATE TABLE IF NOT EXISTS `prof` (
   `telBureau` int(10) NOT NULL DEFAULT '0',
   `idUtil` int(2) NOT NULL,
   PRIMARY KEY (`idProf`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Contenu de la table `prof`
@@ -432,7 +481,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `prenom` varchar(30) NOT NULL,
   `idRole` int(2) NOT NULL,
   PRIMARY KEY (`idUtil`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=214 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=218 ;
 
 --
 -- Contenu de la table `utilisateur`
@@ -613,7 +662,11 @@ INSERT INTO `utilisateur` (`idUtil`, `login`, `pass`, `nom`, `prenom`, `idRole`)
 (207, 'Baskiotisd', 'd450c5dbcc10db0749277efc32f15f9f', 'Baskiotis', 'Despina', 3),
 (208, 'Bornhofens', 'd450c5dbcc10db0749277efc32f15f9f', 'Bornhofen', 'Stefan', 3),
 (209, 'Lamouriine', 'd450c5dbcc10db0749277efc32f15f9f', 'Lamouri', 'Ines', 3),
-(210, 'Sabramaher', 'd450c5dbcc10db0749277efc32f15f9f', 'Sabra', 'Maher', 3);
+(210, 'Sabramaher', 'd450c5dbcc10db0749277efc32f15f9f', 'Sabra', 'Maher', 3),
+(211, 'eleve', 'c16da4ad70df593520193184381b9f21', 'eleve', 'eleve', 2),
+(212, 'prof', 'd450c5dbcc10db0749277efc32f15f9f', 'prof', 'prof', 3),
+(213, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin', 4),
+(217, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin', 4);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
