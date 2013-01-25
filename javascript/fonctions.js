@@ -211,23 +211,32 @@ function Exam_eleve()
         }
     }
     else{
-    alert('tous les champs doivent Ãªtre remplis');
+    alert('tous les champs doivent être remplis');
     }
 }
 
 function reinitialiser()
 {
-   if(document.getElementById("ajout_promo")!=null)
-    {
-        document.getElementById("ajout_promo").style.display="none";
-        document.getElementById("ajout_prof").style.display="none";  
-    }
-   else
-    {
-        document.getElementById("eleve_delete").style.display="none";
-        document.getElementById("prof_delete").style.display="none";
-    }
-   
+   var span=document.getElementsByTagName("span");
+   for (var i=0; i<span.length; i++){
+       span[i].style.display='none';
+   }
+   var div=document.getElementsByTagName("div");
+   for (var i=1; i<div.length; i++){
+       div[i].style.display='none';
+   }
+}
+
+function effacer()
+{
+    
+   document.getElementById("promo").style.display="block";
+   var span=document.getElementsByTagName("span");
+   span[0].innerHTML='<input type="button" value="Envoyer" Onclick="Exam_eleve();"/>';
+   var div=document.getElementsByTagName("div");
+   for (var i=2; i<div.length; i++){
+       div[i].innerHTML='';
+   }
 }
 
 function afficher_note()
