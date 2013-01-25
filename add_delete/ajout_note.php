@@ -30,11 +30,11 @@ if (securite(2))
     }
     if(isset($_POST['util'])){//ajout d'élève supplémentaires qui participent au DS
         foreach (($_POST['util']) as $nb){
-            $req='SELECT el.idUtil FROM eleve el, participe pa WHERE pa.idExam="'.$_POST['DS'].'" AND pa.numEtudiant=el.numEtudiant';
+            $req='SELECT el.numEtudiant FROM eleve el, participe pa WHERE pa.idExam="'.$_POST['DS'].'" AND pa.numEtudiant=el.numEtudiant';
             $res=execReq($req);
             $verif=true;
             while($donnee=mysql_fetch_assoc($res)){
-                if ($donnee['idUtil']==$nb){$verif=false;}//on verifie si l'élève est déjà dans l'examen
+                if ($donnee['numEtudiant']==$nb){$verif=false;}//on verifie si l'élève est déjà dans l'examen
             }
             if ($verif){
                 $req='INSERT INTO participe VALUES("'.$nb.'","'.$_POST['DS'].'","")';
