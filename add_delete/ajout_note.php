@@ -30,7 +30,7 @@ if (securite(2))
     }
     if(isset($_POST['util'])){//ajout d'élève supplémentaires qui participent au DS
         foreach (($_POST['util']) as $nb){
-            $req='SELECT el.idUtil FROM eleve el, participe pa WHERE pa.idExam="'.$_POST['DS'].'" AND pa.numEtudiant=el.numEtudiant'; //ERREUR !!!!!!!!!!!!!!!!
+            $req='SELECT el.idUtil FROM eleve el, participe pa WHERE pa.idExam="'.$_POST['DS'].'" AND pa.numEtudiant=el.numEtudiant';
             $res=execReq($req);
             $verif=true;
             while($donnee=mysql_fetch_assoc($res)){
