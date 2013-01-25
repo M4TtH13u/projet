@@ -19,7 +19,7 @@ if (securite(4))
         mysql_query("SET NAMES UTF8");
         $req='DELETE FROM matiere WHERE idMat="'.$_POST['delete'].'"';
         $res=execReq($req);
-        echo'La matiere a été supprimer';
+        echo'La matiere a été supprimé';
     }
    
 }
@@ -64,20 +64,21 @@ if (securite(4))
         </span>
         <!-- partie suppression -->
         <span id="delete_m">
-              <label>Matière :</label>
-              <select name="delete">
-                <option></option>
-                <?php         // menu déroulant pour la promo
-                    $cnx=connect();
-                    mysql_query("SET NAMES UTF8");
-                    $req='select * from matiere';
-                    $res=execReq($req);
-                    while($matiere=mysql_fetch_assoc($res)){
-                        echo '<option name="delete" value="'.$matiere['idMat'].'">'.$matiere['libelle'].'</option>';
-                    }      
-                    deconnect($cnx); 
-                ?>
-            </select>
+            <label>Choix du module :</label>
+    <select OnChange="gestion2()" id="gestion_matiere">
+           <option></option>
+           <?php
+              $cnx=connect();
+              $req='SELECT * FROM module ';// on sélectionne tous les modules on les affiches dans un select
+              $res=execReq($req);
+              while($module=mysql_fetch_assoc($res))
+              {
+                   echo'<option  value="'.$module['idMod'].'">'.$module['libelle'].'</option>';
+              }
+              deconnect($cnx);
+            ?>
+     </select>
+            <span id="delete_m2"></span>
         </span>
       <br>
       <input type="submit"  value="Envoyer" />

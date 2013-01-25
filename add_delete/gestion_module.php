@@ -20,7 +20,7 @@ if (securite(4))
         mysql_query("SET NAMES UTF8");
         $req='DELETE FROM module WHERE idMod="'.$_POST['delete'].'"';
         $res=execReq($req);
-        echo'Le module a été supprimer';
+        echo'Le module a été supprimé';
     }
    
 }
