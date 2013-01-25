@@ -22,7 +22,7 @@ if (securite(4))
 ?>
 
 <form  method="POST">   <!--Création d'un formulaire-->
-  <fieldset>
+  <fieldset id="assoc_matiere_prof">
       <!--choix du type d'action effectuer qui déclenche l'affichage des champs correspondants-->
         <label>Action :</label><input id="asm" type="radio" name="choixMod" onClick="associer();"/> Associer
         <input type="radio" name="choixMod" id ="dsm" onClick="associer();"/>Dissocier</br>
@@ -41,7 +41,7 @@ if (securite(4))
                    deconnect($cnx);
                  ?>
              </select>
-        <span id="assoc_mat">
+        <div id="assoc_mat">
             <label>Module</label>
               <select name="associer_module" id ="associer_mod" onChange="associer2();">
                 <option></option>
@@ -56,8 +56,8 @@ if (securite(4))
                     deconnect($cnx); 
                 ?>
             </select><br/>
-            <span id="afficher_mat"></span>
-        </span>
+            <div id="afficher_mat"></div>
+        </div>
         
   
         <!-- partie suppression -->

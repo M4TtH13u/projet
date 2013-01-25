@@ -121,6 +121,11 @@ margin-left: 30%;
 margin-right:30%;
 }
 
+#assoc_matiere_prof{
+margin-left: 30%;
+margin-right:30%;
+}
+
 #ajout_m{
     width:100%;
     display:none;
@@ -220,6 +225,5 @@ margin-left: 35%;
 text-align:center;
 }
 #assoc_mat, #dissocier_mat {
-    text-align:center;
     display:none;
 }
