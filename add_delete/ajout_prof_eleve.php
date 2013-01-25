@@ -45,45 +45,42 @@ if (securite(4))
     }
    
 }
-
-    else
-    {
-        ?>
-      <form id="form_prof_eleve" method="POST">   <!--Création d'un formulaire-->
-          <fieldset>
-              <legend>Inscription :</legend>
-              <!--choix du rôle de l'utilisateur qui déclenche l'affichage des champs correspondants-->
-                <label>Type :</label><input type="radio" name="choixUtil" onClick="prof();" value="4"/> Administrateur
-                <input type="radio" name="choixUtil" id="prof1" onClick="prof();" value="3"/>Professeur
-                <input type="radio" name="choixUtil" id="eleve1" onClick="prof();" value="2"/>Elève<br/>
-                <label>Nom :</label><input type="text" name="nom"/><br/>
-                <label>Prénom : </label><input type="text" name="prenom"/><br/>
-                <label>Identifiant : </label><input type="text" name="login"/><br/>
-                <label>Mot de passe : </label><input type="password" name="pass"/><br/>
-                <label>Confirmation mot de passe : </label><input type="password" name="repass"/><br/>
-                  <span id="ajout_promo">
-                      <label>Promo :</label>
-                      <select name="promo">
-                          <option></option>
-                          <?php         // menu déroulant pour la promo
-                              $cnx=connect();
-                              mysql_query("SET NAMES UTF8");
-                              $req='select * from promo';
-                              $res=execReq($req);
-                              while($promo=mysql_fetch_assoc($res)){
-                                  echo '<option name="promo" value="'.$promo['idPromo'].'">'.$promo['libelle'].'</option>';
-                              }      
-                              deconnect($cnx); 
-                          ?>
-                      </select>
-                 </span>
-                  <span id="ajout_prof">
-                      <label>Tel :</label><input type="tel" name="tel"/><br/>
-                      <label>Numéro bureau :</label><input type="text" name="numBureau"/><br/>   
-                 </span>
-              <br>
-              <input type="submit"  value="Envoyer" />
-              <input type="reset" value="Annuler" onClick="reinitialiser();"/>
-          </fieldset>
-      </form>  
-<?php } }?>
+?>
+<form id="form_prof_eleve" method="POST">   <!--Création d'un formulaire-->
+  <fieldset>
+      <legend>Inscription :</legend>
+      <!--choix du rôle de l'utilisateur qui déclenche l'affichage des champs correspondants-->
+        <label>Type :</label><input type="radio" name="choixUtil" onClick="prof();" value="4"/> Administrateur
+        <input type="radio" name="choixUtil" id="prof1" onClick="prof();" value="3"/>Professeur
+        <input type="radio" name="choixUtil" id="eleve1" onClick="prof();" value="2"/>Elève<br/>
+        <label>Nom :</label><input type="text" name="nom"/><br/>
+        <label>Prénom : </label><input type="text" name="prenom"/><br/>
+        <label>Identifiant : </label><input type="text" name="login"/><br/>
+        <label>Mot de passe : </label><input type="password" name="pass"/><br/>
+        <label>Confirmation mot de passe : </label><input type="password" name="repass"/><br/>
+          <span id="ajout_promo">
+              <label>Promo :</label>
+              <select name="promo">
+                  <option></option>
+                  <?php         // menu déroulant pour la promo
+                      $cnx=connect();
+                      mysql_query("SET NAMES UTF8");
+                      $req='select * from promo';
+                      $res=execReq($req);
+                      while($promo=mysql_fetch_assoc($res)){
+                          echo '<option name="promo" value="'.$promo['idPromo'].'">'.$promo['libelle'].'</option>';
+                      }      
+                      deconnect($cnx); 
+                  ?>
+              </select>
+         </span>
+          <span id="ajout_prof">
+              <label>Tel :</label><input type="tel" name="tel"/><br/>
+              <label>Numéro bureau :</label><input type="text" name="numBureau"/><br/>   
+         </span>
+      <br>
+      <input type="submit"  value="Envoyer" />
+      <input type="reset" value="Annuler" onClick="reinitialiser();"/>
+  </fieldset>
+</form>  
+<?php }?>

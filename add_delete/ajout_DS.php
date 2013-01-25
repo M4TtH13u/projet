@@ -25,8 +25,6 @@ if (securite(4))
                 echo "Aucun élève n'a été selectionné pour participer à cet examen";//message d'erreur
             }
         } 
-        else
-        {
       
 ?>
 <form id="form_DS" action="#" method="POST">    <!--Création d'un formulaire-->
@@ -60,5 +58,5 @@ if (securite(4))
 </form>
 
 <?php
-        }}      
+        }      
  ?>

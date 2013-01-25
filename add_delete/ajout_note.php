@@ -48,7 +48,7 @@ if (securite(2))
         }
     echo'les notes ont bien été modifiées';
     }
-    else{
+
 ?>
     <form id="form_module" name="form1" action="#" method="POST"><!-- mise en place du formulaire -->
         <fieldset>
@@ -82,7 +82,7 @@ if (securite(2))
             </div>
     </form>
             
-<?php } }
+<?php }
 else// si il n'a pas le droit on le redirige gentillement vers la page d'accueil
 {
      echo'<SCRIPT LANGUAGE="JavaScript">

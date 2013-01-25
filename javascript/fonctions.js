@@ -99,6 +99,21 @@ function prof(){
     }    
 }
 
+function gestion(){
+    var ajm=document.getElementById("ajm");
+    if (ajm.checked){
+        document.getElementById("ajout_m").style.display="block";
+    }else{
+        document.getElementById("ajout_m").style.display="none";
+    }   
+    var delm=document.getElementById("delm");
+    if (delm.checked){
+        document.getElementById("delete_m").style.display="block";
+    }else{
+        document.getElementById("delete_m").style.display="none";
+    }    
+}
+
 
 function afficher_delete()
 {

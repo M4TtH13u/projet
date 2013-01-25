@@ -35,7 +35,9 @@ if (empty($_SESSION['idUtil']))// si l'utilisateur est pas connecté
                 'login' =>'connect/message_connexion.php',
                 'ajout_note' =>'add_delete/ajout_note.php',
                 'export' =>'export/choix_export.php',
-                'test' => 'test.html'
+                'test' => 'test.html',
+                'gestion_matière' => 'add_delete/gestion_matiere.php',
+                'gestion_module' => 'add_delete/gestion_module.php'
 				  );
 
   // On teste que le paramètre d'url existe et qu'il est bien autorisé

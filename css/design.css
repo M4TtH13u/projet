@@ -121,6 +121,16 @@ margin-left: 30%;
 margin-right:30%;
 }
 
+#ajout_m{
+    text-align:center;
+    display:none;
+}
+
+#delete_m{
+    text-align:center;
+    display:none;
+}
+
 #form_module{
 margin-left: 30%;
 margin-right:30%;
