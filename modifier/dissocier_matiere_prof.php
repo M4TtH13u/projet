@@ -8,7 +8,7 @@
                     $res=execReq($req);
                     if (mysql_num_rows($res)==0)
                     {
-                       echo' Aucune matière est associé au professeur';
+                       echo' Aucune matière n\'est associé au professeur';
                     }
                     else
                     {?>
